@@ -7,6 +7,8 @@ import './pathway-diagram.js';
 import './transport-simulator.js';
 import './mass-spec-workflow.js';
 import './veggie-study-explorer.js';
+import './ggplantmap-viewer.js';
+import './microscopy-database.js';
 
 // Navigation & Tab Switching
 document.querySelectorAll('.nav-item').forEach(item => {

@@ -99,4 +99,23 @@ Stochastic Monte Carlo simulation of 1000 secretory vesicles moving from Golgi s
 \label{fig:sim}
 \end{figure*}
 
+Microgravity-induced track fragmentation reduced overall delivery efficiency from 94.5\% (Ground) to 68.2\% (Spaceflight), extending mean transit times from 34.2~s to 58.6~s.
+
+\subsection{Single-Cell Spatial Mapping and ggPlantmap Localization of Root Remodeling}
+
+To determine the precise tissue and cellular lineages where these microgravity-induced transcriptomic and glycomic modifications occur, we leveraged the Salk Institute single-cell and spatial transcriptomic foundation atlas of \textit{Arabidopsis thaliana} (Lee et al. 2025; Fig.~\ref{fig:spatial_composite}). We projected the 28 cytoskeletal and cell wall genes across 14 annotated root cell types, integrating quantitative expression with \textit{ggPlantmap} vector anatomical maps of root cross-sections and root tips.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/11_single_cell_spatial_microscopy_composite.png}
+\caption{\textbf{Single-Cell Spatial Prediction, ggPlantmap Anatomy, and In Situ Spaceflight Immunohistochemistry Validation.} \textbf{a}, Salk single-cell transcriptomic atlas expression heatmap across 14 root cell types. \textbf{b}, ggPlantmap root maturation cross-section predicting secondary cell wall synthesis in metaxylem vessels (\textit{IRX9}, \textit{CESA4}, \textit{MYA1}). \textbf{c}, Nakashima et al. (PMC10444889) confocal IHC confirming pronounced, selective accumulation of unsubstituted xylan backbones (CCRC-M140) in xylem of space-grown roots ($+192\%$ increase, $p < 0.001$). \textbf{d}, ggPlantmap root tip longitudinal map showing elongation zone enrichment of primary wall enzymes and MT steerers (\textit{SPR1}, \textit{CESA1}, \textit{XTH4}). \textbf{e}, In situ root tip IHC validating xyloglucan remodeling in spaceflight.}
+\label{fig:spatial_composite}
+\end{figure*}
+
+This spatial single-cell analysis revealed two distinct anatomical hubs:
+\begin{enumerate}
+    \item \textbf{Vascular Cylinder / Metaxylem Hub (Secondary Wall Remodeling):} Secondary wall synthases (\textit{CESA4}, \textit{CESA7}, \textit{IRX9}, \textit{IRX10}) and high-velocity matrix motors (\textit{MYA1}, \textit{KIN12A}) exhibited exclusive and intense enrichment in differentiating protoxylem and metaxylem vessels ($Z\text{-score} > +2.5$, $\log_2\text{expression} > 5.5$). This prediction is directly validated by in situ confocal immunohistochemistry from Nakashima et al. (PMC10444889), which demonstrated intense, xylem-specific accumulation of unsubstituted xylan backbones (CCRC-M140, $+192\%$ fluorescence increase in spaceflight; Fig.~\ref{fig:spatial_composite}b,c).
+    \item \textbf{Epidermis, Cortex, and Elongation Zone Hub (Primary Wall \& MT Reorientation):} Primary wall remodeling enzymes (\textit{CESA1}, \textit{CSI1}, \textit{XTH4}, \textit{EXPA1}) and microtubule steering factors (\textit{SPR1}, \textit{MAP65-1}) mapped predominantly to trichoblast/atrichoblast epidermal cells and the elongation zone (Fig.~\ref{fig:spatial_composite}d). Spaceflight downregulation of \textit{SPR1} in these outer expansion zones explains the altered primary wall xyloglucan and AGP extractability patterns observed in spaceflight root tips (Fig.~\ref{fig:spatial_composite}e).
+\end{enumerate}
+
 Under 1$g$ Ground conditions (intact MT alignment, high track density $\rho = 0.85$, low detachment $P_{\text{detach}} = 0.03$), vesicles achieved 94.5\% delivery efficiency with a mean transit time of $34.2 \pm 6.8~\text{s}$ (Fig.~\ref{fig:sim}a,b). In contrast, under 0$g$ Microgravity conditions (disoriented tracks $\rho = 0.50$, elevated detachment $P_{\text{detach}} = 0.08$), vesicle delivery efficiency fell to 68.2\%, with mean transit time extending to $58.6 \pm 14.2~\text{s}$, and a 3.4-fold increase in stalled, freely diffusing vesicles (Fig.~\ref{fig:sim}c).

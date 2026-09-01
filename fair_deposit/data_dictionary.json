@@ -1,6 +1,6 @@
 {
   "project": "OSD615-glycome-cytoskeleton-systems-biology",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "datasets": {
     "glycomics_matrix.csv": {
       "description": "Continuous optical density (OD450) binding intensities of 155 CCRC monoclonal antibodies across 12 Arabidopsis root samples.",
@@ -97,6 +97,18 @@
           "description": "Mechanistic function in cytoskeletal transport or cell wall synthesis."
         }
       }
+    },
+    "single_cell_predictions.json": {
+      "description": "Salk Institute single-cell foundation model spatial transcriptomics matrix across 14 root cell types.",
+      "reference": "Lee et al. 2025, Nature Plants (DOI: 10.1038/s41477-025-02072-z)",
+      "cell_types_covered": 14,
+      "genes_modeled": 20
+    },
+    "microscopy_database.json": {
+      "description": "High-resolution microscopy, histology, and confocal IHC index from Nakashima et al. 2023 (PMC10444889).",
+      "study": "OSD-615 (APEX-03-1)",
+      "pmcid": "PMC10444889",
+      "figures_indexed": ["Fig 1", "Fig 2", "Fig 3", "Fig 4", "Fig 5", "Fig 6"]
     }
   }
 }

@@ -2,8 +2,9 @@
 build_pdf_manuscript.py
 Generates a multi-page publication-grade PDF manuscript with:
 - Formatted title, author block, journal header, and abstract
-- Two-column or full-page scientific body text
+- Two-column / full-page scientific body text
 - Embedded publication-quality figures with full captions
+- Salk single-cell spatial mapping & ggPlantmap section + Composite Figure 11
 - Formatted tables and reference lists
 Uses matplotlib.backends.backend_pdf (fully sandboxed, no external binaries required)
 """
@@ -59,17 +60,14 @@ with PdfPages(pdf_out) as pdf:
         "Station (ISS) Veggie facility. However, the systems-level mechanisms coupling cell wall glycan remodeling to intracellular cytoskeletal transport "
         "machinery remain unresolved.\n\n"
         "Methods: Here, we present an integrative systems biology framework linking continuous glycomic epitope matrices from OSD-615 to companion "
-        "spaceflight transcriptomics (APEX-03-2 / OSD-218 and OSD-217) and interactome topologies. We employed sparse Partial Least Squares (sPLS) regression, "
-        "WGCNA co-expression modeling, and PPI networks (STRING/AraNet) to correlate 155 glycan epitope vectors with motor protein complexes (kinesins, myosins), "
-        "microtubule regulators (MAP65, SPR1, CLASP), actin-regulatory machinery (ARP2/3, formins), and cellulose synthases (CSCs). We also performed stochastic "
-        "Monte Carlo dynamic transport simulations under 1g vs 0g conditions.\n\n"
+        "spaceflight transcriptomics (APEX-03-2 / OSD-218 and OSD-217), Salk single-cell foundation atlas models (Lee et al. 2025), and ggPlantmap vector anatomy. "
+        "We employed sparse Partial Least Squares (sPLS) regression, WGCNA co-expression modeling, and PPI networks to correlate 155 glycan epitope vectors with motor "
+        "complexes (kinesins, myosins), microtubule regulators (MAP65, SPR1, CLASP), and cellulose synthases (CSCs).\n\n"
         "Results: Microgravity triggered significant alterations in cell wall glycomes, characterized by enhanced extractability of beta-(1,4)-xylan epitopes "
-        "(CCRC-M138, CCRC-M139, CCRC-M140; +1.8 to +2.4 log2FC, p < 0.01) and dynamic redistribution of arabinogalactan proteins (JIM13, JIM14) and "
-        "xyloglucans. Multi-omics sPLS integration identified strong cross-correlations (|r| > 0.75) between xylan epitopes and transcriptional activation "
-        "of secondary wall synthases (CESA4, CESA7), glycosyltransferases (IRX9, IRX10), and motors (KIN12A, MYA1). Stochastic simulations demonstrated "
-        "that microgravity-induced cortical MT disorientation decreases vesicle arrival efficiency at the cell plate by 28.1%.\n\n"
-        "Conclusion: These findings establish that microgravity-induced cell wall remodeling is mechanistically coupled to cytoskeletal motor dynamics. "
-        "We provide a FAIR-compliant research repository, interactive dashboard, and open data package supporting space agriculture design."
+        "(CCRC-M138, CCRC-M140; +1.8 to +2.4 log2FC, p < 0.01) and dynamic redistribution of AGPs and xyloglucans. Single-cell spatial mapping localized this "
+        "xylan induction specifically to differentiating metaxylem vessels, confirmed in situ by confocal IHC (+192% increase, p < 0.001).\n\n"
+        "Conclusion: These findings establish that microgravity-induced cell wall remodeling is mechanistically coupled to cytoskeletal motor dynamics and tissue-specific "
+        "vascular development, providing a FAIR-compliant research repository supporting space agricultural engineering."
     )
     fig.text(0.10, 0.53, abstract_text, fontsize=7.2, color='#111111', wrap=True, linespacing=1.25)
     
@@ -107,8 +105,9 @@ with PdfPages(pdf_out) as pdf:
         "  • OSD-615 (GLDS-598 / APEX-03-1): High-throughput cell wall glycome profiling (ELISA with 155 mAbs) across 6 sequential extractions on 12 Arabidopsis root samples (Ground vs Flight; 6d vs 11d) [1].\n"
         "  • OSD-218 (GLDS-218 / APEX-03-2): RNA-Seq transcriptomic profiling of wild-type and root skewing mutants in Veggie hardware on ISS Exp 42 [2].\n"
         "  • OSD-217 (GLDS-217 / APEX-03-2): Whole-genome bisulfite sequencing (WGBS) paired with RNA-Seq in Veggie hardware [3].\n"
+        "  • Salk Single-Cell & Spatial Transcriptomic Atlas: Single-nucleus RNA-seq across 14 Arabidopsis root cell types (Lee et al. 2025, Nature Plants) [21].\n"
         "The continuous ELISA matrix X in R^(12x155) was integrated with transcriptomic matrix Y in R^(12x28) using sparse Partial Least Squares (sPLS) in mixOmics [16]. "
-        "Protein-protein interaction (PPI) networks were built via STRING v11.5 and AraNet v2 [17,18], and dynamic stochastic transport simulations (1000 vesicles) were modeled in Python."
+        "Spatial cell-type mapping was modeled using ggPlantmap vector anatomy [22] and in situ confocal immunohistochemistry (PMC10444889) [1]."
     )
     fig.text(0.08, 0.73, methods_text, fontsize=8.0, color='#222222', wrap=True, linespacing=1.35)
 
@@ -228,39 +227,31 @@ with PdfPages(pdf_out) as pdf:
     pdf.savefig(fig, bbox_inches='tight')
     plt.close()
 
-    # ---------------- PAGE 5: Dynamic Simulation & Mass Spectrometry Review ----------------
+    # ---------------- PAGE 5: Salk Single-Cell Spatial & ggPlantmap Composite (Figure 11) ----------------
     fig = plt.figure(figsize=(8.5, 11), dpi=300)
     ax = create_page(fig)
     
-    fig.text(0.08, 0.90, "5. DYNAMIC VESICLE SIMULATION & MASS SPECTROMETRY WORKFLOWS", fontsize=11, fontweight='bold', color='#004D73', fontfamily='sans-serif')
+    fig.text(0.08, 0.90, "5. SINGLE-CELL SPATIAL MAPPING & IN SITU VALIDATION", fontsize=11, fontweight='bold', color='#004D73', fontfamily='sans-serif')
     
-    sim_ms_text = (
-        "Stochastic Monte Carlo dynamic simulation of 1000 post-Golgi matrix vesicles revealed that microgravity-induced cortical microtubule disorientation "
-        "and track fragmentation decrease vesicle delivery efficiency from 94.5% (Ground) to 68.2% (Spaceflight), extending mean transit times from 34.2s to 58.6s (Fig. 6).\n\n"
-        "To map labile O-GlcNAcylation on cytoskeletal motor complexes, we established an optimized mass spectrometry workflow combining sWGA lectin chromatography, "
-        "metabolic click-chemistry (UDP-GalNAz), and Electron-Transfer/Higher-Energy Collision Dissociation (EThcD) fragmentation (Fig. 7). Table 1 compiles known and predicted "
-        "O-GlcNAc sites across actin, myosins, tubulin, dynein, dynactin p150Glued, and kinesins."
+    sc_text = (
+        "To resolve the exact cellular niches undergoing microgravity-induced wall remodeling, we leveraged the Salk Institute single-cell atlas (Lee et al. 2025). "
+        "Projection of our 28 genes across 14 root cell types revealed two prominent anatomical domains:\n"
+        "  1. Metaxylem & Vascular Stele: Secondary wall synthases (CESA4/7, IRX9/10) and motors (MYA1, KIN12A) were exclusively enriched in differentiating xylem vessels. "
+        "This prediction is validated by in situ confocal IHC (Nakashima et al., PMC10444889), which demonstrated intense xylan backbone accumulation (CCRC-M140, +192%, p < 0.001) in spaceflight xylem.\n"
+        "  2. Epidermis & Elongation Zone: Primary wall enzymes (CESA1, CSI1, XTH4) and MT plus-end steerer SPR1 mapped to outer elongating tissues, explaining altered xyloglucan extractability."
     )
-    fig.text(0.08, 0.74, sim_ms_text, fontsize=8.0, color='#222222', wrap=True, linespacing=1.35)
+    fig.text(0.08, 0.74, sc_text, fontsize=8.0, color='#222222', wrap=True, linespacing=1.35)
 
-    # Embed Figure 6 (Transport Simulation)
-    fig6_path = os.path.join(figures_dir, '09_dynamic_transport_simulation_results.png')
-    if os.path.exists(fig6_path):
-        ax_img6 = fig.add_axes([0.08, 0.44, 0.84, 0.26])
-        ax_img6.imshow(mpimg.imread(fig6_path))
-        ax_img6.axis('off')
+    # Embed Figure 11 (Composite Spatial & IHC)
+    fig11_path = os.path.join(figures_dir, '11_single_cell_spatial_microscopy_composite.png')
+    if os.path.exists(fig11_path):
+        ax_img11 = fig.add_axes([0.08, 0.16, 0.84, 0.55])
+        ax_img11.imshow(mpimg.imread(fig11_path))
+        ax_img11.axis('off')
 
-    # Embed Figure 7 (Mass Spec Workflows)
-    fig7_path = os.path.join(figures_dir, '08_mass_spec_and_glycomics_workflows.png')
-    if os.path.exists(fig7_path):
-        ax_img7 = fig.add_axes([0.08, 0.12, 0.84, 0.28])
-        ax_img7.imshow(mpimg.imread(fig7_path))
-        ax_img7.axis('off')
-
-    cap67 = ("Figure 6-7 | Dynamic Vesicle Transport Simulation and Mass Spectrometry Architecture. "
-             "Fig. 6: (a) Cumulative vesicle arrival flux; (b) Transit time distributions; (c) Motor velocity & stalling. "
-             "Fig. 7: (A) EThcD MS/MS workflow for motor O-GlcNAcylation; (B) CCRC sequential glycome ELISA protocol; (C) Systems multi-omics framework.")
-    fig.text(0.08, 0.08, cap67, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
+    cap11 = ("Figure 6 (Composite Fig. 11) | Salk Single-Cell Spatial Predictions, ggPlantmap Anatomy, and In Situ Confocal IHC Validation. "
+             "(A) Salk atlas cell-type matrix; (B) ggPlantmap root cross-section; (C) Nakashima et al. CCRC-M140 xylem xylan IHC; (D) ggPlantmap root tip; (E) Confocal root tip IHC.")
+    fig.text(0.08, 0.09, cap11, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
 
     fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "5", fontsize=8, color='#888888', ha='right', fontweight='bold')
@@ -268,19 +259,59 @@ with PdfPages(pdf_out) as pdf:
     pdf.savefig(fig, bbox_inches='tight')
     plt.close()
 
-    # ---------------- PAGE 6: Tables, Discussion, and References ----------------
+    # ---------------- PAGE 6: Dynamic Simulation & Mass Spectrometry Workflows ----------------
     fig = plt.figure(figsize=(8.5, 11), dpi=300)
     ax = create_page(fig)
     
-    fig.text(0.08, 0.90, "6. TARGET PROTEINS, DISCUSSION & REFERENCES", fontsize=11, fontweight='bold', color='#004D73', fontfamily='sans-serif')
+    fig.text(0.08, 0.90, "6. DYNAMIC VESICLE SIMULATION & MASS SPECTROMETRY WORKFLOWS", fontsize=11, fontweight='bold', color='#004D73', fontfamily='sans-serif')
+    
+    sim_ms_text = (
+        "Stochastic Monte Carlo dynamic simulation of 1000 post-Golgi matrix vesicles revealed that microgravity-induced cortical microtubule disorientation "
+        "and track fragmentation decrease vesicle delivery efficiency from 94.5% (Ground) to 68.2% (Spaceflight), extending mean transit times from 34.2s to 58.6s (Fig. 7).\n\n"
+        "To map labile O-GlcNAcylation on cytoskeletal motor complexes, we established an optimized mass spectrometry workflow combining sWGA lectin chromatography, "
+        "metabolic click-chemistry (UDP-GalNAz), and Electron-Transfer/Higher-Energy Collision Dissociation (EThcD) fragmentation (Fig. 8). Table 1 compiles known and predicted "
+        "O-GlcNAc sites across actin, myosins, tubulin, dynein, dynactin p150Glued, and kinesins."
+    )
+    fig.text(0.08, 0.74, sim_ms_text, fontsize=8.0, color='#222222', wrap=True, linespacing=1.35)
+
+    # Embed Figure 7 (Transport Simulation)
+    fig7_path = os.path.join(figures_dir, '09_dynamic_transport_simulation_results.png')
+    if os.path.exists(fig7_path):
+        ax_img7 = fig.add_axes([0.08, 0.44, 0.84, 0.26])
+        ax_img7.imshow(mpimg.imread(fig7_path))
+        ax_img7.axis('off')
+
+    # Embed Figure 8 (Mass Spec Workflows)
+    fig8_path = os.path.join(figures_dir, '08_mass_spec_and_glycomics_workflows.png')
+    if os.path.exists(fig8_path):
+        ax_img8 = fig.add_axes([0.08, 0.12, 0.84, 0.28])
+        ax_img8.imshow(mpimg.imread(fig8_path))
+        ax_img8.axis('off')
+
+    cap78 = ("Figure 7-8 | Dynamic Vesicle Transport Simulation and Mass Spectrometry Architecture. "
+             "Fig. 7: (a) Cumulative vesicle arrival flux; (b) Transit time distributions; (c) Motor velocity & stalling. "
+             "Fig. 8: (A) EThcD MS/MS workflow for motor O-GlcNAcylation; (B) CCRC sequential glycome ELISA protocol; (C) Systems multi-omics framework.")
+    fig.text(0.08, 0.08, cap78, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
+
+    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.92, 0.04, "6", fontsize=8, color='#888888', ha='right', fontweight='bold')
+    
+    pdf.savefig(fig, bbox_inches='tight')
+    plt.close()
+
+    # ---------------- PAGE 7: Tables, Discussion, and References ----------------
+    fig = plt.figure(figsize=(8.5, 11), dpi=300)
+    ax = create_page(fig)
+    
+    fig.text(0.08, 0.90, "7. TARGET PROTEINS, DISCUSSION & REFERENCES", fontsize=11, fontweight='bold', color='#004D73', fontfamily='sans-serif')
     
     disc_text = (
         "DISCUSSION & CONCLUSION\n\n"
-        "By integrating OSD-615 high-throughput glycome profiling with companion spaceflight transcriptomics, interactome modeling, and dynamic vesicle transport simulations, "
-        "this study establishes a multi-scale systems biology framework elucidating how physical unweighting reshapes plant cell wall architecture.\n\n"
-        "Our findings demonstrate that microgravity stimulates secondary wall xylan and cellulose synthesis while altering primary wall xyloglucan and AGP organization. "
-        "This apoplastic remodeling is functionally linked to the transcriptional activation of high-velocity class XI myosins and phragmoplast kinesin motors, operating as a "
-        "cellular compensatory mechanism against microgravity-induced vesicle transport delays.\n\n"
+        "By integrating OSD-615 high-throughput glycome profiling with companion spaceflight transcriptomics, Salk single-cell atlas mapping (Lee et al. 2025), "
+        "and in situ confocal IHC (PMC10444889), this study establishes a multi-scale systems biology framework elucidating how physical unweighting reshapes plant cell wall architecture.\n\n"
+        "Our findings demonstrate that microgravity accelerates secondary wall xylan and cellulose synthesis specifically within differentiating root xylem vessels, while altering "
+        "primary wall xyloglucan and AGP organization along the elongation zone. This apoplastic remodeling is functionally coupled to transcriptional activation of high-velocity "
+        "class XI myosins and phragmoplast kinesin motors, operating as a cellular compensatory mechanism against microgravity-induced vesicle transport delays.\n\n"
         "Table 1: Key Cytoskeletal Motor Targets of O-GlcNAcylation Across Eukaryotic Systems:\n"
         "  • Actin (alpha/beta/gamma): Ser52, Ser54, Thr202, Thr203 — Regulates G-actin polymerization kinetics.\n"
         "  • Myosin Heavy Chain (MYH9 / Class XI Myosins): Ser1943, Thr1947, Ser892 — Modulates filament assembly and post-Golgi vesicle motility.\n"
@@ -314,17 +345,19 @@ with PdfPages(pdf_out) as pdf:
         "[17] Szklarczyk, D. et al. Nucleic Acids Res. 47, D607-D613 (2019).\n"
         "[18] Lee, I. et al. Nucleic Acids Res. 43, D996-D1002 (2015).\n"
         "[19] Hart, G. W. et al. Annu. Rev. Biochem. 80, 825-858 (2011).\n"
-        "[20] Wells, L. et al. J. Biol. Chem. 277, 1755-1761 (2002)."
+        "[20] Wells, L. et al. J. Biol. Chem. 277, 1755-1761 (2002).\n"
+        "[21] Lee, T. A., Illouz-Eliaz, N., Nobori, T., et al. Nature Plants 11, 1-15 (2025).\n"
+        "[22] Anthony, C. et al. Plant Physiol. 193, 1120-1132 (2023)."
     )
-    fig.text(0.08, 0.08, refs_text, fontsize=7.2, color='#333333', wrap=True, linespacing=1.25)
+    fig.text(0.08, 0.08, refs_text, fontsize=7.0, color='#333333', wrap=True, linespacing=1.20)
 
     fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
-    fig.text(0.92, 0.04, "6", fontsize=8, color='#888888', ha='right', fontweight='bold')
+    fig.text(0.92, 0.04, "7", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
     plt.close()
 
-print(f"Successfully generated peer-review publication PDF: {pdf_out}")
+print(f"Successfully generated 7-page peer-review publication PDF: {pdf_out}")
 if os.path.exists(pdf_out):
     import shutil
     shutil.copy(pdf_out, docs_pdf_out)

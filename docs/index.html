@@ -28,6 +28,8 @@
             <div class="nav-item" data-tab="tab-simulation">🚚 Transport Simulator</div>
             <div class="nav-item" data-tab="tab-massspec">⚙️ MS Workflows</div>
             <div class="nav-item" data-tab="tab-veggie">🌱 VEGGIE Studies</div>
+            <div class="nav-item" data-tab="tab-singlecell">🗺️ Single-Cell (ggPlantmap)</div>
+            <div class="nav-item" data-tab="tab-microscopy">🔬 Microscopy Database</div>
             <div class="nav-item" data-tab="tab-manuscript">📄 Manuscript</div>
         </nav>
         <div class="sidebar-footer">
@@ -252,6 +254,54 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+        <!-- Tab 11: Single-Cell Spatial Mapping (ggPlantmap) -->
+        <section id="tab-singlecell" class="tab-content">
+            <h2>Single-Cell Spatial Prediction & ggPlantmap Root Anatomy</h2>
+            <p class="tab-desc">Projecting spaceflight-altered cytoskeletal motors and cell wall synthases onto <em>Arabidopsis thaliana</em> root lineages using the Salk Single-Cell & Spatial Atlas (Lee et al. 2025, <em>Nature Plants</em>) and ggPlantmap vector anatomy.</p>
+            
+            <div class="card" style="margin-bottom: 20px;">
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <label for="plantmap-feature-select" style="font-weight: bold; color: var(--text);">Select Gene / Glycan Feature:</label>
+                    <select id="plantmap-feature-select" style="padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); font-size: 0.95rem; min-width: 280px;"></select>
+                    <div style="font-size: 0.85rem; color: #64748b;">🎨 Color gradient: Dark Slate (Low) → Teal (Med) → Bright Coral (High)</div>
+                </div>
+            </div>
+
+            <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                <div class="card" style="text-align: center;">
+                    <h3>Root Maturation Cross-Section</h3>
+                    <div id="plantmap-cross-section" style="margin-top: 10px;"></div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3>Root Tip Longitudinal Map</h3>
+                    <div id="plantmap-longitudinal" style="margin-top: 10px;"></div>
+                </div>
+            </div>
+
+            <div id="plantmap-details-card" class="card" style="border-left: 4px solid var(--teal);"></div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>Salk Atlas Multi-Cell-Type Expression Matrix</h3>
+                <p>Global dotplot of 15 key spaceflight genes across all 14 root cell types.</p>
+                <img src="figures/10_salk_single_cell_root_prediction.png" alt="Salk Single Cell Predictions" style="max-width: 100%; height: auto; border-radius: 6px; margin-top: 10px; border: 1px solid var(--border);">
+            </div>
+        </section>
+
+        <!-- Tab 12: Microscopy Database (PMC10444889) -->
+        <section id="tab-microscopy" class="tab-content">
+            <h2>Microscopy & In Situ Immunohistochemistry Database</h2>
+            <p class="tab-desc">Comprehensive database of seedling morphology, root histology, and confocal laser scanning immunofluorescence from Nakashima et al. (2023, <em>npj Microgravity</em> 9:68 / <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10444889/" target="_blank" style="color:var(--teal);">PMC10444889 ↗</a>).</p>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <input type="text" id="microscopy-search" placeholder="🔍 Search microscopy images by antibody (e.g., CCRC-M140, JIM19), figure, tissue, or finding..." style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); font-size: 0.95rem;">
+            </div>
+
+            <div id="microscopy-gallery"></div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>Multi-Scale Spatial Validation Panel (Figure 11 Composite)</h3>
+                <p>Direct alignment between single-cell spatial transcriptomic predictions (ggPlantmap) and in situ spaceflight confocal IHC.</p>
+                <img src="figures/11_single_cell_spatial_microscopy_composite.png" alt="Composite Spatial & Microscopy Panel" style="max-width: 100%; height: auto; border-radius: 6px; margin-top: 10px; border: 1px solid var(--border);">
             </div>
         </section>
 
