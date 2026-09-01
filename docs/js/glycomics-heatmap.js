@@ -2,6 +2,9 @@
 let rawData = null;
 
 export function initGlycomicsHeatmap() {
+    const container = document.getElementById('heatmap');
+    if (!container) return;
+
     fetch('data/glycomics_heatmap.json')
         .then(r => r.json())
         .then(data => {
@@ -14,15 +17,23 @@ export function initGlycomicsHeatmap() {
 
 function renderHeatmap(classFilter, colorscale) {
     if (!rawData) return;
+    const container = document.getElementById('heatmap');
+    if (!container) return;
 
-    let mabs = rawData.x;
+    let mabs = [...rawData.x];
     let zValues = rawData.z; // 12 samples × 155 mAbs
 
     if (classFilter !== 'all') {
         const filteredIndices = [];
         mabs = [];
         rawData.x.forEach((m, idx) => {
-            if (rawData.glycan_classes[m] === classFilter) {
+            const cls = rawData.glycan_classes[m] || '';
+            if (cls.toLowerCase().includes(classFilter.toLowerCase()) || 
+                (classFilter === 'Xylan / Arabinoxylan' && cls.toLowerCase().includes('xylan')) ||
+                (classFilter === 'Xyloglucan' && cls.toLowerCase().includes('xyloglucan')) ||
+                (classFilter === 'AGPs' && cls.toLowerCase().includes('agp')) ||
+                (classFilter === 'Homogalacturonan Pectin' && cls.toLowerCase().includes('hg')) ||
+                (classFilter === 'RG-I / Arabinan / Galactan' && (cls.toLowerCase().includes('rg') || cls.toLowerCase().includes('galactan')))) {
                 mabs.push(m);
                 filteredIndices.push(idx);
             }
@@ -30,24 +41,27 @@ function renderHeatmap(classFilter, colorscale) {
         zValues = rawData.z.map(row => filteredIndices.map(i => row[i]));
     }
 
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    const textColor = isDark ? '#f1f5f9' : '#0f172a';
+
     const trace = {
         z: zValues,
         x: mabs,
         y: rawData.y.map(s => s.replace('_roots', '')),
         type: 'heatmap',
-        colorscale: colorscale,
+        colorscale: colorscale || 'YlOrRd',
         hoverongaps: false,
         hovertemplate: '<b>Sample:</b> %{y}<br><b>mAb:</b> %{x}<br><b>OD450:</b> %{z:.3f}<extra></extra>'
     };
 
     const layout = {
-        title: { text: `Cell Wall Glycome Profiling (${mabs.length} Monoclonal Antibodies)`, font: { size: 14 } },
-        xaxis: { title: 'CCRC Monoclonal Antibodies', tickangle: -45, tickfont: { size: 8 } },
-        yaxis: { title: 'Arabidopsis Root Samples (ISS Flight vs Ground Control)', tickfont: { size: 10 } },
+        title: { text: `Cell Wall Glycome Profiling (${mabs.length} Monoclonal Antibodies)`, font: { size: 14, color: textColor } },
+        xaxis: { title: 'CCRC Monoclonal Antibodies', tickangle: -45, tickfont: { size: 8, color: textColor } },
+        yaxis: { title: 'Arabidopsis Root Samples (ISS Flight vs Ground Control)', tickfont: { size: 10, color: textColor } },
         margin: { l: 140, r: 40, t: 50, b: 120 },
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
-        font: { color: document.documentElement.dataset.theme === 'dark' ? '#f1f5f9' : '#2c3e50' }
+        font: { color: textColor }
     };
 
     const config = { responsive: true, displayModeBar: true, displaylogo: false };
@@ -57,18 +71,30 @@ function renderHeatmap(classFilter, colorscale) {
 function setupControls() {
     const classFilter = document.getElementById('glycan-class-filter');
     const colorFilter = document.getElementById('heatmap-colorscale');
+    const exportBtn = document.getElementById('btn-export-heatmap');
 
     if (classFilter) {
         classFilter.addEventListener('change', e => {
-            renderHeatmap(e.target.value, colorFilter.value);
+            const colorVal = colorFilter ? colorFilter.value : 'YlOrRd';
+            renderHeatmap(e.target.value, colorVal);
         });
     }
     if (colorFilter) {
         colorFilter.addEventListener('change', e => {
-            renderHeatmap(classFilter.value, e.target.value);
+            const classVal = classFilter ? classFilter.value : 'all';
+            renderHeatmap(classVal, e.target.value);
+        });
+    }
+    if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+            Plotly.downloadImage('heatmap', { format: 'png', width: 1400, height: 800, filename: 'OSD615_Glycome_Heatmap' });
         });
     }
 }
 
-// Auto init
-initGlycomicsHeatmap();
+// Safe DOM initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGlycomicsHeatmap);
+} else {
+    initGlycomicsHeatmap();
+}

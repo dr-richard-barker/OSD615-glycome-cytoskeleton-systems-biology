@@ -124,8 +124,8 @@
     <!-- TAB 2: GLYCOMICS EXPLORER -->
     <section id="tab-glycomics" class="tab-pane">
       <div class="section-header">
-        <h2><i class="fas fa-th"></i> Global Cell Wall Glycome Profiling (155 mAbs)</h2>
-        <p>Interactive clustered heatmap showing optical density (OD450) binding signals across all 155 monoclonal antibodies and 12 root samples.</p>
+        <h2><i class="fas fa-th"></i> Monoclonal Antibody Glycome Profiling (155 mAbs)</h2>
+        <p>Interactive clustered heatmap of cell wall glycan epitopes across 12 spaceflight and ground control samples.</p>
       </div>
       <div class="control-panel">
         <label for="glycan-class-filter">Filter Glycan Class:</label>
@@ -142,12 +142,12 @@
           <option value="Viridis">Viridis</option>
           <option value="Plasma">Plasma</option>
           <option value="RdBu_r">Red-Blue</option>
-          <option value="YlGnBu">Yellow-Green-Blue</option>
+          <option value="YlOrRd" selected>Yellow-Orange-Red</option>
         </select>
         <button id="btn-export-heatmap" class="btn btn-secondary"><i class="fas fa-download"></i> Export Heatmap</button>
       </div>
       <div class="card" style="padding: 10px;">
-        <div id="heatmap-container" style="width: 100%; height: 750px;"></div>
+        <div id="heatmap" style="width: 100%; height: 750px;"></div>
       </div>
     </section>
 
@@ -171,11 +171,11 @@
       <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
         <div class="card">
           <h3>Differential Glycomics Volcano Plot</h3>
-          <div id="volcano-container" style="width: 100%; height: 480px;"></div>
+          <div id="volcano" style="width: 100%; height: 480px;"></div>
         </div>
         <div class="card">
           <h3>Mean Fold Change by Glycan Class</h3>
-          <div id="barchart-container" style="width: 100%; height: 480px;"></div>
+          <div id="bar-chart" style="width: 100%; height: 480px;"></div>
         </div>
       </div>
     </section>
@@ -189,11 +189,11 @@
       <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
         <div class="card">
           <h3>sPLS Correlation Circle Plot</h3>
-          <div id="spls-circle-container" style="width: 100%; height: 480px;"></div>
+          <div id="circle-plot" style="width: 100%; height: 480px;"></div>
         </div>
         <div class="card">
           <h3>Clustered Image Map (CIM) Cross-Correlations</h3>
-          <div id="cim-container" style="width: 100%; height: 480px;"></div>
+          <div id="cim-heatmap" style="width: 100%; height: 480px;"></div>
         </div>
       </div>
       <div class="card">
@@ -291,11 +291,19 @@
     <section id="tab-microscopy" class="tab-pane">
       <div class="section-header">
         <h2><i class="fas fa-microscope"></i> Microscopy & In Situ Immunohistochemistry Database</h2>
-        <p>Comprehensive database of seedling morphology, root histology, and confocal laser scanning immunofluorescence from Nakashima et al. (2023, <em>npj Microgravity</em> 9:68 / <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10444889/" target="_blank" style="color:var(--teal);">PMC10444889 ↗</a>).</p>
+        <p>Comprehensive database of seedling morphology, root histology, and confocal laser scanning immunofluorescence from Nakashima et al. (2023, <em>npj Microgravity</em> 9:68 / <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10444889/" target="_blank" style="color:var(--teal);">PMC10444889 ↗</a> / <a href="https://pmc.ncbi.nlm.nih.gov/articles/instance/10444889/bin/41526_2023_312_MOESM2_ESM.pdf" target="_blank" style="color:var(--coral);">Supplementary File ESM.pdf ↗</a>).</p>
       </div>
 
       <div class="control-panel">
-        <input type="text" id="microscopy-search" placeholder="🔍 Search microscopy images by antibody (e.g., CCRC-M140, JIM19), figure, tissue, or finding..." style="width: 100%;">
+        <label for="microscopy-category">Filter Category:</label>
+        <select id="microscopy-category">
+          <option value="all">All 12 Figures (Main & Supplementary)</option>
+          <option value="main">Main Publication Figures (Figs 1–6)</option>
+          <option value="suppl">Supplementary Figures (Suppl Figs 1–6)</option>
+          <option value="ihc">Confocal Laser Scanning IHC Panels</option>
+          <option value="histology">Histology & Seedling Kinematics</option>
+        </select>
+        <input type="text" id="microscopy-search" placeholder="🔍 Search antibody (e.g., CCRC-M140, JIM19), figure, tissue..." style="flex: 1; min-width: 260px;">
       </div>
 
       <div id="microscopy-gallery"></div>
@@ -357,12 +365,12 @@
         <p>Interactive vector pathway diagrams linking motor protein dynamics, intracellular O-GlcNAcylation cascades, and apoplastic polysaccharide assembly.</p>
       </div>
       <div class="control-panel">
-        <button id="pathway-tab-1" class="btn btn-primary">1. Post-Golgi Secretory Vesicle Trafficking</button>
-        <button id="pathway-tab-2" class="btn btn-secondary">2. Cortical MT Array & Cellulose Deposition</button>
-        <button id="pathway-tab-3" class="btn btn-secondary">3. O-GlcNAc Signaling Cascade on Motor Complexes</button>
+        <button id="btn-pathway-1" class="btn btn-primary">1. Post-Golgi Secretory Vesicle Trafficking</button>
+        <button id="btn-pathway-2" class="btn btn-secondary">2. Cortical MT Array & Cellulose Deposition</button>
+        <button id="btn-pathway-3" class="btn btn-secondary">3. O-GlcNAc Signaling Cascade on Motor Complexes</button>
       </div>
       <div class="card">
-        <div id="pathway-svg-container" style="width: 100%; min-height: 480px;"></div>
+        <div id="pathway-diagram-container" style="width: 100%; min-height: 480px;"></div>
         <div id="pathway-description" class="abstract-box" style="margin-top: 15px; margin-bottom: 0;"></div>
       </div>
     </section>

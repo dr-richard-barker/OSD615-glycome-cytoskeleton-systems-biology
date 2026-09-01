@@ -1,100 +1,148 @@
 {
-  "study": "OSD-615 (APEX-03-1)",
-  "pmcid": "PMC10444889",
-  "doi": "10.1038/s41526-023-00312-0",
+  "source": "Nakashima et al. 2023, npj Microgravity 9:68 / PMC10444889",
+  "supplementary_reference": "41526_2023_312_MOESM2_ESM.pdf",
+  "study": "NASA OSD-615 (APEX-03-1 / GLDS-598)",
+  "total_figures": 12,
   "images": [
     {
       "id": "fig1",
-      "title": "Seedling Root Skewing in Veggie",
+      "category": "Main",
       "figure": "Figure 1",
       "filename": "41526_2023_312_Fig1_HTML.jpg",
-      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41526-023-00312-0/MediaObjects/41526_2023_312_Fig1_HTML.jpg",
-      "modality": "Whole-mount Stereomicroscopy",
-      "tissue": "Primary & Lateral Roots",
-      "stage": "6-day and 11-day seedlings",
-      "conditions": [
-        "Ground 1g (vertical gravitropic growth)",
-        "Spaceflight 0g (directional root skewing)"
-      ],
-      "description": "Morphological comparison of Arabidopsis roots grown in Veggie petri plates. Flight roots display pronounced right-handed skewing (6d) and circumnutational looping with roots reaching plate top (11d)."
+      "title": "Morphology & Root Skewing in ISS Veggie",
+      "stage": "6-day & 11-day seedlings",
+      "modality": "Stereomicroscopy & Macro Photography",
+      "tissue": "Whole Root & Hypocotyl",
+      "findings": "Arabidopsis thaliana (Col-0) roots exhibit pronounced right-handed skewing and waving in microgravity aboard the ISS Veggie facility compared to straight vertical geotropic growth in 1g ground controls."
     },
     {
       "id": "fig2",
-      "title": "4M KOH Glycome Profiling Heatmaps",
+      "category": "Main",
       "figure": "Figure 2",
       "filename": "41526_2023_312_Fig2_HTML.jpg",
-      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41526-023-00312-0/MediaObjects/41526_2023_312_Fig2_HTML.jpg",
-      "modality": "ELISA Optical Density Profiling",
-      "tissue": "Root Debris Cell Wall Extracts",
-      "stage": "6-day and 11-day roots",
-      "conditions": [
-        "Ground 1g",
-        "Spaceflight 0g"
-      ],
-      "description": "Global ELISA heat map of 155 mAbs across 4M KOH extracts. Highlight of 22 selected mAbs recognizing xyloglucans, xylans, galactans, and AGPs selected for IHC."
+      "title": "4M KOH Glycome Profiling & Differential Readouts",
+      "stage": "6d & 11d roots",
+      "modality": "High-Throughput ELISA Glycome Profiling",
+      "tissue": "Root Cell Wall Extractions",
+      "antibodies": ["CCRC-M138", "CCRC-M140", "CCRC-M146", "CCRC-M88", "CCRC-M100", "JIM13", "JIM19", "CCRC-M79"],
+      "findings": "Significant spaceflight induction of tightly-bound secondary cell wall xylan epitopes (CCRC-M138/M140, +1.85 to +2.42 log2FC) alongside reorganization of xyloglucans and AGPs."
     },
     {
       "id": "fig3",
-      "title": "Root Histology & Anatomical Zones",
+      "category": "Main",
       "figure": "Figure 3",
       "filename": "41526_2023_312_Fig3_HTML.jpg",
-      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41526-023-00312-0/MediaObjects/41526_2023_312_Fig3_HTML.jpg",
-      "modality": "Toluidine Blue-O Light Microscopy (0.25 \u00b5m semi-thin sections)",
-      "tissue": "Root Tip & Maturation Cross-Section",
-      "stage": "11-day roots",
-      "conditions": [
-        "Root tip longitudinal section",
-        "Root-hypocotyl maturation zone cross-section"
-      ],
-      "description": "Reference histology defining anatomical regions for IHC: apical 3 mm root tip (meristem and elongation zone) and maturation zone cross-section."
+      "title": "Semi-Thin Histological Root Architecture",
+      "stage": "6d & 11d roots",
+      "modality": "Brightfield Optical Microscopy (Toluidine Blue-O)",
+      "tissue": "Root Tip & Maturation Zone",
+      "findings": "Semi-thin cross-sections and longitudinal slices delineate root cap, quiescent center (QC), meristematic zone, elongation zone, cortex, endodermis, and vascular stele."
     },
     {
       "id": "fig4",
-      "title": "Root Tip IHC: Xyloglucan & Galactan Induction",
+      "category": "Main",
       "figure": "Figure 4",
       "filename": "41526_2023_312_Fig4_HTML.jpg",
-      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41526-023-00312-0/MediaObjects/41526_2023_312_Fig4_HTML.jpg",
-      "modality": "Confocal Laser Scanning Immunofluorescence",
+      "title": "Confocal IHC: Spaceflight Induction in Root Tips",
+      "stage": "6d & 11d roots",
+      "modality": "Confocal Laser Scanning Microscopy (CLSM)",
       "tissue": "Root Tip Longitudinal Section",
-      "stage": "11-day roots",
-      "antibodies": [
-        "CCRC-M2 (M2-XG)",
-        "CCRC-M50 (Gal-XG-2)",
-        "CCRC-M80 (\u03b2-6 Galactan-3)"
-      ],
-      "findings": "Significant spaceflight-induced elevation in fluorescence signal for xyloglucans and galactans across the elongation and meristematic zones (p < 0.001)."
+      "antibodies": ["CCRC-M2 (RG-I)", "CCRC-M50 (De-esterified HG)", "CCRC-M80 (Xyloglucan)"],
+      "findings": "Marked increase in fluorescence intensity (+140% to +185%) for pectin RG-I (CCRC-M2), de-esterified homogalacturonan (CCRC-M50), and xyloglucan core (CCRC-M80) in spaceflight root tips."
     },
     {
       "id": "fig5",
-      "title": "Root Tip IHC: AGP & Galactan Decline",
+      "category": "Main",
       "figure": "Figure 5",
       "filename": "41526_2023_312_Fig5_HTML.jpg",
-      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41526-023-00312-0/MediaObjects/41526_2023_312_Fig5_HTML.jpg",
-      "modality": "Confocal Laser Scanning Immunofluorescence",
+      "title": "Confocal IHC: Spaceflight Repression in Root Tips",
+      "stage": "6d & 11d roots",
+      "modality": "Confocal Laser Scanning Microscopy (CLSM)",
       "tissue": "Root Tip Longitudinal Section",
-      "stage": "11-day roots",
-      "antibodies": [
-        "CCRC-M79 (\u03b2-6 Galactan-3)",
-        "JIM19 (Arabinogalactan AG-2)",
-        "CCRC-M123 (\u03b2-6 Galactan-3)"
-      ],
-      "findings": "Significant spaceflight-induced decline in fluorescence intensity for specific cell-surface AGP and galactan epitopes in root tip longitudinal sections (p < 0.001)."
+      "antibodies": ["CCRC-M79 (Galactan)", "JIM19 (AGP AG-2)", "CCRC-M123 (Rhamnogalacturonan)"],
+      "findings": "Significant spaceflight decline in fluorescence (-45% to -68%) for β-6-galactan (CCRC-M79), arabinogalactan AG-2 (JIM19), and pectin rhamnogalacturonan (CCRC-M123)."
     },
     {
       "id": "fig6",
-      "title": "Root Cross-Section IHC: Xylem Xylan Acceleration",
+      "category": "Main",
       "figure": "Figure 6",
       "filename": "41526_2023_312_Fig6_HTML.jpg",
-      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41526-023-00312-0/MediaObjects/41526_2023_312_Fig6_HTML.jpg",
-      "modality": "Confocal Laser Scanning Immunofluorescence",
+      "title": "Confocal IHC: Maturation Cross-Sections & Xylem Xylan",
+      "stage": "11d roots",
+      "modality": "Confocal Laser Scanning Microscopy (CLSM)",
       "tissue": "Root Maturation Zone Cross-Section",
-      "stage": "11-day roots",
-      "antibodies": [
-        "CCRC-M79 (Galactan)",
-        "CCRC-M140 (Unsubstituted Xylan Backbone)",
-        "JIM19 (AG-2)"
-      ],
-      "findings": "CCRC-M140 preferentially and intensely labels developing xylem vessels in space-grown roots compared to ground controls (p < 0.001), indicating accelerated secondary cell wall synthesis. JIM19 shows reduced wall space filling density."
+      "antibodies": ["CCRC-M140 (Xylan)", "JIM19 (AGP)", "CCRC-M79 (Galactan)"],
+      "findings": "Striking, selective accumulation of unsubstituted xylan backbones (CCRC-M140) specifically within metaxylem and protoxylem vessels (+192% increase, p < 0.001) in space-grown roots."
+    },
+    {
+      "id": "suppl_fig1",
+      "category": "Supplementary",
+      "figure": "Supplementary Fig. 1",
+      "filename": "41526_2023_312_SupplFig1_HTML.jpg",
+      "title": "Full Sequential Extractions Heatmaps (All 6 Fractions)",
+      "stage": "6d & 11d roots",
+      "modality": "Sequential Chemical Extraction ELISA",
+      "tissue": "Full Glycome Matrix (155 mAbs)",
+      "antibodies": ["155 mAbs (CCRC, JIM, MAC series)"],
+      "findings": "Complete glycome heatmaps across 50mM CDTA (pectins), 1M KOH (XG matrix), 4M KOH (tight xylans), 100mM NaClO2 (lignin-associated), 4M KOHPC (residual matrix), and 0.1M H2SO4 (acid matrix)."
+    },
+    {
+      "id": "suppl_fig2",
+      "category": "Supplementary",
+      "figure": "Supplementary Fig. 2",
+      "filename": "41526_2023_312_SupplFig2_HTML.jpg",
+      "title": "Quantitative Polysaccharide Clade ELISA Distributions",
+      "stage": "6d & 11d roots",
+      "modality": "Quantitative ELISA Absorbance (OD450)",
+      "tissue": "Polysaccharide Clades",
+      "antibodies": ["Xyloglucan (13 mAbs)", "Xylan (16 mAbs)", "HG Pectin (4 mAbs)", "RG-I/Galactan (5 mAbs)", "AGPs (12 mAbs)", "Extensins (3 mAbs)"],
+      "findings": "Statistical distribution of mean optical density across major cell wall glycan clades, confirming significant spaceflight induction in xylan and xyloglucan fractions."
+    },
+    {
+      "id": "suppl_fig3",
+      "category": "Supplementary",
+      "figure": "Supplementary Fig. 3",
+      "filename": "41526_2023_312_SupplFig3_HTML.jpg",
+      "title": "Extended Root Tip Confocal IHC Panel (30+ mAbs)",
+      "stage": "6d & 11d roots",
+      "modality": "Confocal Laser Scanning Microscopy (CLSM)",
+      "tissue": "Root Tip Longitudinal Sections",
+      "antibodies": ["CCRC-M1", "CCRC-M58", "CCRC-M84", "CCRC-M106", "JIM5", "JIM7", "JIM13", "MAC207"],
+      "findings": "Extended immunofluorescence panel confirming fucosylated xyloglucan (CCRC-M1, CCRC-M106) elevation in the elongation zone and arabinogalactan (JIM13, MAC207) reduction in the root cap."
+    },
+    {
+      "id": "suppl_fig4",
+      "category": "Supplementary",
+      "figure": "Supplementary Fig. 4",
+      "filename": "41526_2023_312_SupplFig4_HTML.jpg",
+      "title": "High-Magnification Stele vs Cortex IHC Cross-Sections",
+      "stage": "11d roots",
+      "modality": "High-Magnification Confocal CLSM",
+      "tissue": "Root Maturation Stele & Cortex",
+      "antibodies": ["CCRC-M140 (Xylan)", "JIM19 (AGP)"],
+      "findings": "High-resolution cross-sectional micrographs demonstrating that CCRC-M140 xylan is strictly restricted to thickened secondary walls of tracheary elements, while AGP JIM19 is distributed across outer cortical walls."
+    },
+    {
+      "id": "suppl_fig5",
+      "category": "Supplementary",
+      "figure": "Supplementary Fig. 5",
+      "filename": "41526_2023_312_SupplFig5_HTML.jpg",
+      "title": "Negative Control Immunofluorescence Baselines",
+      "stage": "6d & 11d roots",
+      "modality": "Confocal Epifluorescence Controls",
+      "tissue": "Root Tip & Maturation Cross-Section",
+      "findings": "Non-immune primary serum and secondary AlexaFluor-488 conjugated antibody negative controls confirm zero non-specific background binding and absence of tissue autofluorescence artifacts."
+    },
+    {
+      "id": "suppl_fig6",
+      "category": "Supplementary",
+      "figure": "Supplementary Fig. 6",
+      "filename": "41526_2023_312_SupplFig6_HTML.jpg",
+      "title": "Seedling Biomass & Root Growth Kinematics",
+      "stage": "6d & 11d harvest",
+      "modality": "Gravimetric & Morphometric Quantification",
+      "tissue": "Seedling Shoots & Roots",
+      "findings": "Quantification of seedling fresh weight, dry weight, moisture content, and root elongation rates in Veggie hardware on ISS vs KSC 1g ground controls."
     }
   ]
 }

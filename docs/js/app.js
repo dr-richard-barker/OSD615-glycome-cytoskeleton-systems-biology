@@ -38,10 +38,18 @@ export function switchTab(tabId) {
         window.scrollTo({ top: 320, behavior: 'smooth' });
     }
 
-    // Trigger window resize for Plotly, Cytoscape, and HTML5 Canvas redraws
+    // Trigger window resize and Plotly chart recalculation
     setTimeout(() => {
         window.dispatchEvent(new Event('resize'));
-    }, 50);
+        ['heatmap', 'volcano', 'bar-chart', 'circle-plot', 'cim-heatmap'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el && window.Plotly && el.data) {
+                try {
+                    window.Plotly.Plots.resize(el);
+                } catch (e) {}
+            }
+        });
+    }, 60);
 }
 
 // Navigation Event Listeners
@@ -51,7 +59,6 @@ document.querySelectorAll('.nav-link, .nav-trigger').forEach(el => {
         const tabId = el.getAttribute('data-tab') || el.getAttribute('href')?.replace('#', '');
         if (tabId) {
             switchTab(tabId);
-            // Update hash in URL
             history.pushState(null, '', `#${tabId}`);
         }
     });

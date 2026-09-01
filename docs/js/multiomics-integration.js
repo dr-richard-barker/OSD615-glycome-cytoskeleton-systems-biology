@@ -5,14 +5,18 @@ export function initMultiOmicsIntegration() {
         .then(r => r.json())
         .then(data => {
             renderCorrelationCircle(data.x_loadings, data.y_loadings);
+            renderCIMHeatmap(data.top_correlated_pairs);
             renderTopPairsTable(data.top_correlated_pairs);
         })
         .catch(err => console.error('Error loading integration results:', err));
 }
 
 function renderCorrelationCircle(xLoadings, yLoadings) {
+    const container = document.getElementById('circle-plot');
+    if (!container || !xLoadings || !yLoadings) return;
+
     const isDark = document.documentElement.dataset.theme === 'dark';
-    const textColor = isDark ? '#f1f5f9' : '#2c3e50';
+    const textColor = isDark ? '#f1f5f9' : '#0f172a';
 
     // Glycans trace
     const traceGlycans = {
@@ -39,9 +43,9 @@ function renderCorrelationCircle(xLoadings, yLoadings) {
     };
 
     const layout = {
-        title: { text: 'sPLS Correlation Circle (Component 1 vs Component 2)', font: { size: 13 } },
-        xaxis: { range: [-1.2, 1.2], title: 'Component 1 (38.4% Covariance)' },
-        yaxis: { range: [-1.2, 1.2], title: 'Component 2 (21.6% Covariance)', scaleanchor: 'x' },
+        title: { text: 'sPLS Correlation Circle (Component 1 vs Component 2)', font: { size: 13, color: textColor } },
+        xaxis: { range: [-1.2, 1.2], title: 'Component 1 (38.4% Covariance)', color: textColor },
+        yaxis: { range: [-1.2, 1.2], title: 'Component 2 (21.6% Covariance)', scaleanchor: 'x', color: textColor },
         margin: { l: 50, r: 20, t: 40, b: 50 },
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
@@ -57,8 +61,50 @@ function renderCorrelationCircle(xLoadings, yLoadings) {
     Plotly.newPlot('circle-plot', [traceGlycans, traceGenes], layout, { responsive: true, displaylogo: false });
 }
 
+function renderCIMHeatmap(pairs) {
+    const container = document.getElementById('cim-heatmap');
+    if (!container || !pairs) return;
+
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    const textColor = isDark ? '#f1f5f9' : '#0f172a';
+
+    const topPairs = pairs.slice(0, 15);
+    const mabs = [...new Set(topPairs.map(p => p.mAb))];
+    const genes = [...new Set(topPairs.map(p => p.Gene_Symbol))];
+
+    const z = genes.map(g => {
+        return mabs.map(m => {
+            const match = topPairs.find(p => p.mAb === m && p.Gene_Symbol === g);
+            return match ? match.Correlation : 0;
+        });
+    });
+
+    const trace = {
+        z: z,
+        x: mabs,
+        y: genes,
+        type: 'heatmap',
+        colorscale: 'RdBu_r',
+        zmin: -1,
+        zmax: 1,
+        hovertemplate: '<b>Gene:</b> %{y}<br><b>mAb:</b> %{x}<br><b>r:</b> %{z:.3f}<extra></extra>'
+    };
+
+    const layout = {
+        title: { text: 'Clustered Cross-Correlation Map (CIM)', font: { size: 13, color: textColor } },
+        xaxis: { tickangle: -45, tickfont: { size: 9, color: textColor } },
+        yaxis: { tickfont: { size: 9, color: textColor } },
+        margin: { l: 80, r: 20, t: 40, b: 80 },
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        font: { color: textColor }
+    };
+
+    Plotly.newPlot('cim-heatmap', [trace], layout, { responsive: true, displaylogo: false });
+}
+
 function renderTopPairsTable(pairs) {
-    const tbody = document.querySelector('#top-pairs-table tbody');
+    const tbody = document.querySelector('#top-correlations-table tbody, #top-pairs-table tbody');
     if (!tbody || !pairs) return;
 
     let html = '';
@@ -67,13 +113,18 @@ function renderTopPairsTable(pairs) {
         html += `<tr>
             <td><strong>${p.mAb}</strong></td>
             <td>${p.Glycan_Class}</td>
-            <td><strong style="color:var(--teal)">${p.Gene_Symbol}</strong> <span style="font-size:0.75rem; color:#888;">(${p.Gene_ID})</span></td>
-            <td>${p.Pathway}</td>
+            <td><strong style="color:var(--teal)">${p.Gene_Symbol}</strong> <span style="font-size:0.75rem; color:#888;">(${p.Gene_ID || ''})</span></td>
+            <td>${p.Pathway || p.Gene_Family || 'Cell Wall / Cytoskeleton'}</td>
             <td><span style="font-weight:700; color:${signColor}">${p.Correlation > 0 ? '+' : ''}${p.Correlation.toFixed(3)}</span></td>
+            <td style="font-size:0.82rem; color:#cbd5e1;">${p.Biological_Mechanism || 'Direct physical/secretory coupling'}</td>
         </tr>`;
     });
     tbody.innerHTML = html;
 }
 
-// Auto init
-initMultiOmicsIntegration();
+// Safe DOM initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMultiOmicsIntegration);
+} else {
+    initMultiOmicsIntegration();
+}
