@@ -1,0 +1,197 @@
+{
+  "terms": [
+    {
+      "Database": "GO Biological Process",
+      "Term": "Microtubule-based movement (GO:0007018)",
+      "Gene_Count": 6,
+      "Fold_Enrichment": 14.5,
+      "pvalue": 1.2e-06,
+      "FDR": 1.8e-05,
+      "Category": "Cytoskeleton",
+      "neg_log10_fdr": 4.7447274948966935
+    },
+    {
+      "Database": "GO Biological Process",
+      "Term": "Plant-type secondary cell wall biogenesis (GO:0009834)",
+      "Gene_Count": 7,
+      "Fold_Enrichment": 18.2,
+      "pvalue": 4.5e-08,
+      "FDR": 1.2e-06,
+      "Category": "Cell Wall",
+      "neg_log10_fdr": 5.920818753952375
+    },
+    {
+      "Database": "GO Biological Process",
+      "Term": "Actin filament-based movement (GO:0030048)",
+      "Gene_Count": 4,
+      "Fold_Enrichment": 12.0,
+      "pvalue": 8.1e-05,
+      "FDR": 0.00065,
+      "Category": "Cytoskeleton",
+      "neg_log10_fdr": 3.1870866433571443
+    },
+    {
+      "Database": "GO Biological Process",
+      "Term": "Xylan biosynthetic process (GO:0045492)",
+      "Gene_Count": 4,
+      "Fold_Enrichment": 22.4,
+      "pvalue": 2.1e-06,
+      "FDR": 2.5e-05,
+      "Category": "Cell Wall",
+      "neg_log10_fdr": 4.6020599913279625
+    },
+    {
+      "Database": "GO Biological Process",
+      "Term": "Protein O-linked glycosylation (GO:0006493)",
+      "Gene_Count": 3,
+      "Fold_Enrichment": 9.8,
+      "pvalue": 0.00042,
+      "FDR": 0.0021,
+      "Category": "Glycosylation",
+      "neg_log10_fdr": 2.677780705266081
+    },
+    {
+      "Database": "GO Biological Process",
+      "Term": "Cellulose biosynthetic process (GO:0030244)",
+      "Gene_Count": 5,
+      "Fold_Enrichment": 16.0,
+      "pvalue": 3e-07,
+      "FDR": 5.8e-06,
+      "Category": "Cell Wall",
+      "neg_log10_fdr": 5.236572006437063
+    },
+    {
+      "Database": "GO Cellular Component",
+      "Term": "Cortical microtubule cytoskeleton (GO:0005874)",
+      "Gene_Count": 8,
+      "Fold_Enrichment": 11.2,
+      "pvalue": 6.8e-07,
+      "FDR": 8.2e-06,
+      "Category": "Cytoskeleton",
+      "neg_log10_fdr": 5.086186147616283
+    },
+    {
+      "Database": "GO Cellular Component",
+      "Term": "Cellulose synthase complex (GO:0090406)",
+      "Gene_Count": 4,
+      "Fold_Enrichment": 24.0,
+      "pvalue": 1.5e-06,
+      "FDR": 2e-05,
+      "Category": "Cell Wall",
+      "neg_log10_fdr": 4.698970004336019
+    },
+    {
+      "Database": "GO Cellular Component",
+      "Term": "Golgi apparatus subcompartment (GO:0098588)",
+      "Gene_Count": 6,
+      "Fold_Enrichment": 8.5,
+      "pvalue": 0.00034,
+      "FDR": 0.0019,
+      "Category": "Secretory",
+      "neg_log10_fdr": 2.721246399047171
+    },
+    {
+      "Database": "GO Cellular Component",
+      "Term": "Phragmoplast (GO:0009524)",
+      "Gene_Count": 5,
+      "Fold_Enrichment": 13.8,
+      "pvalue": 7.2e-06,
+      "FDR": 6.5e-05,
+      "Category": "Cytoskeleton",
+      "neg_log10_fdr": 4.187086643357144
+    },
+    {
+      "Database": "MapMan4 BIN",
+      "Term": "BIN 31.2: Microtubules & Motor Transport",
+      "Gene_Count": 7,
+      "Fold_Enrichment": 15.6,
+      "pvalue": 8.9e-08,
+      "FDR": 2.1e-06,
+      "Category": "Cytoskeleton",
+      "neg_log10_fdr": 5.6777807052660805
+    },
+    {
+      "Database": "MapMan4 BIN",
+      "Term": "BIN 10.1: Secondary Cell Wall Biosynthesis",
+      "Gene_Count": 6,
+      "Fold_Enrichment": 19.4,
+      "pvalue": 1.1e-07,
+      "FDR": 2.5e-06,
+      "Category": "Cell Wall",
+      "neg_log10_fdr": 5.6020599913279625
+    },
+    {
+      "Database": "MapMan4 BIN",
+      "Term": "BIN 31.1: Actin Cytoskeleton & Myosins",
+      "Gene_Count": 5,
+      "Fold_Enrichment": 14.1,
+      "pvalue": 5.4e-05,
+      "FDR": 0.00048,
+      "Category": "Cytoskeleton",
+      "neg_log10_fdr": 3.318758762624413
+    },
+    {
+      "Database": "MapMan4 BIN",
+      "Term": "BIN 20.1: Post-Golgi Vesicular Secretion",
+      "Gene_Count": 5,
+      "Fold_Enrichment": 10.5,
+      "pvalue": 0.00018,
+      "FDR": 0.0011,
+      "Category": "Secretory",
+      "neg_log10_fdr": 2.958607314841775
+    },
+    {
+      "Database": "CAZy Family",
+      "Term": "GT43 (\u03b2-1,4-Xylan Synthase)",
+      "Gene_Count": 2,
+      "Fold_Enrichment": 28.0,
+      "pvalue": 0.00032,
+      "FDR": 0.0017,
+      "Category": "CAZy",
+      "neg_log10_fdr": 2.769551078621726
+    },
+    {
+      "Database": "CAZy Family",
+      "Term": "GT2 (Cellulose Synthase CesA)",
+      "Gene_Count": 4,
+      "Fold_Enrichment": 21.5,
+      "pvalue": 8.5e-06,
+      "FDR": 7.2e-05,
+      "Category": "CAZy",
+      "neg_log10_fdr": 4.142667503568732
+    },
+    {
+      "Database": "CAZy Family",
+      "Term": "GH16 (Xyloglucan Endotransglucosylase/Hydrolase)",
+      "Gene_Count": 3,
+      "Fold_Enrichment": 16.2,
+      "pvalue": 0.00041,
+      "FDR": 0.002,
+      "Category": "CAZy",
+      "neg_log10_fdr": 2.6989700043360187
+    },
+    {
+      "Database": "CAZy Family",
+      "Term": "GT47 (Xylan Arabinosyl/Glucuronosyltransferase)",
+      "Gene_Count": 2,
+      "Fold_Enrichment": 19.0,
+      "pvalue": 0.00075,
+      "FDR": 0.0031,
+      "Category": "CAZy",
+      "neg_log10_fdr": 2.5086383061657274
+    }
+  ],
+  "databases": [
+    "GO Biological Process",
+    "GO Cellular Component",
+    "MapMan4 BIN",
+    "CAZy Family"
+  ],
+  "categories": [
+    "Cytoskeleton",
+    "Cell Wall",
+    "Glycosylation",
+    "Secretory",
+    "CAZy"
+  ]
+}

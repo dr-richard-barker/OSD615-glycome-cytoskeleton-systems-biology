@@ -1,0 +1,56 @@
+[
+  {
+    "Accession": "OSD-615",
+    "Title": "Glycome profiling and immunohistochemistry uncover changes in cell walls of Arabidopsis thaliana roots during spaceflight (APEX-03-1)",
+    "Organism": "Arabidopsis thaliana",
+    "Hardware": "Vegetable Production System (Veggie)",
+    "Mission": "SpaceX CRS-5 (ISS Exp 42)",
+    "Assay": "High-Throughput Glycome Profiling (ELISA with 155 mAbs) & IHC",
+    "DOI": "10.1038/s41526-023-00312-0"
+  },
+  {
+    "Accession": "OSD-218",
+    "Title": "Molecular Biology of Growth and Cell Remodeling: Root skewing mutants in Veggie hardware (APEX-03-2)",
+    "Organism": "Arabidopsis thaliana (Col-0, Ws, spr1, sku5)",
+    "Hardware": "Vegetable Production System (Veggie)",
+    "Mission": "SpaceX CRS-5 (ISS Exp 42)",
+    "Assay": "RNA-Seq Transcription Profiling",
+    "DOI": "10.3389/fpls.2020.00017"
+  },
+  {
+    "Accession": "OSD-217",
+    "Title": "Characterization of Epigenetic Regulation in an Extraterrestrial Environment: The Arabidopsis Spaceflight Methylome (APEX-03-2)",
+    "Organism": "Arabidopsis thaliana (Ws)",
+    "Hardware": "Vegetable Production System (Veggie)",
+    "Mission": "SpaceX CRS-5 (ISS Exp 42)",
+    "Assay": "Whole-Genome Bisulfite Sequencing & RNA-Seq",
+    "DOI": "10.1038/s42003-019-0361-9"
+  },
+  {
+    "Accession": "OSD-416",
+    "Title": "Epigenomic Regulators Elongator Complex Subunit 2 and Methyltransferase 1 Differentially Condition Spaceflight Response (APEX-04)",
+    "Organism": "Arabidopsis thaliana (Col-0, elp2-5, met1-7)",
+    "Hardware": "Vegetable Production System (Veggie)",
+    "Mission": "SpaceX CRS-10 (ISS Exp 50)",
+    "Assay": "Bisulfite-Seq & RNA-Seq",
+    "DOI": "10.3390/ijms22168581"
+  },
+  {
+    "Accession": "OSD-625",
+    "Title": "Single-Molecule Long-Read Methylation Profiling Reveals Regional DNA Methylation in Spaceflight (APEX-04-EpEx)",
+    "Organism": "Arabidopsis thaliana (Col-0, elp2-5)",
+    "Hardware": "Vegetable Production System (Veggie)",
+    "Mission": "SpaceX CRS-10 (ISS Exp 50)",
+    "Assay": "PacBio Sequel IIe Targeted Methyl-Seq & RNA-Seq",
+    "DOI": "10.1038/s41526-024-00378-4"
+  },
+  {
+    "Accession": "OSD-251",
+    "Title": "Characterizing Arabidopsis Root Adaptation: Light-induced transcription and root skewing in spaceflight (CARA / APEX-04)",
+    "Organism": "Arabidopsis thaliana",
+    "Hardware": "Vegetable Production System (Veggie)",
+    "Mission": "SpaceX CRS-10 (ISS Exp 50)",
+    "Assay": "RNA-Seq & Epigenomics",
+    "DOI": "10.1016/j.lssr.2020.07.004"
+  }
+]

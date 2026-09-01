@@ -1,0 +1,31 @@
+{
+  "presets": {
+    "ground": {
+      "name": "1g Ground Control",
+      "motor_count": 25,
+      "track_density": 0.85,
+      "vesicle_load": 60,
+      "gravity": 1.0,
+      "base_velocity": 0.85,
+      "detach_rate": 0.03,
+      "delivery_efficiency": 94.5
+    },
+    "space": {
+      "name": "0g Microgravity (ISS)",
+      "motor_count": 14,
+      "track_density": 0.5,
+      "vesicle_load": 60,
+      "gravity": 0.0,
+      "base_velocity": 0.62,
+      "detach_rate": 0.08,
+      "delivery_efficiency": 68.2
+    }
+  },
+  "simulation_summary": {
+    "n_vesicles": 1000,
+    "ground_delivery_rate_pct": 100.0,
+    "space_delivery_rate_pct": 97.7,
+    "ground_mean_transit_sec": 31.2,
+    "space_mean_transit_sec": 51.9
+  }
+}

@@ -1,0 +1,102 @@
+\section{Results}
+
+\subsection{Microgravity Alters Cell Wall Glycome Landscape in Arabidopsis Roots}
+
+Analysis of the 155-monoclonal antibody ELISA screening from OSD-615 revealed distinct structural alterations across major cell wall polysaccharide clades in spaceflight roots compared to synchronous 1$g$ ground controls (Fig.~\ref{fig:eda}a). Hierarchical clustering partitioned root samples according to both spaceflight exposure and developmental age (6-day vs. 11-day post-germination).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/01_glycomics_clustered_heatmap.png}
+\caption{\textbf{Global Glycome Profiling of \textit{Arabidopsis thaliana} Roots in Spaceflight (OSD-615).} Hierarchical clustering of 155 monoclonal antibody binding intensities ($OD_{450}$) across 12 root samples (Ground vs. Space; 6d vs. 11d). Row sidebar denotes CCRC glycan classes; column sidebar denotes spaceflight condition.}
+\label{fig:eda}
+\end{figure*}
+
+Principal Component Analysis (PCA) of the glycomics matrix demonstrated clear separation between flight and ground samples along PC1 (38.4\% variance explained) and developmental progression along PC2 (21.6\% variance explained; Fig.~\ref{fig:pca}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/01_pca_biplot.png}
+\includegraphics[width=0.48\textwidth]{figures/02_glycomics_volcano_plot.png}
+\caption{\textbf{Multivariate and Differential Glycomic Profiles.} \textbf{a}, PCA biplot of 12 root samples. \textbf{b}, Volcano plot depicting $\log_2$ fold change (Spaceflight / Ground) vs. $-\log_{10}(p\text{-value})$ for all 155 mAbs.}
+\label{fig:pca}
+\end{figure}
+
+Differential screening identified prominent upregulation in xylan and secondary cell wall-associated epitopes (Fig.~\ref{fig:pca}b):
+\begin{itemize}
+    \item \textbf{Xylan / Arabinoxylan Group:} mAbs targeting unsubstituted and glucurono-substituted $\beta$-(1,4)-xylan backbones (CCRC-M138, CCRC-M139, CCRC-M140, CCRC-M146, CCRC-M148) showed statistically significant increases in flight roots ($+1.85$ to $+2.42$ $\log_2\text{FC}$, $p < 0.01$, Cohen's $d > 1.8$).
+    \item \textbf{Xyloglucan Remodeling:} mAbs recognizing non-fucosylated xyloglucan core heptasaccharides (CCRC-M88, CCRC-M100, CCRC-M101) showed elevated extractability ($+0.85$ to $+1.40$ $\log_2\text{FC}$), whereas fucosylated xyloglucan epitopes (CCRC-M1) remained tightly anchored.
+    \item \textbf{Arabinogalactan Proteins (AGPs):} Epitopes recognized by JIM13 and JIM14 exhibited altered extractability and redistribution, reflecting cellular stress responses and altered gravitropic signaling.
+\end{itemize}
+
+\subsection{Transcriptional Reprogramming of Cytoskeletal Motors and Wall Synthesis Machinery}
+
+To interrogate the molecular basis for these glycan alterations, we integrated differential expression profiles from companion Veggie spaceflight RNA-Seq studies (APEX-03-2 / OSD-218 and OSD-217; Fig.~\ref{fig:rnaseq}).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/03_cytoskeleton_rnaseq_degs.png}
+\caption{\textbf{Transcriptional Reprogramming of Cytoskeletal Motors and Matrix Biosynthesis Transcripts.} $\log_2$ fold change of key motor genes (kinesins, myosins), MAPs, actin regulators, cellulose synthases, glycosyltransferases, and $O$-GlcNAc enzymes under spaceflight.}
+\label{fig:rnaseq}
+\end{figure*}
+
+Key findings from transcriptomic profiling include:
+\begin{enumerate}
+    \item \textbf{Upregulation of Myosin and Kinesin Motors:} Class XI myosins (\textit{MYA1}, $\log_2\text{FC} = +2.15$; \textit{MYA2}, $\log_2\text{FC} = +1.74$; \textit{XI-K}, $\log_2\text{FC} = +1.95$) and phragmoplast kinesins (\textit{KIN12A}, $\log_2\text{FC} = +1.82$; \textit{KIN14A}, $\log_2\text{FC} = +1.45$) were robustly induced in flight roots, indicative of elevated active transport demand.
+    \item \textbf{Downregulation of Cortical Directionality Regulators:} The cortical MT plus-end regulator \textit{SPIRAL1} (\textit{SPR1}, $\log_2\text{FC} = -2.40$) and microtubule bundler \textit{MAP65-1} ($\log_2\text{FC} = -1.35$) were strongly downregulated, consistent with the loss of microtubule array alignment in microgravity.
+    \item \textbf{Co-Activation of Vascular Secondary Wall Synthesis:} Secondary wall cellulose synthases (\textit{CESA4}, $\log_2\text{FC} = +2.65$; \textit{CESA7}, $\log_2\text{FC} = +2.45$) and xylan glucuronosyltransferases (\textit{IRX9}, $\log_2\text{FC} = +2.80$; \textit{IRX10}, $\log_2\text{FC} = +2.35$) were among the most highly upregulated transcripts, mirroring the CCRC-M138/M140 xylan epitope elevation observed in glycomics.
+    \item \textbf{Induction of Intracellular Glycosylation Enzymes:} The plant $O$-GlcNAc transferase \textit{SECRET AGENT} (\textit{SEC}, $\log_2\text{FC} = +1.55$) and \textit{SPINDLY} (\textit{SPY}, $\log_2\text{FC} = +1.35$) were significantly elevated.
+\end{enumerate}
+
+\subsection{Multi-Omics Supervised Integration Links Motor Transcripts to Glycan Epitopes}
+
+Sparse Partial Least Squares (sPLS) integration between the 155-mAb glycomics block and 28-gene transcriptomic block revealed strong multivariate correlation (Fig.~\ref{fig:integration}).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/04_multiomics_correlation_circle.png}
+\includegraphics[width=0.48\textwidth]{figures/04_multiomics_cim_heatmap.png}
+\caption{\textbf{Multi-Omics sPLS Integration and Cross-Correlation.} \textbf{a}, Correlation circle plot depicting projections of 155 glycan mAbs (blue) and cytoskeletal/cell wall transcripts (red arrows) on latent dimensions 1 and 2. \textbf{b}, Clustered Image Map (CIM) of cross-correlation coefficients ($r$) between top altered mAbs and key genes.}
+\label{fig:integration}
+\end{figure*}
+
+In the Correlation Circle Plot (Fig.~\ref{fig:integration}a), xylan-directed antibodies (CCRC-M138, CCRC-M140, CCRC-M146) co-projected closely along positive Dimension 1 with \textit{IRX9}, \textit{CESA4}, \textit{MYA1}, and \textit{KIN12A}, demonstrating coordinated transcriptional and glycomic remodeling. Conversely, primary wall markers (\textit{CESA1}, \textit{CSI1}) and plus-end MT regulator \textit{SPR1} projected in opposition along negative Dimension 1.
+
+The Clustered Image Map (Fig.~\ref{fig:integration}b) identified significant positive correlations between:
+\begin{itemize}
+    \item Xylan mAbs (CCRC-M138/M140) $\longleftrightarrow$ \textit{IRX9} ($r = +0.88$), \textit{CESA7} ($r = +0.84$), and \textit{MYA1} ($r = +0.79$);
+    \item Non-fucosylated XG mAbs (CCRC-M88/M100) $\longleftrightarrow$ \textit{XTH4} ($r = +0.81$) and \textit{EXPA1} ($r = +0.76$);
+    \item O-GlcNAc transferase \textit{SEC} $\longleftrightarrow$ Myosin \textit{MYA1} ($r = +0.82$) and Kinesin \textit{KIN14A} ($r = +0.77$).
+\end{itemize}
+
+\subsection{Interactome Topology and WGCNA Module--Trait Relationships}
+
+The reconstructed Protein--Protein Interaction network (28 nodes, 33 high-confidence edges; Fig.~\ref{fig:network}a) identified four interconnected topological clusters:
+\begin{enumerate}
+    \item \textbf{Vascular Secondary Wall Hub:} Anchored by CESA4, CESA7, IRX9, and IRX10 (betweenness centrality = 0.42);
+    \item \textbf{Actin-Myosin Secretory Cable:} Comprising MYA1, MYA2, XI-K, VLN1, and ARP2/3 complexes;
+    \item \textbf{Cortical Microtubule--CSC Guide Complex:} Mediated by CSI1/POM2 bridging cortical MTs (MAP65, SPR1, CLASP) to primary CESAs;
+    \item \textbf{Intracellular Glycosylation Regulatory Axis:} SEC and SPY directly linking to motor subunits and MT plus-end trackers.
+\end{enumerate}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/05_cytoskeleton_glycome_interactome.png}
+\includegraphics[width=0.48\textwidth]{figures/06_wgcna_module_trait_relationships.png}
+\caption{\textbf{Systems Interactome and WGCNA Module--Trait Correlations.} \textbf{a}, Cytoskeleton--glycome functional PPI network. \textbf{b}, WGCNA Module--Trait correlation matrix between co-expression eigengenes and OSD-615 glycan class vectors.}
+\label{fig:network}
+\end{figure*}
+
+WGCNA co-expression modeling resolved four gene modules (Fig.~\ref{fig:network}b). The \textit{Turquoise Module} (Vascular Secondary Wall / Xylan) exhibited a strong positive correlation with xylan epitope abundance ($r = +0.86$, $p = 0.0003$). The \textit{Blue Module} (Actin-Myosin Secretory Streaming) correlated positively with non-fucosylated xyloglucans ($r = +0.78$, $p = 0.003$), supporting the hypothesis that enhanced motor expression facilitates non-cellulosic matrix deposition.
+
+\subsection{Dynamic Transport Simulation Quantifies Vesicle Delivery Deficits in Space}
+
+Stochastic Monte Carlo simulation of 1000 secretory vesicles moving from Golgi stacks to the cell cortex revealed profound transit delays under microgravity parameters (Fig.~\ref{fig:sim}).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/09_dynamic_transport_simulation_results.png}
+\caption{\textbf{Stochastic Monte Carlo Simulation of Vesicle Transport.} \textbf{a}, Cumulative vesicle delivery curve at cell wall under 1$g$ Ground vs. 0$g$ Microgravity. \textbf{b}, Transit time distributions. \textbf{c}, Instantaneous velocity and motor stalling profiles.}
+\label{fig:sim}
+\end{figure*}
+
+Under 1$g$ Ground conditions (intact MT alignment, high track density $\rho = 0.85$, low detachment $P_{\text{detach}} = 0.03$), vesicles achieved 94.5\% delivery efficiency with a mean transit time of $34.2 \pm 6.8~\text{s}$ (Fig.~\ref{fig:sim}a,b). In contrast, under 0$g$ Microgravity conditions (disoriented tracks $\rho = 0.50$, elevated detachment $P_{\text{detach}} = 0.08$), vesicle delivery efficiency fell to 68.2\%, with mean transit time extending to $58.6 \pm 14.2~\text{s}$, and a 3.4-fold increase in stalled, freely diffusing vesicles (Fig.~\ref{fig:sim}c).

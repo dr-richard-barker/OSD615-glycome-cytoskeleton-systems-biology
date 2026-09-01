@@ -1,0 +1,83 @@
+\section{Methods}
+
+\subsection{NASA OSDR Data Acquisition and Study Discovery}
+
+Data for this study were acquired from the NASA Open Science Data Repository (OSDR / GeneLab platform; \url{https://osdr.nasa.gov}) \cite{Ray2019}. We developed an automated Python ingestion engine leveraging the OSDR RESTful APIs:
+\begin{enumerate}
+    \item \textbf{File Enumeration API:} \texttt{GET https://osdr.nasa.gov/osdr/data/osd/files/\{OSD\_ID\}?all\_files=true} to retrieve study file inventories, checksums, and download URIs.
+    \item \textbf{Geode Download Gateway:} \texttt{GET https://osdr.nasa.gov/geode-py/ws/studies/OSD-\{ID\}/download?source=datamanager\&file=\{filename\}} with exponential backoff retry sessions (\texttt{urllib3.util.Retry(total=5, backoff\_factor=1)}).
+    \item \textbf{VEGGIE Study Querying:} \texttt{GET https://osdr.nasa.gov/osdr/data/search?term=veggie\&ffield=organism\&fvalue=Arabidopsis+thaliana\&type=cgene} to systematically identify all \textit{Arabidopsis} RNA-Seq and multi-omics investigations conducted in the ISS Veggie hardware (Table~\ref{tab:veggie_studies}).
+\end{enumerate}
+
+The foundational datasets incorporated in this study comprise:
+\begin{itemize}
+    \item \textbf{OSD-615 (GLDS-598 / APEX-03-1):} High-throughput cell wall glycome profiling (ELISA with 155 monoclonal antibodies) and immunohistochemistry (IHC) on 4-day and 8-day old \textit{Arabidopsis thaliana} (Col-0) roots grown in Veggie on the ISS vs. ground controls \cite{Nakashima2023}.
+    \item \textbf{OSD-218 (GLDS-218 / APEX-03-2):} RNA-Seq transcriptomic profiling of wild-type (Col-0, Ws) and root skewing mutants (\textit{spr1}, \textit{sku5}) harvested synchronously in Veggie on ISS Exp 42 \cite{Califar2020}.
+    \item \textbf{OSD-217 (GLDS-217 / APEX-03-2):} Whole-genome bisulfite sequencing (WGBS) paired with RNA-Seq in Veggie hardware \cite{Zhou2019}.
+\end{itemize}
+
+\subsection{Glycomics Matrix Curation and CCRC Epitope Annotation}
+
+The transformed OSD-615 ELISA dataset ($n = 12$ root samples: 3 biological replicates $\times$ 2 conditions [Space vs. Ground] $\times$ 2 growth timepoints [6d vs. 11d post-activation]) was parsed into a clean sample-by-epitope matrix $\mathbf{X} \in \mathbb{R}^{12 \times 155}$. Each monoclonal antibody was annotated according to the Complex Carbohydrate Research Center (CCRC) carbohydrate-binding specificities \cite{Pattathil2010}:
+\begin{itemize}
+    \item \textbf{Fucosylated Xyloglucan (XG-Fuc):} CCRC-M1, CCRC-M84, CCRC-M102, CCRC-M106 (recognizing $\alpha$-L-Fuc\textit{p}-(1$\to$2)-$\beta$-D-Gal\textit{p} side chains).
+    \item \textbf{Non-fucosylated Xyloglucan (XG-NonFuc):} CCRC-M87, CCRC-M88, CCRC-M89, CCRC-M93, CCRC-M95, CCRC-M101, CCRC-M104 (recognizing unbranched or galactosylated xyloglucan heptasaccharide core motifs).
+    \item \textbf{Xylan / Arabinoxylan:} CCRC-M108, CCRC-M109, CCRC-M137, CCRC-M138, CCRC-M139, CCRC-M140, CCRC-M144--M155, CCRC-M160 (recognizing unsubstituted $\beta$-(1,4)-D-xylan backbones and (4-O-methyl)-$\alpha$-D-glucuronoxylan).
+    \item \textbf{Homogalacturonan (HG Pectin):} JIM5 (unesterified/low methyl-esterified HG), JIM7 (partially methyl-esterified HG), CCRC-M38, CCRC-M131.
+    \item \textbf{Rhamnogalacturonan-I / Galactan / Arabinan:} CCRC-M2, CCRC-M5, CCRC-M7, CCRC-M23, CCRC-M35, CCRC-M36, CCRC-M72, CCRC-M129 (recognizing RG-I backbones, 1,4-$\beta$-D-galactans, and 1,5-$\alpha$-L-arabinans).
+    \item \textbf{Arabinogalactan Proteins (AGPs):} JIM13, JIM14, JIM16, JIM19, JIM20, MAC204, MAC207, CCRC-M133 (recognizing $\beta$-(1,3)- and $\beta$-(1,6)-galactan epitopes of AGP glycan moieties).
+    \item \textbf{Extensins / HRGPs:} JIM11, JIM12 (recognizing $O$-glycosylated hydroxyproline-rich glycoproteins).
+\end{itemize}
+
+\subsection{Differential Glycomic and Statistical Analysis}
+
+For each mAb $m$, differential binding between Spaceflight ($S$) and Ground ($G$) controls was evaluated using Welch's two-sample $t$-tests and two-way analysis of variance (ANOVA) accounting for Condition $\times$ Timepoint interactions:
+\begin{equation}
+    y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}
+\end{equation}
+where $\alpha_i$ represents the spaceflight factor ($i \in \{\text{Ground}, \text{Space}\}$), $\beta_j$ represents harvest timepoint ($j \in \{6\text{d}, 11\text{d}\}$), and $(\alpha\beta)_{ij}$ captures interaction terms.
+
+Log$_2$ fold-changes were computed as:
+\begin{equation}
+    \log_2\text{FC}_m = \log_2\left( \frac{\bar{x}_{m,\text{Space}} + \epsilon}{\bar{x}_{m,\text{Ground}} + \epsilon} \right)
+\end{equation}
+with pseudo-count $\epsilon = 10^{-4}$. Multiple testing correction was performed using the Benjamini--Hochberg False Discovery Rate (FDR) procedure. Standardized effect sizes were calculated using Cohen's $d$:
+\begin{equation}
+    d_m = \frac{\bar{x}_{m,\text{Space}} - \bar{x}_{m,\text{Ground}}}{s_{\text{pooled}}}, \quad s_{\text{pooled}} = \sqrt{\frac{(n_S - 1)s_S^2 + (n_G - 1)s_G^2}{n_S + n_G - 2}}
+\end{equation}
+
+\subsection{Multi-Omics Supervised Integration (sPLS / mixOmics)}
+
+To correlate the continuous glycomic epitope matrix $\mathbf{X} \in \mathbb{R}^{n \times p}$ ($p = 155$ mAbs) with the curated transcriptomic matrix $\mathbf{Y} \in \mathbb{R}^{n \times q}$ ($q = 28$ key cytoskeletal and cell wall genes), we implemented sparse Partial Least Squares (sPLS) regression within the mixOmics framework \cite{Rohart2017}. sPLS maximizes the covariance between linear combinations of features from each omics block:
+\begin{equation}
+    \max_{\mathbf{u}_h, \mathbf{v}_h} \operatorname{cov}(\mathbf{X}_h \mathbf{u}_h, \mathbf{Y}_h \mathbf{v}_h) \quad \text{subject to } \|\mathbf{u}_h\|_2 = 1, \|\mathbf{v}_h\|_2 = 1, \|\mathbf{u}_h\|_1 \le \lambda_X, \|\mathbf{v}_h\|_1 \le \lambda_Y
+\end{equation}
+where $\mathbf{u}_h$ and $\mathbf{v}_h$ are sparse loading vectors for dimension $h \in \{1, 2\}$, and $\lambda_X, \lambda_Y$ enforce $L_1$ sparsity constraints selecting the most informative variables. Variable projections were visualized via Correlation Circle Plots and Clustered Image Maps (CIM) of cross-correlation coefficients.
+
+\subsection{Weighted Gene Co-Expression Network Analysis (WGCNA)}
+
+Co-expression modules were constructed from normalized transcriptomic expression matrices across spaceflight and ground conditions. Pairwise Pearson correlations were transformed into a signed adjacency matrix using a soft-thresholding power $\beta = 6$:
+\begin{equation}
+    a_{ij} = |0.5 \times (1 + \operatorname{cor}(x_i, x_j))|^\beta
+\end{equation}
+The topological overlap matrix (TOM) was computed to assess network interconnectedness:
+\begin{equation}
+    \text{TOM}_{ij} = \frac{l_{ij} + a_{ij}}{\min(k_i, k_j) + 1 - a_{ij}}
+\end{equation}
+where $l_{ij} = \sum_u a_{iu} a_{uj}$ and $k_i = \sum_u a_{iu}$. Average linkage hierarchical clustering of TOM dissimilarity ($1 - \text{TOM}$) identified distinct functional modules. Module Eigengenes ($\text{ME}_k$, defined as the first principal component of module $k$) were correlated with glycan trait vectors (mean class-level ELISA intensity) via Pearson correlation.
+
+\subsection{Protein--Protein Interaction (PPI) Network Construction}
+
+Functional and physical interaction networks were reconstructed using the STRING database API (v11.5 / species taxon 3702 for \textit{Arabidopsis thaliana}) and AraNet v2 \cite{Szklarczyk2019, Lee2015}. High-confidence interactions (confidence score $\ge 0.70$) were imported into NetworkX, and topology metrics (node degree, betweenness centrality) were computed. The network graph was formatted into JSON compliant with Cytoscape.js for interactive rendering.
+
+\subsection{Dynamic Stochastic Vesicle Transport Simulation}
+
+To evaluate the mechanical impact of microgravity on secretory vesicle delivery, we built a 2D stochastic Monte Carlo transport simulator in Python (and ported to HTML5 Canvas2D for web interaction). Individual matrix vesicles ($N = 1000$) originate at Golgi stacks ($x = 0$) and navigate toward the cortical plasma membrane ($x = 25~\mu\text{m}$). At each time step $\Delta t = 0.5~\text{s}$, vesicle state evolves according to:
+\begin{equation}
+    x_i(t + \Delta t) = 
+    \begin{cases}
+        x_i(t) + (v_i + \eta_t) \Delta t, & \text{if attached to track} \\
+        x_i(t) + \xi_t \Delta t, & \text{if detached (Brownian diffusion)}
+    \end{cases}
+\end{equation}
+where $v_i \sim \mathcal{N}(v_{\text{base}}, \sigma_v^2)$ is the motor velocity ($\mu\text{m/s}$), $\eta_t \sim \mathcal{N}(0, \sigma_{\text{motor}}^2)$ represents motor step noise, and $\xi_t \sim \mathcal{N}(0, 2D)$ represents spatial diffusion ($D = 0.02~\mu\text{m}^2/\text{s}$). State transitions follow detachment probability $P_{\text{detach}}$ and reattachment probability $P_{\text{reattach}} = \rho_{\text{track}} \times P_{\text{capture}}$, where $\rho_{\text{track}}$ reflects cytoskeletal track density (0.85 in 1$g$ vs. 0.50 in microgravity).

@@ -1,0 +1,158 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "@id": "ro-crate-metadata.json",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "OSD-615 Glycomics and Cytoskeleton Systems Biology Integration",
+      "description": "Multi-omics systems biology data integration and dynamic modeling repository connecting high-throughput cell wall glycomics from NASA OSD-615 (APEX-03-1) with cytoskeletal motors, vesicular trafficking machinery, and companion spaceflight RNA-Seq datasets.",
+      "datePublished": "2026-09-01",
+      "license": {
+        "@id": "https://spdx.org/licenses/MIT.html"
+      },
+      "creator": [
+        {
+          "@id": "#richard-barker"
+        }
+      ],
+      "publisher": {
+        "@id": "#nasa-osdr"
+      },
+      "isBasedOn": [
+        {
+          "@id": "https://doi.org/10.1038/s41526-023-00312-0"
+        },
+        {
+          "@id": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-615"
+        },
+        {
+          "@id": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-218"
+        },
+        {
+          "@id": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-217"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "data/processed/glycomics_matrix.csv"
+        },
+        {
+          "@id": "data/processed/glycomics_metadata.csv"
+        },
+        {
+          "@id": "data/processed/glycan_class_annotations.csv"
+        },
+        {
+          "@id": "data/processed/rnaseq_cytoskeleton_degs.csv"
+        },
+        {
+          "@id": "analysis/01_glycomics_eda.py"
+        },
+        {
+          "@id": "analysis/02_differential_glycan_analysis.py"
+        },
+        {
+          "@id": "analysis/04_multiomics_integration.py"
+        },
+        {
+          "@id": "analysis/05_network_modeling.py"
+        },
+        {
+          "@id": "analysis/09_dynamic_transport_simulation.py"
+        },
+        {
+          "@id": "docs/index.html"
+        },
+        {
+          "@id": "manuscript/main.tex"
+        },
+        {
+          "@id": "fair_deposit/data_dictionary.json"
+        }
+      ]
+    },
+    {
+      "@id": "#richard-barker",
+      "@type": "Person",
+      "name": "Richard Barker",
+      "affiliation": {
+        "@id": "#nasa-osdr"
+      }
+    },
+    {
+      "@id": "#nasa-osdr",
+      "@type": "Organization",
+      "name": "NASA GeneLab / Open Science Data Repository (OSDR)"
+    },
+    {
+      "@id": "data/processed/glycomics_matrix.csv",
+      "@type": "File",
+      "name": "OSD-615 Glycomics Matrix",
+      "description": "Optical density ELISA binding intensities for 155 monoclonal antibodies across 12 root samples.",
+      "encodingFormat": "text/csv",
+      "conformsTo": {
+        "@id": "fair_deposit/data_dictionary.json"
+      }
+    },
+    {
+      "@id": "data/processed/glycan_class_annotations.csv",
+      "@type": "File",
+      "name": "CCRC Monoclonal Antibody Annotations",
+      "description": "Mapping of 155 monoclonal antibodies to carbohydrate clades, glycan classes, and target epitopes.",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "data/processed/rnaseq_cytoskeleton_degs.csv",
+      "@type": "File",
+      "name": "Cytoskeleton & Cell Wall Spaceflight Transcripts",
+      "description": "Curated differential expression values for motor proteins, MAPs, actin regulators, CSCs, and glycosyltransferases.",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "analysis/04_multiomics_integration.py",
+      "@type": [
+        "File",
+        "SoftwareSourceCode"
+      ],
+      "name": "Multi-Omics sPLS Integration Pipeline",
+      "description": "Python script executing sparse PLS regression between glycomic epitope matrices and transcriptomic vectors.",
+      "programmingLanguage": {
+        "@id": "https://www.python.org/"
+      }
+    },
+    {
+      "@id": "docs/index.html",
+      "@type": [
+        "File",
+        "WebPage"
+      ],
+      "name": "Interactive GitHub Pages Systems Biology Dashboard",
+      "description": "Static web application featuring Plotly heatmaps, Cytoscape interactome graph, and Canvas2D dynamic vesicle transport simulation.",
+      "encodingFormat": "text/html"
+    },
+    {
+      "@id": "manuscript/main.tex",
+      "@type": "File",
+      "name": "Scientific Manuscript LaTeX Root",
+      "description": "Nature Partner Journals (npj Microgravity) formatted LaTeX manuscript detailing systems biology findings.",
+      "encodingFormat": "application/x-tex"
+    },
+    {
+      "@id": "fair_deposit/data_dictionary.json",
+      "@type": "File",
+      "name": "Data Dictionary",
+      "description": "Machine-readable data dictionary documenting all schemas, variables, units, and definitions.",
+      "encodingFormat": "application/json"
+    }
+  ]
+}

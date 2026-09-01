@@ -1,0 +1,13 @@
+Sample_Name,Spaceflight,Growth_Time,unit,Condition_Group
+R7_roots,Ground,6,day,Ground_6d
+R11_roots,Ground,6,day,Ground_6d
+R10_roots,Ground,6,day,Ground_6d
+R9_roots,Ground,11,day,Ground_11d
+R2_roots,Ground,11,day,Ground_11d
+R4_roots,Ground,11,day,Ground_11d
+R6_roots,Space,6,day,Space_6d
+R1_roots,Space,6,day,Space_6d
+R3_roots,Space,6,day,Space_6d
+R5_roots,Space,11,day,Space_11d
+R8_roots,Space,11,day,Space_11d
+R12_roots,Space,11,day,Space_11d

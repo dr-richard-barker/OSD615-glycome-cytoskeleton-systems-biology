@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Glycome-Cytoskeleton Systems Biology: Follow-Up to OSD-615 (APEX-03-1)"
+version: 1.0.0
+date-released: "2026-09-01"
+url: "https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology"
+repository-code: "https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology"
+license: MIT
+authors:
+  - family-names: Barker
+    given-names: Richard
+    affiliation: "NASA GeneLab / OSDR"
+keywords:
+  - glycomics
+  - cytoskeleton
+  - systems biology
+  - spaceflight
+  - microgravity
+  - Arabidopsis thaliana
+  - cell wall
+  - kinesin
+  - myosin
+  - O-GlcNAcylation
+  - multi-omics
+  - NASA OSDR
+  - OSD-615
+  - APEX-03
+  - Veggie hardware
+references:
+  - type: article
+    title: "Glycome profiling and immunohistochemistry uncover changes in cell walls of Arabidopsis thaliana roots during spaceflight"
+    authors:
+      - family-names: Nakashima
+        given-names: Jin
+      - family-names: Pattathil
+        given-names: Sivakumar
+      - family-names: Avci
+        given-names: Utku
+      - family-names: Chin
+        given-names: Sabrina
+      - family-names: Sparks
+        given-names: J. Alan
+      - family-names: Hahn
+        given-names: Michael G.
+      - family-names: Gilroy
+        given-names: Simon
+      - family-names: Blancaflor
+        given-names: Elison B.
+    journal: "npj Microgravity"
+    volume: 9
+    start: 67
+    year: 2023
+    doi: "10.1038/s41526-023-00312-0"

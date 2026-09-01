@@ -1,0 +1,1990 @@
+{
+  "x_loadings": [
+    {
+      "name": "CCRC-M95",
+      "comp1": 0.300578618602724,
+      "comp2": -0.29760244463826546,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M101",
+      "comp1": 0.3636745351612038,
+      "comp2": -0.4118641442215889,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M104",
+      "comp1": 0.3208647571917154,
+      "comp2": -0.5214260968747431,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M89",
+      "comp1": 0.3810067026022724,
+      "comp2": -0.35895742300531597,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M93",
+      "comp1": 0.3991289090935743,
+      "comp2": -0.2609854245086036,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M87",
+      "comp1": 0.381214386899249,
+      "comp2": -0.08403637936657384,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M88",
+      "comp1": 0.39647363518735906,
+      "comp2": -0.03303119547649847,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M100",
+      "comp1": 0.3997023498275695,
+      "comp2": -0.23044564783748994,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M103",
+      "comp1": 0.41878352035816213,
+      "comp2": -0.24470185146767842,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M58",
+      "comp1": 0.36271605560230646,
+      "comp2": -0.40835668760464267,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M86",
+      "comp1": 0.42668080866347013,
+      "comp2": -0.033901645323844425,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M55",
+      "comp1": 0.40108680919871603,
+      "comp2": -0.3533564931960366,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M52",
+      "comp1": 0.377383147601886,
+      "comp2": -0.4580390974168885,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M99",
+      "comp1": 0.31060758450085224,
+      "comp2": -0.5202666436618478,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M54",
+      "comp1": 0.37308002084670217,
+      "comp2": -0.4359174498152579,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M48",
+      "comp1": 0.40462147967361584,
+      "comp2": -0.23131111792636438,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M49",
+      "comp1": 0.37815550650902935,
+      "comp2": -0.4016132725371699,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M96",
+      "comp1": 0.4126739928649696,
+      "comp2": -0.2667044113892458,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M50",
+      "comp1": 0.36277543470803864,
+      "comp2": -0.47131729486132046,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M51",
+      "comp1": 0.4068215944141062,
+      "comp2": 0.10317881127656586,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M53",
+      "comp1": 0.3919246272048024,
+      "comp2": -0.3738021105740138,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M57",
+      "comp1": 0.399899127865801,
+      "comp2": 0.1429710329655165,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M102",
+      "comp1": 0.400538675483554,
+      "comp2": -0.2530185967982108,
+      "class": "Xyloglucan (Fucosylated)"
+    },
+    {
+      "name": "CCRC-M39",
+      "comp1": 0.4007151351075964,
+      "comp2": -0.32369455526317104,
+      "class": "Xyloglucan (Non-Fucosylated)"
+    },
+    {
+      "name": "CCRC-M106",
+      "comp1": 0.3472404458950096,
+      "comp2": -0.45182106468999167,
+      "class": "Xyloglucan (Fucosylated)"
+    },
+    {
+      "name": "CCRC-M84",
+      "comp1": 0.38678525689008025,
+      "comp2": -0.19472532998434983,
+      "class": "Xyloglucan (Fucosylated)"
+    },
+    {
+      "name": "CCRC-M1",
+      "comp1": 0.2644404061649509,
+      "comp2": -0.07850252835613025,
+      "class": "Xyloglucan (Fucosylated)"
+    },
+    {
+      "name": "CCRC-M111",
+      "comp1": 0.2977196717118543,
+      "comp2": 0.08066777259049426,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M108",
+      "comp1": 0.4028823904052217,
+      "comp2": -0.30152941984969667,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M109",
+      "comp1": 0.40048567756705633,
+      "comp2": -0.32459722069373415,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M119",
+      "comp1": 0.23106659998787962,
+      "comp2": -0.5704812828467991,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M115",
+      "comp1": 0.31578512405554343,
+      "comp2": -0.03374578379043589,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M110",
+      "comp1": 0.16653092497078267,
+      "comp2": 0.24185972054198168,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M105",
+      "comp1": -0.022839265174108996,
+      "comp2": -0.09296384568510963,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M117",
+      "comp1": 0.003598722320195571,
+      "comp2": -0.4018143552718748,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M113",
+      "comp1": 0.15641399088851768,
+      "comp2": -0.3191499162844228,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M120",
+      "comp1": 0.09532055167684562,
+      "comp2": 0.559338360874103,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M118",
+      "comp1": 0.36084916927574906,
+      "comp2": 0.0021491505164693172,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M116",
+      "comp1": -0.12008993274957111,
+      "comp2": -0.06052047166932813,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M114",
+      "comp1": 0.42047272332808855,
+      "comp2": -0.13807410195307798,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M154",
+      "comp1": 0.11435373100063133,
+      "comp2": -0.4034807006411005,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M150",
+      "comp1": 0.40792218472402875,
+      "comp2": -0.12443065715261659,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M144",
+      "comp1": 0.3829888664539221,
+      "comp2": -0.30857825351117485,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M146",
+      "comp1": 0.3698625474405688,
+      "comp2": -0.3252848585726148,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M145",
+      "comp1": 0.33886207973205745,
+      "comp2": -0.6051038679205865,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M155",
+      "comp1": 0.37805517177819725,
+      "comp2": -0.2001547207530056,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M153",
+      "comp1": 0.41015815278156514,
+      "comp2": 0.029355096754359624,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M151",
+      "comp1": 0.39198914886102165,
+      "comp2": 0.01512422331859326,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M148",
+      "comp1": 0.39802581634581613,
+      "comp2": -0.22265281817932245,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M140",
+      "comp1": 0.39169549954303906,
+      "comp2": -0.20101062945023512,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M139",
+      "comp1": 0.3914370210727567,
+      "comp2": -0.16270175036914772,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M138",
+      "comp1": 0.40076548538139245,
+      "comp2": -0.07361436870365673,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M160",
+      "comp1": 0.30839220217070085,
+      "comp2": -0.25473089317469383,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M137",
+      "comp1": 0.36776227868583267,
+      "comp2": -0.16329364785123057,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M152",
+      "comp1": 0.3369182005423355,
+      "comp2": -0.33662362362084597,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M149",
+      "comp1": 0.40979267669892544,
+      "comp2": -0.12285845397877805,
+      "class": "Xylan / Arabinoxylan"
+    },
+    {
+      "name": "CCRC-M75",
+      "comp1": 0.07644344147422154,
+      "comp2": -0.19283324154452888,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M70",
+      "comp1": -0.12237724597442401,
+      "comp2": 0.6218836317446053,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M74",
+      "comp1": 0.04252337653156797,
+      "comp2": -0.47322526196924536,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M166",
+      "comp1": -0.23191277164175444,
+      "comp2": -0.4325184991504906,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M168",
+      "comp1": -0.2510462397523374,
+      "comp2": 0.01406727137995017,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M174",
+      "comp1": -0.1297804243246284,
+      "comp2": 0.05367215112540929,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M175",
+      "comp1": -0.20055053680186177,
+      "comp2": -0.14614495894343635,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M169",
+      "comp1": -0.027731718009119846,
+      "comp2": -0.2519073057643368,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M170",
+      "comp1": -0.26258293433059554,
+      "comp2": -0.24887386711754467,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "LAMP",
+      "comp1": -0.1422723245574735,
+      "comp2": 0.9499632857424988,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "BG1",
+      "comp1": 0.09504925711546616,
+      "comp2": 0.14256502223056433,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M131",
+      "comp1": 0.37925995347556074,
+      "comp2": -0.6218532453138961,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M38",
+      "comp1": 0.3701973741723164,
+      "comp2": -0.6648700013054977,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "JIM5",
+      "comp1": 0.3708734608893839,
+      "comp2": -0.5271272102821711,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "JIM136",
+      "comp1": 0.011952039786356453,
+      "comp2": -0.07089805061090142,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "JIM7",
+      "comp1": -0.03229071602691768,
+      "comp2": 0.20200603707640924,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M69",
+      "comp1": 0.41614130064968147,
+      "comp2": -0.22545350288608568,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M35",
+      "comp1": 0.3960143700527023,
+      "comp2": -0.3479953314227659,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M36",
+      "comp1": 0.4093177604097422,
+      "comp2": -0.37080597043061453,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M14",
+      "comp1": -0.12292415373492431,
+      "comp2": -0.17155082556977663,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M129",
+      "comp1": 0.4023184724889361,
+      "comp2": -0.40407776344494084,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M72",
+      "comp1": 0.40839064854326285,
+      "comp2": -0.30127585617074554,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM3",
+      "comp1": 0.292311962326508,
+      "comp2": 0.10376889296073653,
+      "class": "Homogalacturonan (HG Pectin)"
+    },
+    {
+      "name": "CCRC-M40",
+      "comp1": 0.3274443215065953,
+      "comp2": -0.3751205040260536,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M161",
+      "comp1": 0.37422151628059336,
+      "comp2": 0.042291536814206124,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M164",
+      "comp1": -0.1951534867685426,
+      "comp2": 0.7049583109546446,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M98",
+      "comp1": -0.11085394354548882,
+      "comp2": 0.882753007941024,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M94",
+      "comp1": 0.1445917292378363,
+      "comp2": -0.24338617275207103,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M5",
+      "comp1": 0.39839030682772686,
+      "comp2": 0.20334686497629062,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M2",
+      "comp1": 0.42263940852302373,
+      "comp2": -0.045089535715508486,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM137",
+      "comp1": 0.22515859828290372,
+      "comp2": 0.20005961992028962,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM101",
+      "comp1": -0.1867917602211882,
+      "comp2": -0.2464519206773073,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M61",
+      "comp1": -0.2482332264256851,
+      "comp2": -0.012501966560332065,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M30",
+      "comp1": -0.24510714355058455,
+      "comp2": -0.14904084893227212,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M23",
+      "comp1": 0.38605760557952423,
+      "comp2": -0.41375282702474525,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M17",
+      "comp1": 0.3681451368956055,
+      "comp2": 0.10510232499658788,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M19",
+      "comp1": 0.03069143603533106,
+      "comp2": -0.2927803443118558,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M18",
+      "comp1": 0.38202350070781615,
+      "comp2": 0.10417637594526741,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M56",
+      "comp1": 0.3951684004829101,
+      "comp2": -0.20110659858714067,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M16",
+      "comp1": 0.41073539494658146,
+      "comp2": -0.09480223799849559,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M60",
+      "comp1": 0.4199837253792222,
+      "comp2": -0.19127543756212553,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M41",
+      "comp1": 0.3324419166737124,
+      "comp2": -0.5859483380687355,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M80",
+      "comp1": 0.4013924065729103,
+      "comp2": -0.41369374420335125,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M79",
+      "comp1": 0.4050760468072981,
+      "comp2": -0.402520379583226,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M44",
+      "comp1": 0.4104428765311889,
+      "comp2": -0.2794394480488267,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M33",
+      "comp1": 0.4067367238056598,
+      "comp2": -0.37493048303149923,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M32",
+      "comp1": 0.4082783759054078,
+      "comp2": -0.3186102657849216,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M13",
+      "comp1": 0.4027971277350249,
+      "comp2": -0.2533461966305016,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M42",
+      "comp1": 0.4106341071663742,
+      "comp2": -0.25050070938520197,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M24",
+      "comp1": 0.3959977508954654,
+      "comp2": -0.29102366582262124,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M12",
+      "comp1": 0.36859277937050683,
+      "comp2": -0.43188034416357624,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M7",
+      "comp1": 0.40638849612357336,
+      "comp2": -0.3552269653960796,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M77",
+      "comp1": 0.38981356206741036,
+      "comp2": -0.20712718059277968,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M25",
+      "comp1": 0.3993884911436209,
+      "comp2": -0.3428126548683398,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M9",
+      "comp1": 0.4169320786809951,
+      "comp2": -0.09672597795578178,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M128",
+      "comp1": 0.4156458919034052,
+      "comp2": -0.24394571561205589,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M126",
+      "comp1": 0.4128163410719442,
+      "comp2": -0.14896926328081947,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M134",
+      "comp1": 0.41849126466448955,
+      "comp2": -0.2969389669515431,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M125",
+      "comp1": 0.41852919452026427,
+      "comp2": -0.19734598992838673,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M123",
+      "comp1": 0.40906594119506334,
+      "comp2": -0.2707109746357642,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M122",
+      "comp1": 0.3955521043408429,
+      "comp2": -0.198795476604503,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M121",
+      "comp1": 0.37913080703588725,
+      "comp2": 0.036307449758404886,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M112",
+      "comp1": 0.39603993940280197,
+      "comp2": -0.2884343871814493,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M21",
+      "comp1": 0.41861623451203667,
+      "comp2": -0.11497544407484675,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM131",
+      "comp1": 0.4146903819699248,
+      "comp2": -0.15429166879746137,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M22",
+      "comp1": 0.35064638931643144,
+      "comp2": -0.43834533087011224,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM132",
+      "comp1": 0.40483536726651537,
+      "comp2": -0.0015255953743762778,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM1",
+      "comp1": 0.36177188132984883,
+      "comp2": -0.16129887658314412,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "CCRC-M15",
+      "comp1": 0.315028715526417,
+      "comp2": -0.3335740977326519,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M8",
+      "comp1": 0.28172580702931255,
+      "comp2": 0.15585548110968422,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM16",
+      "comp1": 0.4005645476487652,
+      "comp2": 0.2253969613647781,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM93",
+      "comp1": 0.37628933490144895,
+      "comp2": 0.31836719591617857,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM94",
+      "comp1": 0.3885989592241875,
+      "comp2": 0.25893148388635534,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM11",
+      "comp1": 0.4076889071545705,
+      "comp2": 0.20098958978404188,
+      "class": "Extensins / HRGPs"
+    },
+    {
+      "name": "MAC204",
+      "comp1": 0.38288370578604397,
+      "comp2": 0.24871814872635897,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM20",
+      "comp1": 0.42076420601730885,
+      "comp2": 0.1726968094613235,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM14",
+      "comp1": 0.4177358541786853,
+      "comp2": -0.047319798145094606,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM19",
+      "comp1": 0.40818274689637807,
+      "comp2": 0.04681155652290984,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM12",
+      "comp1": 0.3916848060643662,
+      "comp2": 0.3111759802863041,
+      "class": "Extensins / HRGPs"
+    },
+    {
+      "name": "CCRC-M133",
+      "comp1": 0.19624737589631497,
+      "comp2": 0.6007419475639536,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "CCRC-M107",
+      "comp1": 0.2314052257008373,
+      "comp2": 0.4692814482192484,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM4",
+      "comp1": 0.1390738246757456,
+      "comp2": 0.12335749917738671,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "CCRC-M31",
+      "comp1": -0.25296450882882426,
+      "comp2": 0.19228037797342357,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM17",
+      "comp1": 0.3943157563081226,
+      "comp2": 0.08487994643159973,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "CCRC-M26",
+      "comp1": 0.3461681161674215,
+      "comp2": 0.21317345911713292,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "JIM15",
+      "comp1": 0.3545150530008599,
+      "comp2": -0.21145353004718112,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM8",
+      "comp1": 0.32421116544841094,
+      "comp2": -0.21563562810886666,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "CCRC-M85",
+      "comp1": 0.17792798667508675,
+      "comp2": 0.5156263030124114,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M81",
+      "comp1": 0.20831170661353235,
+      "comp2": 0.08435115154547454,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "MAC266",
+      "comp1": -0.09215903600532001,
+      "comp2": -0.4556717356893793,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "PN16.4B4",
+      "comp1": 0.12878522307730392,
+      "comp2": -0.12574555664886064,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "MAC207",
+      "comp1": 0.4104129814758768,
+      "comp2": -0.031160652892060554,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM133",
+      "comp1": 0.36505570758813216,
+      "comp2": 0.1425486925894268,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "JIM13",
+      "comp1": 0.40386917052991206,
+      "comp2": -0.13526448631835084,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "CCRC-M92",
+      "comp1": 0.38927735947356656,
+      "comp2": 0.2399105570603567,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M91",
+      "comp1": 0.39652413456040375,
+      "comp2": 0.20837823127157498,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "CCRC-M78",
+      "comp1": 0.3985388907509422,
+      "comp2": 0.16786955921236374,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    },
+    {
+      "name": "MAC265",
+      "comp1": -0.003538121229638171,
+      "comp2": -0.08495371064298919,
+      "class": "Arabinogalactan Proteins (AGPs)"
+    },
+    {
+      "name": "CCRC-M97",
+      "comp1": 0.36916856639523316,
+      "comp2": -0.15431835003882605,
+      "class": "Rhamnogalacturonan-I / Galactan / Arabinan"
+    }
+  ],
+  "y_loadings": [
+    {
+      "symbol": "KIN14A",
+      "id": "AT1G01950",
+      "comp1": 0.0525120503518758,
+      "comp2": 0.9499742897859463,
+      "pathway": "Microtubule Motor Transport"
+    },
+    {
+      "symbol": "KIN12A",
+      "id": "AT3G44050",
+      "comp1": 0.11480590241687777,
+      "comp2": 0.8011618998744345,
+      "pathway": "Microtubule Motor Transport"
+    },
+    {
+      "symbol": "FRA1",
+      "id": "AT5G41310",
+      "comp1": -0.0956280176332454,
+      "comp2": -0.7120674450355614,
+      "pathway": "Cell Wall Secretory Machinery"
+    },
+    {
+      "symbol": "KIN7A",
+      "id": "AT1G73860",
+      "comp1": 0.16848766308423774,
+      "comp2": 0.6238527001669966,
+      "pathway": "Microtubule Motor Transport"
+    },
+    {
+      "symbol": "MYA1",
+      "id": "AT1G17580",
+      "comp1": 0.11494955389893477,
+      "comp2": 0.7997263420126398,
+      "pathway": "Actin-Driven Vesicle Motility"
+    },
+    {
+      "symbol": "MYA2",
+      "id": "AT5G43900",
+      "comp1": 0.009971577745420917,
+      "comp2": 0.8244538080463087,
+      "pathway": "Actin-Driven Vesicle Motility"
+    },
+    {
+      "symbol": "XI-K",
+      "id": "AT1G04160",
+      "comp1": 0.10177441420974154,
+      "comp2": 0.7998402499562978,
+      "pathway": "Actin-Driven Vesicle Motility"
+    },
+    {
+      "symbol": "MAP65-1",
+      "id": "AT5G55230",
+      "comp1": 0.0052815265958764835,
+      "comp2": -0.655637484557424,
+      "pathway": "Microtubule Organization"
+    },
+    {
+      "symbol": "SPR1",
+      "id": "AT1G09710",
+      "comp1": -0.07796001408184766,
+      "comp2": -0.7287584122374365,
+      "pathway": "Microtubule Directionality"
+    },
+    {
+      "symbol": "CLASP",
+      "id": "AT2G35630",
+      "comp1": -0.0002090264025689796,
+      "comp2": -0.7472756554911161,
+      "pathway": "Microtubule Organization"
+    },
+    {
+      "symbol": "MOR1",
+      "id": "AT2G16060",
+      "comp1": 0.01782721451665194,
+      "comp2": 0.6871665283427123,
+      "pathway": "Microtubule Polymerization"
+    },
+    {
+      "symbol": "ARP2",
+      "id": "AT5G46400",
+      "comp1": -0.09841671230832261,
+      "comp2": 0.807104661819387,
+      "pathway": "Actin Nucleation"
+    },
+    {
+      "symbol": "ARP3",
+      "id": "AT1G43170",
+      "comp1": 0.04464658254629929,
+      "comp2": 0.9002052229199722,
+      "pathway": "Actin Nucleation"
+    },
+    {
+      "symbol": "PRF1",
+      "id": "AT5G59890",
+      "comp1": -0.0931713891914064,
+      "comp2": -0.8399477382966023,
+      "pathway": "Actin Polymerization"
+    },
+    {
+      "symbol": "VLN1",
+      "id": "AT2G28290",
+      "comp1": 0.04587568786873185,
+      "comp2": 0.8804944906216118,
+      "pathway": "Actin Bundling"
+    },
+    {
+      "symbol": "FH1",
+      "id": "AT3G25500",
+      "comp1": -0.006666162522274509,
+      "comp2": 0.6380588708006368,
+      "pathway": "Membrane-Actin Nucleation"
+    },
+    {
+      "symbol": "CESA1",
+      "id": "AT4G32410",
+      "comp1": 0.045708093115054936,
+      "comp2": -0.8521723965050284,
+      "pathway": "Cell Wall Biosynthesis"
+    },
+    {
+      "symbol": "CESA3",
+      "id": "AT5G05170",
+      "comp1": -0.15280112834456833,
+      "comp2": -0.6502584436006181,
+      "pathway": "Cell Wall Biosynthesis"
+    },
+    {
+      "symbol": "CESA4",
+      "id": "AT5G44030",
+      "comp1": 0.06908266303345559,
+      "comp2": 0.7294340015151661,
+      "pathway": "Vascular Secondary Wall"
+    },
+    {
+      "symbol": "CESA7",
+      "id": "AT5G17420",
+      "comp1": 0.08090017667570075,
+      "comp2": 0.8298229455710413,
+      "pathway": "Vascular Secondary Wall"
+    },
+    {
+      "symbol": "CSI1",
+      "id": "AT2G22120",
+      "comp1": -0.033309820107791634,
+      "comp2": -0.5380068354747973,
+      "pathway": "CSC-Microtubule Alignment"
+    },
+    {
+      "symbol": "IRX9",
+      "id": "AT3G18660",
+      "comp1": 0.06153852100464658,
+      "comp2": 0.8533343802962996,
+      "pathway": "Xylan Biosynthesis"
+    },
+    {
+      "symbol": "IRX10",
+      "id": "AT5G15630",
+      "comp1": 0.05619635316870828,
+      "comp2": 0.8574217834176956,
+      "pathway": "Xylan Biosynthesis"
+    },
+    {
+      "symbol": "XTH4",
+      "id": "AT4G02290",
+      "comp1": 0.08128044530585415,
+      "comp2": 0.8703207369241203,
+      "pathway": "Xyloglucan Remodeling"
+    },
+    {
+      "symbol": "EXPA1",
+      "id": "AT1G65310",
+      "comp1": 0.08063138492342271,
+      "comp2": 0.852505438636544,
+      "pathway": "Wall Loosening"
+    },
+    {
+      "symbol": "PME3",
+      "id": "AT3G10720",
+      "comp1": -0.01905412363030866,
+      "comp2": -0.7801087314165415,
+      "pathway": "Pectin De-esterification"
+    },
+    {
+      "symbol": "SEC",
+      "id": "AT2G35940",
+      "comp1": 0.023341252124603164,
+      "comp2": 0.6841660461766976,
+      "pathway": "Intracellular O-GlcNAcylation"
+    },
+    {
+      "symbol": "SPY",
+      "id": "AT2G36400",
+      "comp1": 0.054338652363166616,
+      "comp2": 0.6176640445213379,
+      "pathway": "Intracellular Glycosylation"
+    }
+  ],
+  "top_correlated_pairs": [
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "XI-K",
+      "Gene_ID": "AT1G04160",
+      "Pathway": "Actin-Driven Vesicle Motility",
+      "Correlation": 0.793
+    },
+    {
+      "mAb": "CCRC-M107",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "KIN12A",
+      "Gene_ID": "AT3G44050",
+      "Pathway": "Microtubule Motor Transport",
+      "Correlation": 0.77
+    },
+    {
+      "mAb": "CCRC-M107",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "CSI1",
+      "Gene_ID": "AT2G22120",
+      "Pathway": "CSC-Microtubule Alignment",
+      "Correlation": -0.769
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "CSI1",
+      "Gene_ID": "AT2G22120",
+      "Pathway": "CSC-Microtubule Alignment",
+      "Correlation": -0.762
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "KIN12A",
+      "Gene_ID": "AT3G44050",
+      "Pathway": "Microtubule Motor Transport",
+      "Correlation": 0.756
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "MYA1",
+      "Gene_ID": "AT1G17580",
+      "Pathway": "Actin-Driven Vesicle Motility",
+      "Correlation": 0.748
+    },
+    {
+      "mAb": "CCRC-M107",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "EXPA1",
+      "Gene_ID": "AT1G65310",
+      "Pathway": "Wall Loosening",
+      "Correlation": 0.746
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "KIN7A",
+      "Gene_ID": "AT1G73860",
+      "Pathway": "Microtubule Motor Transport",
+      "Correlation": 0.744
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "EXPA1",
+      "Gene_ID": "AT1G65310",
+      "Pathway": "Wall Loosening",
+      "Correlation": 0.732
+    },
+    {
+      "mAb": "CCRC-M107",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "SPR1",
+      "Gene_ID": "AT1G09710",
+      "Pathway": "Microtubule Directionality",
+      "Correlation": -0.731
+    },
+    {
+      "mAb": "CCRC-M107",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "XI-K",
+      "Gene_ID": "AT1G04160",
+      "Pathway": "Actin-Driven Vesicle Motility",
+      "Correlation": 0.723
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "CESA7",
+      "Gene_ID": "AT5G17420",
+      "Pathway": "Vascular Secondary Wall",
+      "Correlation": 0.702
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "CESA3",
+      "Gene_ID": "AT5G05170",
+      "Pathway": "Cell Wall Biosynthesis",
+      "Correlation": -0.699
+    },
+    {
+      "mAb": "CCRC-M107",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "CESA3",
+      "Gene_ID": "AT5G05170",
+      "Pathway": "Cell Wall Biosynthesis",
+      "Correlation": -0.695
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "IRX9",
+      "Gene_ID": "AT3G18660",
+      "Pathway": "Xylan Biosynthesis",
+      "Correlation": 0.69
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "SPR1",
+      "Gene_ID": "AT1G09710",
+      "Pathway": "Microtubule Directionality",
+      "Correlation": -0.686
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "FH1",
+      "Gene_ID": "AT3G25500",
+      "Pathway": "Membrane-Actin Nucleation",
+      "Correlation": 0.675
+    },
+    {
+      "mAb": "CCRC-M107",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "PRF1",
+      "Gene_ID": "AT5G59890",
+      "Pathway": "Actin Polymerization",
+      "Correlation": -0.675
+    },
+    {
+      "mAb": "CCRC-M111",
+      "Glycan_Class": "Xylan / Arabinoxylan",
+      "Gene_Symbol": "CESA3",
+      "Gene_ID": "AT5G05170",
+      "Pathway": "Cell Wall Biosynthesis",
+      "Correlation": -0.673
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "PRF1",
+      "Gene_ID": "AT5G59890",
+      "Pathway": "Actin Polymerization",
+      "Correlation": -0.666
+    },
+    {
+      "mAb": "LAMP",
+      "Glycan_Class": "Homogalacturonan (HG Pectin)",
+      "Gene_Symbol": "CLASP",
+      "Gene_ID": "AT2G35630",
+      "Pathway": "Microtubule Organization",
+      "Correlation": -0.663
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "SPY",
+      "Gene_ID": "AT2G36400",
+      "Pathway": "Intracellular Glycosylation",
+      "Correlation": 0.662
+    },
+    {
+      "mAb": "JIM12",
+      "Glycan_Class": "Extensins / HRGPs",
+      "Gene_Symbol": "KIN7A",
+      "Gene_ID": "AT1G73860",
+      "Pathway": "Microtubule Motor Transport",
+      "Correlation": 0.655
+    },
+    {
+      "mAb": "CCRC-M133",
+      "Glycan_Class": "Arabinogalactan Proteins (AGPs)",
+      "Gene_Symbol": "IRX10",
+      "Gene_ID": "AT5G15630",
+      "Pathway": "Xylan Biosynthesis",
+      "Correlation": 0.654
+    },
+    {
+      "mAb": "CCRC-M166",
+      "Glycan_Class": "Homogalacturonan (HG Pectin)",
+      "Gene_Symbol": "KIN7A",
+      "Gene_ID": "AT1G73860",
+      "Pathway": "Microtubule Motor Transport",
+      "Correlation": -0.652
+    }
+  ],
+  "cross_matrix": {
+    "mabs": [
+      "CCRC-M133",
+      "CCRC-M107",
+      "JIM12",
+      "CCRC-M111",
+      "JIM11",
+      "JIM20",
+      "CCRC-M92",
+      "JIM93",
+      "JIM94",
+      "MAC204",
+      "CCRC-M91",
+      "LAMP",
+      "JIM16",
+      "CCRC-M78",
+      "JIM17",
+      "CCRC-M57",
+      "CCRC-M51",
+      "CCRC-M166",
+      "JIM19",
+      "CCRC-M18"
+    ],
+    "genes": [
+      "KIN14A",
+      "KIN12A",
+      "FRA1",
+      "KIN7A",
+      "MYA1",
+      "MYA2",
+      "XI-K",
+      "MAP65-1",
+      "SPR1",
+      "CLASP",
+      "MOR1",
+      "ARP2",
+      "ARP3",
+      "PRF1",
+      "VLN1",
+      "FH1",
+      "CESA1",
+      "CESA3",
+      "CESA4",
+      "CESA7",
+      "CSI1",
+      "IRX9",
+      "IRX10",
+      "XTH4",
+      "EXPA1",
+      "PME3",
+      "SEC",
+      "SPY"
+    ],
+    "values": [
+      [
+        0.5847312888972832,
+        0.7564563289513118,
+        -0.36695824718804526,
+        0.7442899739482021,
+        0.7482384606380591,
+        0.3078942570311862,
+        0.7926692438293261,
+        -0.2512589233606294,
+        -0.6856784702034765,
+        -0.30105606980340355,
+        0.21428602268518224,
+        0.3239282671522821,
+        0.5984526660352344,
+        -0.6662167552910553,
+        0.4915347246983418,
+        0.6754721470993044,
+        -0.5493663534959022,
+        -0.6993716727251301,
+        0.42566235519728507,
+        0.7023992775886507,
+        -0.7618099976751915,
+        0.6904167677401019,
+        0.6535358180516269,
+        0.6357614005642519,
+        0.7324847713531203,
+        -0.5397670065225252,
+        0.31030050649788377,
+        0.6620500126642415
+      ],
+      [
+        0.44599289062876907,
+        0.7702691654833982,
+        -0.33544936855608226,
+        0.6160613205949682,
+        0.6049416884809963,
+        0.235551715295819,
+        0.7229334723805013,
+        -0.1862690784147504,
+        -0.730824452005769,
+        -0.24010962083190904,
+        0.2594039641573549,
+        0.0884232362056009,
+        0.3905959101600873,
+        -0.6752239784617828,
+        0.3689751521426709,
+        0.5913987615155459,
+        -0.45307615350581465,
+        -0.6950588069065141,
+        0.5172637626035838,
+        0.6389744993254164,
+        -0.7694274545681152,
+        0.6229068477456493,
+        0.5325510224307757,
+        0.5724941006708034,
+        0.7464622293030813,
+        -0.5931655797932804,
+        0.4631610295184369,
+        0.5107182687412184
+      ],
+      [
+        0.3293969766914972,
+        0.43932209264884664,
+        -0.436440952145075,
+        0.6548722541072459,
+        0.569329297881756,
+        0.23601480385288134,
+        0.47386157278895924,
+        -0.17692421928370386,
+        -0.3264448321142415,
+        -0.13963559785895066,
+        0.0417500856053897,
+        -0.04176960561736983,
+        0.3968131977204554,
+        -0.3956269487652226,
+        0.35992439624499273,
+        0.08009331079567923,
+        -0.05275524599535635,
+        -0.5941373038932578,
+        0.33078973225932745,
+        0.49012469760388966,
+        -0.19782620777363183,
+        0.32579291230337426,
+        0.39546337858941677,
+        0.44541868217976394,
+        0.3189218541734066,
+        -0.09322433132669876,
+        0.08567375885656738,
+        0.33158710795245605
+      ],
+      [
+        0.18468007483111445,
+        0.526357744568868,
+        -0.20760519349878523,
+        0.30012748789518884,
+        0.4284371431965583,
+        0.24384693129147691,
+        0.39248331289563376,
+        0.15498293392077578,
+        -0.43072152311858636,
+        -0.24501840911538755,
+        0.32275466217345156,
+        -0.004925750970937081,
+        0.32059645672153236,
+        -0.2337296192248213,
+        0.184921068132122,
+        0.34056756406416094,
+        -0.16399606329654218,
+        -0.6734417870295333,
+        0.481126002617802,
+        0.41663203468985427,
+        -0.27943758092288584,
+        0.5226325394466511,
+        0.35523397288913844,
+        0.2219269486474139,
+        0.4307755270422947,
+        -0.32423288131338374,
+        0.12121044727237557,
+        0.25147960809373254
+      ],
+      [
+        0.25822634892276436,
+        0.48716684922458486,
+        -0.3457544495491026,
+        0.614989921950426,
+        0.5102449890745157,
+        0.19458990663142642,
+        0.45524056384910555,
+        -0.07632130451384285,
+        -0.34214546454882594,
+        -0.07712086227829844,
+        0.03188440928456656,
+        -0.12935136646353815,
+        0.32012525461814717,
+        -0.3909600348021295,
+        0.3099012802089211,
+        0.09305218570589724,
+        -0.0235037559454101,
+        -0.6298735985725943,
+        0.3467538005190674,
+        0.477835239837029,
+        -0.2919926268308195,
+        0.33261455632767273,
+        0.321910225525034,
+        0.36394541069015485,
+        0.358912801206693,
+        -0.1315495145668688,
+        0.11832502321109319,
+        0.297414066561814
+      ],
+      [
+        0.26543613262683846,
+        0.4121443757202304,
+        -0.3932103880702515,
+        0.6163697295705274,
+        0.4840675234604647,
+        0.1833871650991617,
+        0.41785483200722723,
+        -0.039081192525919864,
+        -0.2880659633161156,
+        -0.08827697821311903,
+        0.12192506338782959,
+        -0.1558362911296702,
+        0.3045845088088969,
+        -0.34356620649518255,
+        0.271433055865912,
+        0.044020086335599305,
+        0.040996325410000416,
+        -0.5682144091789946,
+        0.29532840516007425,
+        0.37843364130586726,
+        -0.11125140421860644,
+        0.29159472149882276,
+        0.28173770673343806,
+        0.34700492125950294,
+        0.30515421181446517,
+        -0.10200748550721071,
+        0.09321196509107156,
+        0.23297213464333888
+      ],
+      [
+        0.2658743796737391,
+        0.400170044558459,
+        -0.3206929337003975,
+        0.5522129344086191,
+        0.4837573534089529,
+        0.21654765514688837,
+        0.37965534323256583,
+        -0.024002322861381712,
+        -0.2231272976127361,
+        -0.07246635327736647,
+        0.027873289680648488,
+        -0.04883752096364069,
+        0.3643870489229383,
+        -0.26949678394026993,
+        0.28002179137271116,
+        0.01340209812583573,
+        -0.013789430255553358,
+        -0.594104104009046,
+        0.26842119214682697,
+        0.43811659577327844,
+        -0.09564802988031018,
+        0.29267668832255994,
+        0.3113770279508054,
+        0.30693489110408595,
+        0.2605689882364932,
+        -0.02300465273363439,
+        0.026388228549093586,
+        0.21369938348924353
+      ],
+      [
+        0.33968523211267004,
+        0.33622670622858486,
+        -0.4562872077328919,
+        0.5941954238348917,
+        0.44635132588581655,
+        0.27953763041950186,
+        0.3976499807508426,
+        -0.17219211695348555,
+        -0.258462571275633,
+        -0.056116586372624025,
+        0.11507882592189965,
+        -0.07443625069070975,
+        0.32739145640389056,
+        -0.3645310441665037,
+        0.39684283962655226,
+        0.005115644890000671,
+        0.04107519285610809,
+        -0.5440084290039021,
+        0.31824786434693225,
+        0.3838608619136788,
+        -0.0902897409733756,
+        0.23943252323210604,
+        0.302784911310843,
+        0.41866707363793837,
+        0.2755323453039501,
+        -0.04193092986506337,
+        0.12968573031384076,
+        0.30089635557062416
+      ],
+      [
+        0.302161844096394,
+        0.36293384462822265,
+        -0.3980454480422749,
+        0.5265895937568221,
+        0.3919192725500763,
+        0.2937512623880458,
+        0.37541171701734555,
+        -0.06932883977013522,
+        -0.2702404351078564,
+        -0.01380124792941003,
+        0.1635651211007042,
+        -0.10672238084504822,
+        0.2916364972800199,
+        -0.3300551059690135,
+        0.37187902482223945,
+        0.026782653082745023,
+        0.05366890739253972,
+        -0.6075286544713945,
+        0.3630448280520763,
+        0.37768678518469323,
+        -0.11061265989944981,
+        0.26511758065717717,
+        0.26274937534954707,
+        0.35574263610591694,
+        0.3068708882398276,
+        -0.06685974421595245,
+        0.15546965483409156,
+        0.2687323963439669
+      ],
+      [
+        0.3027459799528326,
+        0.44431193272681835,
+        -0.2790323678305143,
+        0.5920668777783666,
+        0.5109234003493828,
+        0.17476393925540157,
+        0.3672906991314859,
+        -0.03854264058372827,
+        -0.1906731520447084,
+        -0.11385261650881356,
+        -0.028488057205579276,
+        -0.060850470516105,
+        0.3755663780564642,
+        -0.30237864338539444,
+        0.29650559048170166,
+        -0.016574820130972688,
+        0.004195992830108878,
+        -0.5674633787253834,
+        0.20414657974785672,
+        0.41945030410282985,
+        -0.15429754631220435,
+        0.304171626831291,
+        0.31903016941927614,
+        0.29515357988928503,
+        0.2752691315687157,
+        -0.006908540231130234,
+        0.00024186859714394265,
+        0.26702060593075827
+      ],
+      [
+        0.276534263481221,
+        0.377800621697513,
+        -0.32278052804398766,
+        0.5507071489030564,
+        0.48321825935410195,
+        0.2434049056423533,
+        0.37866825885772387,
+        -0.0011153002122019798,
+        -0.20529565860565718,
+        -0.10305399686683983,
+        0.06476209870125182,
+        -0.069928054971561,
+        0.3597483572038879,
+        -0.2750515049081724,
+        0.2962975841514578,
+        0.0025933727272312765,
+        0.020444484731565696,
+        -0.5746311087759621,
+        0.259566459234258,
+        0.4012342884140957,
+        -0.07650268187705278,
+        0.2901177312909835,
+        0.30110679554925296,
+        0.3181258996779983,
+        0.2520041173362274,
+        -0.005096832162795217,
+        0.047241313245614466,
+        0.23712095399364227
+      ],
+      [
+        0.39997292564341247,
+        0.4160955254571915,
+        -0.3580672775830275,
+        0.16372236703666312,
+        0.32626204291975364,
+        0.43082889618775727,
+        0.29358741954891354,
+        -0.4462819993196373,
+        -0.3187031641278132,
+        -0.6631160429908796,
+        0.4605078693728081,
+        0.42001926967681397,
+        0.3782826477200786,
+        -0.4938822864160661,
+        0.3629690030393191,
+        0.18170187760242584,
+        -0.5173330933206128,
+        -0.029147335664679332,
+        0.38040103985206875,
+        0.3432307609475897,
+        -0.2156326008311506,
+        0.3955740958520325,
+        0.3232312213223309,
+        0.36061790047619563,
+        0.4094721430803855,
+        -0.5856584550638735,
+        0.5696507487369741,
+        0.029816981425631956
+      ],
+      [
+        0.29322207329969213,
+        0.3615420414087494,
+        -0.3375031246756689,
+        0.5974903494048284,
+        0.48116013120891005,
+        0.2165213759890484,
+        0.43027473244799247,
+        0.005960252498322072,
+        -0.21713912165228788,
+        -0.08854948931817393,
+        0.08477178276951126,
+        -0.1270963425424845,
+        0.3138855671883075,
+        -0.3396480131730763,
+        0.25011533964763855,
+        -0.011525752268879825,
+        0.008062417521798046,
+        -0.5042442692651141,
+        0.20074230300492735,
+        0.37245474755716096,
+        -0.05385662347864123,
+        0.24467365475526548,
+        0.2704014204942148,
+        0.3772743548174056,
+        0.26558866637088085,
+        -0.019725424337657508,
+        0.17022738457508926,
+        0.18247912510314943
+      ],
+      [
+        0.25674247174059217,
+        0.44886098845674627,
+        -0.22080402699861082,
+        0.5088161129372702,
+        0.42972351662896535,
+        0.14963326720131442,
+        0.33043833816179513,
+        0.06568648966769625,
+        -0.19667823481352076,
+        -0.05268578788503205,
+        0.014470738721058004,
+        -0.1450203618349384,
+        0.29256931057326646,
+        -0.26745940758776837,
+        0.23217986804336938,
+        -0.026077846347856058,
+        0.0433266074591137,
+        -0.6014961508141526,
+        0.22512592353923222,
+        0.37749415521171714,
+        -0.13978071579746762,
+        0.2922974954316756,
+        0.2638268729233364,
+        0.24159298093280898,
+        0.2906719974636243,
+        -0.010688679137046218,
+        0.04990486504188498,
+        0.20935112560146857
+      ],
+      [
+        0.1372144062441692,
+        0.4246351743549525,
+        -0.23463025136455198,
+        0.5112190467257158,
+        0.39033566562253674,
+        0.18466270269507634,
+        0.3944629473505636,
+        0.09742698566223555,
+        -0.27018928605865883,
+        -0.005025272786682892,
+        0.07238892389475018,
+        -0.1877750160462928,
+        0.22380448336966238,
+        -0.3101837397911536,
+        0.1939427425753538,
+        0.050854659340863057,
+        0.0037069534062070136,
+        -0.5594505205367825,
+        0.2968308429908293,
+        0.40244245684807767,
+        -0.21992453128578845,
+        0.2705092789168493,
+        0.1639212809277131,
+        0.22961045671685987,
+        0.31460715273234435,
+        -0.1359656335937894,
+        0.17789051791444918,
+        0.10849206488165783
+      ],
+      [
+        0.2722931847591249,
+        0.3015458258921623,
+        -0.47200318922383633,
+        0.5430045798603628,
+        0.39124060440980285,
+        0.1674028731887111,
+        0.3205265031413887,
+        -0.11895892133364108,
+        -0.2616813853516291,
+        -0.061792460300248805,
+        0.1868701861396738,
+        -0.19207772406745832,
+        0.23794714864424935,
+        -0.2913633951161991,
+        0.2948874814240615,
+        -0.0019800113696293135,
+        0.15102841122098,
+        -0.5167913135315522,
+        0.31692541445182787,
+        0.25729944297312424,
+        0.01321530811930357,
+        0.22129328795131556,
+        0.2633114654383143,
+        0.34867562314223866,
+        0.23893103616791508,
+        -0.053266906004055814,
+        0.03660014412672448,
+        0.27085260665522043
+      ],
+      [
+        0.2446302800793743,
+        0.3263957537906445,
+        -0.43025027469005755,
+        0.5365508116152709,
+        0.4149554632885998,
+        0.12896461868909986,
+        0.31450504966469134,
+        -0.08358655822157604,
+        -0.25408318961192483,
+        -0.07922627037657815,
+        0.1410982209111584,
+        -0.19424674203869624,
+        0.24817965599595837,
+        -0.26370405770035177,
+        0.25133285491894614,
+        -0.0007234073664806771,
+        0.1391246048307654,
+        -0.5284153281026658,
+        0.2968881353472964,
+        0.27436508727938386,
+        0.0019169410359072942,
+        0.23903218987804048,
+        0.27667385346273127,
+        0.31740586711875834,
+        0.22988666334025692,
+        -0.04305250624882127,
+        -0.013107066622211571,
+        0.25612003721981813
+      ],
+      [
+        -0.343272629551003,
+        -0.5036856301967044,
+        0.2781935865566583,
+        -0.6518227171399356,
+        -0.41248095921892847,
+        -0.17797665474526572,
+        -0.5600353858262034,
+        -0.02953205451002001,
+        0.35991645514180187,
+        0.12041286468477884,
+        -0.32362941953432756,
+        0.029638989592633794,
+        -0.25582611838046737,
+        0.5512886275925108,
+        -0.17399270231545455,
+        -0.22637479853970113,
+        0.266915498768611,
+        0.3080391353590941,
+        -0.13819026000005855,
+        -0.3348376608761274,
+        0.2636446308482142,
+        -0.32209954973720395,
+        -0.13226781565426993,
+        -0.3472039459629191,
+        -0.5128972160595516,
+        0.45312771288456194,
+        -0.5278028089241317,
+        -0.009018491486084024
+      ],
+      [
+        0.18701560368189002,
+        0.3431910918867834,
+        -0.27287305628587855,
+        0.487120492311546,
+        0.398226709575624,
+        0.16909550175217158,
+        0.3232881534665373,
+        0.11512333266554185,
+        -0.19550589428792242,
+        -0.02708494116093405,
+        0.10794765044702558,
+        -0.15083731628537664,
+        0.2716651063134703,
+        -0.19426522742296654,
+        0.19473937839909894,
+        0.016981249141363813,
+        0.08306606055293182,
+        -0.5672990251437057,
+        0.24524148126686957,
+        0.31740889011155166,
+        -0.02303698402944847,
+        0.26366847783082986,
+        0.2156881838672326,
+        0.2166033341457947,
+        0.2301649714041378,
+        -0.01859098397270279,
+        0.001447036438141677,
+        0.16222947783051345
+      ],
+      [
+        0.20798785783111967,
+        0.2698334229418915,
+        -0.41831630694538924,
+        0.3814737204925127,
+        0.29859592673799995,
+        0.24025181908458312,
+        0.28278418367797303,
+        -0.013448501074990021,
+        -0.27139020516028045,
+        -0.039467639412081375,
+        0.2786790876286839,
+        -0.1940301201218796,
+        0.18786549117575857,
+        -0.2250823991404659,
+        0.2571191930297832,
+        0.01720261744151573,
+        0.13380311780640153,
+        -0.5531864146194927,
+        0.40225202213322714,
+        0.25086624839293864,
+        0.048526529775346855,
+        0.22721582397060916,
+        0.22206778759971965,
+        0.3006723824000047,
+        0.23663738321074793,
+        -0.07009093221661047,
+        0.12107946584345486,
+        0.1889467528291272
+      ]
+    ]
+  }
+}

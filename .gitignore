@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# Data (raw downloads are large, keep processed)
+data/raw/
+
+# Analysis intermediates
+analysis/models/*.pkl
+analysis/models/*.joblib
+
+# LaTeX build artifacts
+manuscript/*.aux
+manuscript/*.bbl
+manuscript/*.blg
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.lof
+manuscript/*.lot
+manuscript/*.fls
+manuscript/*.fdb_latexmk
+manuscript/*.synctex.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

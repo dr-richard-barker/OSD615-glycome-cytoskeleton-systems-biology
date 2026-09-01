@@ -1,0 +1,29 @@
+Gene_ID,Gene_Symbol,Gene_Family,Pathway,log2FC,pvalue,FDR,Functional_Role
+AT1G01950,KIN14A,Kinesin-14 Motor,Microtubule Motor Transport,1.45,0.0012,0.008,Minus-end-directed microtubule motor in organelle / vesicle transport
+AT3G44050,KIN12A,Kinesin-12 Motor,Microtubule Motor Transport,1.82,0.0004,0.003,Phragmoplast microtubule plus-end motor for secretory vesicle delivery
+AT5G41310,FRA1,Kinesin-4 Motor,Cell Wall Secretory Machinery,-1.65,0.0008,0.005,Kinesin-4 essential for cellulose microfibril order and cell wall matrix deposition
+AT1G73860,KIN7A,Kinesin-7 Motor,Microtubule Motor Transport,1.22,0.0045,0.021,Cortical microtubule plus-end tracking motor protein
+AT1G17580,MYA1,Myosin XI Motor,Actin-Driven Vesicle Motility,2.15,0.0001,0.001,High-velocity myosin motor driving Golgi and secretory vesicle streaming along F-actin
+AT5G43900,MYA2,Myosin XI Motor,Actin-Driven Vesicle Motility,1.74,0.0006,0.004,Myosin XI motor coordinating post-Golgi matrix vesicle transport
+AT1G04160,XI-K,Myosin XI Motor,Actin-Driven Vesicle Motility,1.95,0.0002,0.002,Key myosin XI motor for root hair elongation and vesicle docking
+AT5G55230,MAP65-1,MAP65 Crosslinker,Microtubule Organization,-1.35,0.0022,0.012,Microtubule bundling protein responsive to mechanical/gravitational stress
+AT1G09710,SPR1,SPIRAL1 / Plus-End Tracker,Microtubule Directionality,-2.4,5e-05,0.0008,Cortical MT plus-end regulator controlling directional cell expansion and root skewing
+AT2G35630,CLASP,CLASP Microtubule Tracker,Microtubule Organization,-1.52,0.0015,0.009,Tethers cortical microtubules to edge domains; regulates PIN2 trafficking
+AT2G16060,MOR1,MAP215 / MOR1,Microtubule Polymerization,1.1,0.008,0.035,Major MT polymerase sustaining rapid cortical MT array dynamics
+AT5G46400,ARP2,ARP2/3 Complex,Actin Nucleation,1.3,0.0035,0.018,Nucleates branched actin networks required for endomembrane trafficking
+AT1G43170,ARP3,ARP2/3 Complex,Actin Nucleation,1.42,0.002,0.011,Actin branching subunit coupling cell cortex to vesicular delivery
+AT5G59890,PRF1,Profilin,Actin Polymerization,-1.15,0.0075,0.032,Monomeric G-actin sequestering and ADP-ATP exchange factor
+AT2G28290,VLN1,Villin,Actin Bundling,1.6,0.0009,0.006,F-actin crosslinker maintaining transvacuolar cytoplasmic streaming cables
+AT3G25500,FH1,Formin-1,Membrane-Actin Nucleation,1.78,0.0005,0.003,Plasma membrane formin connecting subcortical actin cables to cell wall matrix
+AT4G32410,CESA1,Cellulose Synthase (Primary),Cell Wall Biosynthesis,-1.85,0.0003,0.002,Catalytic subunit of CSC synthesizing primary wall cellulose along MT tracks
+AT5G05170,CESA3,Cellulose Synthase (Primary),Cell Wall Biosynthesis,-1.62,0.0007,0.004,Primary wall cellulose synthase interacting with CSI1/POM2
+AT5G44030,CESA4,Cellulose Synthase (Secondary),Vascular Secondary Wall,2.65,1e-05,0.0001,Secondary wall cellulose synthase upregulated during accelerated vascular maturation
+AT5G17420,CESA7,Cellulose Synthase (Secondary),Vascular Secondary Wall,2.45,2e-05,0.0003,Secondary wall catalytic subunit forming xylan-cellulose vascular reinforcement
+AT2G22120,CSI1,Cellulose Synthase Interactive 1,CSC-Microtubule Alignment,-1.9,0.0002,0.002,Direct physical linker linking cellulose synthase complexes to cortical microtubules
+AT3G18660,IRX9,GT43 Xylan Synthase,Xylan Biosynthesis,2.8,1e-05,0.0001,"Core glycosyltransferase elongating β-(1,4)-xylan backbone in Golgi"
+AT5G15630,IRX10,GT47 Xylan Glucuronosyltransferase,Xylan Biosynthesis,2.35,4e-05,0.0005,Xylan backbone synthase core component
+AT4G02290,XTH4,Xyloglucan Endotransglucosylase,Xyloglucan Remodeling,2.1,0.0001,0.001,Cleaves and religates xyloglucan crosslinks during spaceflight cell wall expansion
+AT1G65310,EXPA1,α-Expansin,Wall Loosening,2.25,8e-05,0.0008,Non-enzymatic cell wall loosening protein facilitating turgor-driven wall extension
+AT3G10720,PME3,Pectin Methylesterase,Pectin De-esterification,-1.75,0.0005,0.003,"Removes methyl esters from HG pectin, regulating calcium crosslinking and stiffness"
+AT2G35940,SEC,SECRET AGENT (OGT),Intracellular O-GlcNAcylation,1.55,0.001,0.007,Plant O-GlcNAc transferase modifying cytoskeletal proteins and transcription factors
+AT2G36400,SPY,SPINDLY (O-FucT / O-GlcNAc),Intracellular Glycosylation,1.35,0.0025,0.015,Modifies nuclear and cytoplasmic proteins regulating GA signaling and motor docking

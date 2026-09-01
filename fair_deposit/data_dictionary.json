@@ -1,0 +1,102 @@
+{
+  "project": "OSD615-glycome-cytoskeleton-systems-biology",
+  "version": "1.0.0",
+  "datasets": {
+    "glycomics_matrix.csv": {
+      "description": "Continuous optical density (OD450) binding intensities of 155 CCRC monoclonal antibodies across 12 Arabidopsis root samples.",
+      "rows": 12,
+      "columns": 155,
+      "index": "Sample_Name (e.g. R7_roots, R11_roots)",
+      "variables": {
+        "mAbs_CCRC-M*": {
+          "type": "float",
+          "unit": "OD450 absorbance",
+          "description": "Enzyme-linked immunosorbent assay (ELISA) binding signal for CCRC glycan-directed monoclonal antibody."
+        }
+      }
+    },
+    "glycomics_metadata.csv": {
+      "description": "Sample annotations for the OSD-615 spaceflight experiment.",
+      "columns": {
+        "Sample_Name": {
+          "type": "string",
+          "description": "Unique identifier for biological root sample."
+        },
+        "Spaceflight": {
+          "type": "string",
+          "values": ["Ground", "Space"],
+          "description": "Experimental condition (ISS spaceflight vs KSC ground control)."
+        },
+        "Growth_Time": {
+          "type": "integer",
+          "unit": "days",
+          "values": [6, 11],
+          "description": "Harvest timepoint post-germination activation in Veggie hardware."
+        },
+        "Condition_Group": {
+          "type": "string",
+          "description": "Combined factor string (e.g., Space_11d, Ground_6d)."
+        }
+      }
+    },
+    "glycan_class_annotations.csv": {
+      "description": "Annotation mapping for all 155 monoclonal antibodies.",
+      "columns": {
+        "mAb": {
+          "type": "string",
+          "description": "Monoclonal antibody accession identifier (e.g. CCRC-M138, JIM13)."
+        },
+        "Glycan_Class": {
+          "type": "string",
+          "description": "Carbohydrate class (e.g. Xylan / Arabinoxylan, Xyloglucan, AGPs, HG Pectin)."
+        },
+        "Target_Epitope": {
+          "type": "string",
+          "description": "Chemical structure and linkage of recognized glycan epitope."
+        },
+        "Polysaccharide_Clade": {
+          "type": "string",
+          "values": ["Hemicellulose", "Pectin", "Glycoprotein", "Other"],
+          "description": "Broad cell wall polysaccharide clade."
+        }
+      }
+    },
+    "rnaseq_cytoskeleton_degs.csv": {
+      "description": "Curated differential expression values for cytoskeletal motors and matrix enzymes.",
+      "columns": {
+        "Gene_ID": {
+          "type": "string",
+          "description": "Arabidopsis TAIR10 locus identifier (e.g. AT1G17580)."
+        },
+        "Gene_Symbol": {
+          "type": "string",
+          "description": "Standard gene symbol (e.g. MYA1, KIN12A, CESA4, SEC)."
+        },
+        "Gene_Family": {
+          "type": "string",
+          "description": "Protein family classification."
+        },
+        "Pathway": {
+          "type": "string",
+          "description": "Functional pathway assignment."
+        },
+        "log2FC": {
+          "type": "float",
+          "description": "Log2 fold change in spaceflight versus ground control."
+        },
+        "pvalue": {
+          "type": "float",
+          "description": "Statistical p-value."
+        },
+        "FDR": {
+          "type": "float",
+          "description": "Benjamini-Hochberg False Discovery Rate adjusted p-value."
+        },
+        "Functional_Role": {
+          "type": "string",
+          "description": "Mechanistic function in cytoskeletal transport or cell wall synthesis."
+        }
+      }
+    }
+  }
+}

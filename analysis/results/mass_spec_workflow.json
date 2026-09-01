@@ -1,0 +1,92 @@
+{
+  "workflows": [
+    {
+      "id": "oglcnac_ms",
+      "title": "Intracellular O-GlcNAc Mass Spectrometry on Motor Complexes",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Protein Extraction & Immunoprecipitation",
+          "details": "Native lysis of root or cell cultures to preserve cytoskeletal complexes (e.g. Myosin XI, Dynactin p150Glued, Kinesin-4/12). OGA inhibitor (Thiamet-G) added to prevent post-lysis deglycosylation."
+        },
+        {
+          "step": 2,
+          "name": "Chemoenzymatic or Lectin Enrichment",
+          "details": "Concanavalin A (ConA) or succinylated Wheat Germ Agglutinin (sWGA) affinity chromatography, or metabolic labeling with UDP-GalNAz followed by copper-free click chemistry biotinylation."
+        },
+        {
+          "step": 3,
+          "name": "Protease Digestion (Trypsin / Glu-C)",
+          "details": "Orthogonal protease digestion to produce ideal peptide lengths (8-25 amino acids) surrounding Ser/Thr O-GlcNAc sites in motor neck and tail domains."
+        },
+        {
+          "step": 4,
+          "name": "Stepped HCD-EThcD Mass Spectrometry",
+          "details": "Electron-Transfer/Higher-Energy Collision Dissociation (EThcD) fragmentation preserves the labile glycosidic bond (GlcNAc oxonium ion at m/z 204.08) while fragmenting peptide backbone c/z ions for unambiguous site localization."
+        },
+        {
+          "step": 5,
+          "name": "Database Search & Yin-Yang Phosphorylation Mapping",
+          "details": "Byonic and O-GlcNAcAtlas spectral matching. Evaluation of reciprocal O-GlcNAcylation vs phosphorylation switches regulating motor processivity."
+        }
+      ]
+    },
+    {
+      "id": "ccrc_glycomics",
+      "title": "CCRC High-Throughput Glycome Profiling (OSD-615)",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Alcohol Insoluble Residue (AIR) Preparation",
+          "details": "Root tissues from ISS spaceflight and KSC ground controls are homogenized in liquid N2 and washed with ethanol, chloroform, and acetone to isolate cell wall structural matrix."
+        },
+        {
+          "step": 2,
+          "name": "Sequential Chemical Fractionation",
+          "details": "Six-stage chemical extraction: 50mM CDTA (pectin) \u2192 50mM Na2CO3 (pectin) \u2192 1M KOH (loosely bound hemicellulose) \u2192 4M KOH (tightly bound hemicellulose) \u2192 Chlorite (lignin) \u2192 4M KOH post-chlorite."
+        },
+        {
+          "step": 3,
+          "name": "Dialysis, Lyophilization & 384-Well Coating",
+          "details": "Extracts are dialyzed exhaustively against water to remove extraction salts and coated at standardized carbohydrate concentrations onto 384-well microplates."
+        },
+        {
+          "step": 4,
+          "name": "Robotic ELISA with 155 Monoclonal mAbs",
+          "details": "Automated ELISA workstation screens the extract against 155 glycan-directed monoclonal antibodies targeting xyloglucan, xylan, HG, RG-I, and AGP epitopes."
+        },
+        {
+          "step": 5,
+          "name": "Optical Density Quantitation & Heatmap Generation",
+          "details": "OD450 optical absorbance quantifies relative epitope abundance across ground and microgravity treatments."
+        }
+      ]
+    },
+    {
+      "id": "systems_integration",
+      "title": "Systems Biology Multi-Omics & Dynamic Simulation",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Data Curation & Harmonization",
+          "details": "Integration of OSD-615 glycomics with companion Veggie RNA-Seq (OSD-218/217) and metadata."
+        },
+        {
+          "step": 2,
+          "name": "Sparse PLS & Factorization",
+          "details": "mixOmics sPLS-DA and Bayesian MOFA2 factorization to find shared variance across transcripts and wall epitopes."
+        },
+        {
+          "step": 3,
+          "name": "Interactome Modeling (STRING / AraNet)",
+          "details": "Network topology connecting differentially expressed kinesins/myosins with matrix synthases."
+        },
+        {
+          "step": 4,
+          "name": "Dynamic Vesicle Transport Simulation",
+          "details": "Stochastic Monte Carlo modeling of motor-driven secretory vesicle flux to cell plate and cell wall in microgravity."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+\section{Introduction}
+
+Plants evolved under an invariant 1$g$ gravitational vector on Earth, utilizing gravity as a primary cue for directional growth, mechanical reinforcement, and cellular morphogenesis \cite{Blancaflor2016, Gilroy2016}. In the microgravity environment of low Earth orbit (LEO), such as aboard the International Space Station (ISS), the absence of sedimentation forces fundamentally disrupts cellular mechanics, triggering extensive transcriptional reprogramming, cytoskeletal reorganization, and cell wall remodeling \cite{Ferl2015, Paul2017, Barker2020}. 
+
+The plant cell wall is a dynamic, complex extracellular matrix composed of cellulose microfibrils embedded in an amorphous ground substance of non-cellulosic matrix polysaccharides (xyloglucans, xylans, mannans, pectins) and structural glycoproteins, including arabinogalactan proteins (AGPs) and extensins \cite{Cosgrove2005, Somerville2004}. In growing root tissues, cell wall loosening, matrix synthesis, and directional expansion require continuous physical coordination between the intracellular cytoskeleton and extracellular polysaccharide deposition \cite{Paredez2006, Gutierrez2009}.
+
+\subsection{The Cytoskeleton--Secretory Vesicle Transport Nexus}
+
+In plant cells, unlike animal cells where long-range organelle transport relies predominantly on microtubule-dependent kinesin and dynein motors, long-range cytoplasmic streaming and post-Golgi vesicle trafficking are driven primarily by class XI myosin motors moving along filamentous actin (F-actin) cables \cite{Sparkes2009, Peremyslov2010}. Concurrently, cortical microtubules (CMTs) directly govern the trajectory and insertion of cellulose synthase complexes (CSCs) into the plasma membrane via Cellulose Synthase Interactive 1 (CSI1/POM2) linkers \cite{Bringmann2012, Li2012}. Furthermore, kinesin motor proteins (such as Kinesin-4/FRA1 and Kinesin-12/PAKRP1) operate along microtubule arrays during cell division, phragmoplast expansion, and secondary cell wall patterning, guiding secretory vesicles containing matrix polysaccharides and wall-modifying enzymes to target membrane domains \cite{Zhong2002, Lee2007}.
+
+When plants experience microgravity, cortical microtubule arrays frequently lose transverse alignment and become disoriented, while actin filaments exhibit altered bundling and aggregation \cite{Sievers1991, Blancaflor2014}. This cytoskeletal disruption impairs the directional delivery of Golgi-derived matrix vesicles, resulting in aberrant cell wall assembly, altered wall elasticity, and root growth skewing \cite{Nakashima2023, Califar2020}.
+
+\subsection{Coupling Across Biochemical Axes: Intracellular Glycosylation vs. Cell-Surface Glycoproteomics}
+
+The functional connection between glycans and cytoskeletal machinery operates across two primary biochemical axes:
+\begin{enumerate}
+    \item \textbf{Direct Intracellular Glycosylation (O-GlcNAcylation):} Unlike classic cell-surface complex $N$- and $O$-glycans, dynamic intracellular $O$-linked $\beta$-$N$-acetylglucosamine ($O$-GlcNAc) directly modifies nuclear and cytosolic proteins, competing with Ser/Thr phosphorylation \cite{Hart2011, Torres1984}. Actin monomers, myosins, and regulatory proteins (such as $\alpha$-actinin, fascin, and cofilin) undergo dynamic $O$-GlcNAcylation, regulating actin polymerization, stress fiber assembly, and motor kinetics \cite{Haltiwanger1992, Wells2002}. Similarly, tubulin, dynein intermediate/light chains, dynactin p150$^{\text{Glued}}$, and kinesin stalk domains are targets of $O$-GlcNAc transferase (OGT) in animal systems, and homologous enzymes (SECRET AGENT/SEC and SPINDLY/SPY) in plants \cite{Hart2007, Olszewski2010, Steiner2012}.
+    \item \textbf{Secretory and Extracellular Glycome Coupling:} Secretory vesicles transport newly synthesized matrix polysaccharides (xyloglucans, xylans, pectins) and $O$-glycoproteins (AGPs) from the Golgi apparatus to the apoplast. Cell-surface glycoproteins (e.g., AGPs, wall-associated kinases, and plasma membrane receptor-like kinases) physically interact with the extracellular matrix, transmitting mechanical forces across the plasma membrane to subcortical actin cables and cortical microtubules \cite{Showalter2001, Seifert2007, Humphrey2007}.
+\end{enumerate}
+
+\subsection{The Foundational OSD-615 (APEX-03-1) Spaceflight Experiment}
+
+To systematically map the consequences of microgravity on plant cell wall architecture, the Advanced Plant EXperiment 03-1 (APEX-03-1 / NASA OSDR accession **OSD-615**) was flown aboard the ISS in the Vegetable Production System (Veggie) facility \cite{Nakashima2023}. Using high-throughput glycome profiling with a comprehensive library of ~155 glycan-directed monoclonal antibodies (mAbs) developed at the Complex Carbohydrate Research Center (CCRC), Nakashima et al. demonstrated that microgravity accelerates secondary cell wall formation in \textit{Arabidopsis thaliana} root steles and selectively alters the abundance and extractability of xylan, xyloglucan, and arabinogalactan epitopes \cite{Nakashima2023, Pattathil2010}.
+
+\subsection{Study Objectives}
+
+Despite these pioneering discoveries, the molecular pathways linking the altered OSD-615 glycomics profiles to the underlying cytoskeletal transport networks have remained largely correlative. In this study, we bridge this gap by establishing an open-science systems biology framework that:
+\begin{itemize}
+    \item Integrates OSD-615 continuous glycomics matrices with companion spaceflight transcriptomics (APEX-03-2 / OSD-218 and OSD-217) using supervised sparse PLS (mixOmics) and WGCNA co-expression modeling;
+    \item Reconstructs a high-confidence protein--protein interaction (PPI) network coupling motor proteins, cytoskeletal regulators, and carbohydrate-active enzymes (CAZy);
+    \item Implements dynamic stochastic Monte Carlo simulations to quantify how microgravity-induced cytoskeletal perturbation alters post-Golgi vesicle transit times and wall delivery flux;
+    \item Provides an exhaustive review of mass spectrometry workflows (EThcD, lectin affinity, click-chemistry) for mapping $O$-GlcNAcylation on motor complexes;
+    \item Deploys a FAIR-compliant, interactive 10-tab web dashboard on GitHub Pages for community exploration and model simulation.
+\end{itemize}
