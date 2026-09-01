@@ -176,50 +176,34 @@ with PdfPages(pdf_out) as pdf:
     pdf.savefig(fig, bbox_inches='tight')
     plt.close()
 
-    # ---------------- PAGE 4: Multi-Omics sPLS Integration & WGCNA (Figures 4 & 5) ----------------
+    # ---------------- PAGE 4: Multi-Omics sPLS Integration & Expanded Compartmental Interactome ----------------
     fig = plt.figure(figsize=(8.5, 11), dpi=300)
     ax = create_page(fig)
     
-    fig.text(0.08, 0.90, "4. MULTI-OMICS sPLS INTEGRATION & SYSTEMS INTERACTOME", fontsize=11, fontweight='bold', color='#004D73', fontfamily='sans-serif')
+    fig.text(0.08, 0.90, "4. MULTI-OMICS sPLS INTEGRATION & SUBCELLULAR INTERACTOME", fontsize=11, fontweight='bold', color='#004D73', fontfamily='sans-serif')
     
     res2_text = (
-        "Sparse PLS integration linked xylan-directed antibodies (CCRC-M138, CCRC-M140) and non-fucosylated xyloglucans directly with motor transcripts "
-        "and secondary wall synthesis hubs (Fig. 4a). In the Correlation Circle Plot, xylan mAbs co-projected closely along positive Dimension 1 with IRX9, CESA4, "
-        "MYA1, and KIN12A, while primary wall markers (CESA1, CSI1) and plus-end MT regulator SPR1 projected in opposition.\n\n"
-        "The reconstructed Protein-Protein Interaction (PPI) network (28 nodes, 33 high-confidence edges; Fig. 5a) resolved four interconnected topological clusters: "
-        "(1) Secondary Wall / Xylan Hub; (2) Actin-Myosin Secretory Cable; (3) Cortical MT-CSC Guide Complex; and (4) Intracellular Glycosylation Axis (SEC/SPY). "
-        "WGCNA co-expression modeling confirmed that the Turquoise Module (Secondary Wall / Xylan) correlated strongly with xylan epitope abundance (r = +0.86, p = 0.0003; Fig. 5b)."
+        "Sparse PLS integration linked xylan-directed antibodies (CCRC-M138, CCRC-M140) directly with motor transcripts and secondary wall synthesis hubs (Fig. 4). "
+        "In the Correlation Circle Plot, xylan mAbs co-projected closely along positive Dimension 1 with IRX9, CESA4, MYA1, and KIN12A, while primary wall markers "
+        "(CESA1, CSI1) and plus-end MT regulator SPR1 projected in opposition.\n\n"
+        "To establish the biochemical flow linking cytoskeletal motility to apoplastic matrix deposition, we reconstructed a multi-scale subcellular compartmental interactome "
+        "(31 functional nodes across 5 spatial zones; Fig. 5). The map delineates: (1) Golgi lumen synthesis (IRX9/10 xylan elongation; CSLC4; GAUT1); (2) Subcortical actin-myosin "
+        "streaming cables (MYA1/2, XI-K, ACT7, VLN1, PRF1, ARP2/3, FH1) coupled to nucleocytoplasmic O-GlcNAcylation (SEC, SPY); (3) Cortical MT arrays (SPR1, MAP65-1, CLASP, KIN12A/14A, FRA1); "
+        "(4) Plasma membrane CesA rosettes (CESA1/3/4/7) anchored via CSI1/POM2; and (5) Apoplastic matrix modifiers (XTH4, EXPA1, PME3)."
     )
-    fig.text(0.08, 0.74, res2_text, fontsize=8.0, color='#222222', wrap=True, linespacing=1.35)
+    fig.text(0.08, 0.73, res2_text, fontsize=7.8, color='#222222', wrap=True, linespacing=1.35)
 
-    # Embed Figure 4 (Circle + CIM)
-    fig4a_path = os.path.join(figures_dir, '04_multiomics_correlation_circle.png')
-    fig4b_path = os.path.join(figures_dir, '04_multiomics_cim_heatmap.png')
-    if os.path.exists(fig4a_path) and os.path.exists(fig4b_path):
-        ax_img4a = fig.add_axes([0.08, 0.44, 0.41, 0.27])
-        ax_img4a.imshow(mpimg.imread(fig4a_path))
-        ax_img4a.axis('off')
-        
-        ax_img4b = fig.add_axes([0.51, 0.44, 0.41, 0.27])
-        ax_img4b.imshow(mpimg.imread(fig4b_path))
-        ax_img4b.axis('off')
+    # Embed Figure 5 (Full-width Subcellular Compartmental Interactome & Reaction Matrix)
+    fig5_path = os.path.join(figures_dir, '05_cytoskeleton_glycome_interactome.png')
+    if os.path.exists(fig5_path):
+        ax_img5 = fig.add_axes([0.08, 0.16, 0.84, 0.55])
+        ax_img5.imshow(mpimg.imread(fig5_path))
+        ax_img5.axis('off')
 
-    # Embed Figure 5 (Interactome + WGCNA)
-    fig5a_path = os.path.join(figures_dir, '05_cytoskeleton_glycome_interactome.png')
-    fig5b_path = os.path.join(figures_dir, '06_wgcna_module_trait_relationships.png')
-    if os.path.exists(fig5a_path) and os.path.exists(fig5b_path):
-        ax_img5a = fig.add_axes([0.08, 0.12, 0.41, 0.27])
-        ax_img5a.imshow(mpimg.imread(fig5a_path))
-        ax_img5a.axis('off')
-        
-        ax_img5b = fig.add_axes([0.51, 0.12, 0.41, 0.27])
-        ax_img5b.imshow(mpimg.imread(fig5b_path))
-        ax_img5b.axis('off')
-
-    cap45 = ("Figure 4-5 | Multi-Omics Integration and Systems Interactome Topology. "
-             "Fig. 4: (a) sPLS Correlation Circle Plot; (b) Clustered Image Map (CIM) cross-correlations. "
-             "Fig. 5: (a) Cytoskeleton-glycome functional interactome; (b) WGCNA module-trait relationship heatmap.")
-    fig.text(0.08, 0.08, cap45, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
+    cap45 = ("Figure 5 | Subcellular Compartmental Systems Interactome and Catalytic Reaction Catalog. "
+             "(A) 31-node interactome partitioned across Golgi, Cytoplasm, Cortical MTs, Plasma Membrane, and Apoplastic Wall. "
+             "(B) Catalytic reactions, donor/acceptor substrates, products made, and spaceflight response.")
+    fig.text(0.08, 0.09, cap45, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
 
     fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "4", fontsize=8, color='#888888', ha='right', fontweight='bold')

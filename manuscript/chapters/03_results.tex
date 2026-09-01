@@ -68,25 +68,34 @@ The Clustered Image Map (Fig.~\ref{fig:integration}b) identified significant pos
     \item O-GlcNAc transferase \textit{SEC} $\longleftrightarrow$ Myosin \textit{MYA1} ($r = +0.82$) and Kinesin \textit{KIN14A} ($r = +0.77$).
 \end{itemize}
 
-\subsection{Interactome Topology and WGCNA Module--Trait Relationships}
+\subsection{Subcellular Compartmental Interactome, Catalytic Reactions, and Module--Trait Coupling}
 
-The reconstructed Protein--Protein Interaction network (28 nodes, 33 high-confidence edges; Fig.~\ref{fig:network}a) identified four interconnected topological clusters:
-\begin{enumerate}
-    \item \textbf{Vascular Secondary Wall Hub:} Anchored by CESA4, CESA7, IRX9, and IRX10 (betweenness centrality = 0.42);
-    \item \textbf{Actin-Myosin Secretory Cable:} Comprising MYA1, MYA2, XI-K, VLN1, and ARP2/3 complexes;
-    \item \textbf{Cortical Microtubule--CSC Guide Complex:} Mediated by CSI1/POM2 bridging cortical MTs (MAP65, SPR1, CLASP) to primary CESAs;
-    \item \textbf{Intracellular Glycosylation Regulatory Axis:} SEC and SPY directly linking to motor subunits and MT plus-end trackers.
-\end{enumerate}
+To delineate the precise biochemical flow connecting intracellular cytoskeletal dynamics to extracellular polysaccharide deposition, we reconstructed a multi-scale subcellular compartmental interactome mapping 31 functional nodes across five distinct spatial zones (Fig.~\ref{fig:network}a,b):
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/05_cytoskeleton_glycome_interactome.png}
-\includegraphics[width=0.48\textwidth]{figures/06_wgcna_module_trait_relationships.png}
-\caption{\textbf{Systems Interactome and WGCNA Module--Trait Correlations.} \textbf{a}, Cytoskeleton--glycome functional PPI network. \textbf{b}, WGCNA Module--Trait correlation matrix between co-expression eigengenes and OSD-615 glycan class vectors.}
+\includegraphics[width=0.98\textwidth]{figures/05_cytoskeleton_glycome_interactome.png}
+\caption{\textbf{Subcellular Compartmental Systems Interactome and Catalytic Reaction Catalog.} \textbf{a}, Reconstructed spatial interactome partitioned into five distinct cellular compartments: (1) Golgi \& Trans-Golgi Network (TGN), (2) Cytoplasm \& Subcortical Actin Cables, (3) Cortical Microtubule Array, (4) Plasma Membrane, and (5) Apoplastic Cell Wall Matrix. Node colors indicate spaceflight $\log_2\text{FC}$ (red: upregulated $> +1.0$; teal: downregulated $< -0.5$; gold: intermediate). Edge widths denote interaction confidence scores ($0.70 - 0.99$). \textbf{b}, Catalytic reactions, donor/acceptor substrates required, products made, and physiological roles of key regulatory hubs.}
 \label{fig:network}
 \end{figure*}
 
-WGCNA co-expression modeling resolved four gene modules (Fig.~\ref{fig:network}b). The \textit{Turquoise Module} (Vascular Secondary Wall / Xylan) exhibited a strong positive correlation with xylan epitope abundance ($r = +0.86$, $p = 0.0003$). The \textit{Blue Module} (Actin-Myosin Secretory Streaming) correlated positively with non-fucosylated xyloglucans ($r = +0.78$, $p = 0.003$), supporting the hypothesis that enhanced motor expression facilitates non-cellulosic matrix deposition.
+\begin{enumerate}
+    \item \textbf{Golgi and Trans-Golgi Network (TGN) Synthesis Hub:} Matrix synthases (\textit{IRX9}, \textit{IRX10}, \textit{CSLC4}, \textit{GAUT1}, \textit{MUR3}) reside within the Golgi lumen, utilizing cytosolic nucleotide sugars (UDP-$\alpha$-D-xylose, UDP-$\alpha$-D-glucose, UDP-D-galacturonic acid, UDP-D-galactose) as donor substrates to assemble non-cellulosic polysaccharides. Specifically, the \textit{IRX9/IRX10} core complex catalyses $\beta$-(1,4)-xylosyl transfer, elongating xylan backbones that are packaged into post-Golgi secretory vesicles.
+    \item \textbf{Cytoplasmic Streaming and Actin Cable Assembly:} Class XI myosins (\textit{MYA1}, $\log_2\text{FC} = +2.15$; \textit{MYA2}, $\log_2\text{FC} = +1.74$; \textit{XI-K}, $\log_2\text{FC} = +1.95$) hydrolyze ATP (generating $\sim 5-7~\text{pN}$ mechanical force) to drive processive vesicle motility along filamentous actin (\textit{ACT7}) cables. Actin cable polarity and elongation are sustained by profilin (\textit{PRF1}) G-actin ADP/ATP nucleotide exchange, formin (\textit{FH1}) processive nucleation, and villin (\textit{VLN1}) calcium-independent bundling.
+    \item \textbf{Intracellular Glycosylation Axis ($O$-GlcNAc / $O$-Fucose):} The nucleocytoplasmic glycosyltransferases \textit{SEC} (EC 2.4.1.255) and \textit{SPINDLY} (\textit{SPY}) transfer $N$-acetylglucosamine from UDP-GlcNAc and fucose from GDP-Fucose onto serine/threonine residues of motor heads (\textit{MYA1}, \textit{KIN14A}) and MT bundlers (\textit{MAP65-1}), modulating ATPase kinetics and track binding affinity under spaceflight stress.
+    \item \textbf{Cortical Microtubule Lattice and Kinesin Motors:} Microtubule plus-end steerers (\textit{SPR1}, \textit{CLASP}, \textit{MOR1}) and minus-end crosslinkers (\textit{MAP65-1}, \textit{KIN14A}) utilize GTP-$\alpha/\beta$-tubulin heterodimers to maintain a parallel transverse array along the inner cell cortex. In microgravity, severe transcriptional repression of \textit{SPR1} ($-2.40~\log_2\text{FC}$) and \textit{MAP65-1} ($-1.35~\log_2\text{FC}$) destabilizes array alignment.
+    \item \textbf{Plasma Membrane CSCs and Guide Linkers:} Cellulose Synthase Interactive 1 (\textit{CSI1/POM2}) physically tethers catalytic rosette complexes (\textit{CESA1/3} for primary wall, \textit{CESA4/7} for secondary wall) to cortical MTs, converting cytosolic UDP-glucose into linear crystalline $\beta$-(1,4)-glucan microfibrils.
+    \item \textbf{Apoplastic Cell Wall Matrix Assembly and Loosening:} Secreted xyloglucan endotransglucosylase/hydrolases (\textit{XTH4}) and expansins (\textit{EXPA1}) cleave and re-ligate matrix tethers in the acidic apoplast (pH 5.0–5.5), facilitating turgor-driven matrix remodeling, while pectin methylesterases (\textit{PME3}) remove methyl esters from homogalacturonans to regulate calcium-mediated gel crosslinking.
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/06_wgcna_module_trait_relationships.png}
+\caption{\textbf{WGCNA Module--Trait Correlation Matrix.} Correlation coefficients ($r$) and significance ($p$-values) between co-expression eigengenes and OSD-615 glycan class vectors across 12 root samples.}
+\label{fig:wgcna}
+\end{figure}
+
+WGCNA co-expression modeling resolved four gene modules (Fig.~\ref{fig:wgcna}). The \textit{Turquoise Module} (Vascular Secondary Wall / Xylan) exhibited a strong positive correlation with xylan epitope abundance ($r = +0.86$, $p = 0.0003$). The \textit{Blue Module} (Actin-Myosin Secretory Streaming) correlated positively with non-fucosylated xyloglucans ($r = +0.78$, $p = 0.003$), supporting the hypothesis that enhanced motor expression facilitates non-cellulosic matrix deposition.
 
 \subsection{Dynamic Transport Simulation Quantifies Vesicle Delivery Deficits in Space}
 

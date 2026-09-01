@@ -3,305 +3,16 @@
     "nodes": [
       {
         "data": {
-          "id": "KIN14A",
-          "label": "KIN14A",
-          "gene_id": "AT1G01950",
-          "gene_family": "Kinesin-14 Motor",
-          "pathway": "Microtubule Motor Transport",
-          "log2FC": 1.45,
-          "pvalue": 0.0012,
-          "FDR": 0.008,
-          "degree": 2,
-          "betweenness": 0.0,
-          "role": "Minus-end-directed microtubule motor in organelle / vesicle transport",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "KIN12A",
-          "label": "KIN12A",
-          "gene_id": "AT3G44050",
-          "gene_family": "Kinesin-12 Motor",
-          "pathway": "Microtubule Motor Transport",
-          "log2FC": 1.82,
-          "pvalue": 0.0004,
-          "FDR": 0.003,
-          "degree": 1,
-          "betweenness": 0.0,
-          "role": "Phragmoplast microtubule plus-end motor for secretory vesicle delivery",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "FRA1",
-          "label": "FRA1",
-          "gene_id": "AT5G41310",
-          "gene_family": "Kinesin-4 Motor",
-          "pathway": "Cell Wall Secretory Machinery",
-          "log2FC": -1.65,
-          "pvalue": 0.0008,
-          "FDR": 0.005,
-          "degree": 2,
-          "betweenness": 0.071,
-          "role": "Kinesin-4 essential for cellulose microfibril order and cell wall matrix deposition",
-          "color": "#2F5985"
-        }
-      },
-      {
-        "data": {
-          "id": "KIN7A",
-          "label": "KIN7A",
-          "gene_id": "AT1G73860",
-          "gene_family": "Kinesin-7 Motor",
-          "pathway": "Microtubule Motor Transport",
-          "log2FC": 1.22,
-          "pvalue": 0.0045,
-          "FDR": 0.021,
-          "degree": 1,
-          "betweenness": 0.0,
-          "role": "Cortical microtubule plus-end tracking motor protein",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "MYA1",
-          "label": "MYA1",
-          "gene_id": "AT1G17580",
-          "gene_family": "Myosin XI Motor",
-          "pathway": "Actin-Driven Vesicle Motility",
-          "log2FC": 2.15,
-          "pvalue": 0.0001,
-          "FDR": 0.001,
-          "degree": 3,
-          "betweenness": 0.416,
-          "role": "High-velocity myosin motor driving Golgi and secretory vesicle streaming along F-actin",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "MYA2",
-          "label": "MYA2",
-          "gene_id": "AT5G43900",
-          "gene_family": "Myosin XI Motor",
-          "pathway": "Actin-Driven Vesicle Motility",
-          "log2FC": 1.74,
-          "pvalue": 0.0006,
-          "FDR": 0.004,
-          "degree": 2,
-          "betweenness": 0.313,
-          "role": "Myosin XI motor coordinating post-Golgi matrix vesicle transport",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "XI-K",
-          "label": "XI-K",
-          "gene_id": "AT1G04160",
-          "gene_family": "Myosin XI Motor",
-          "pathway": "Actin-Driven Vesicle Motility",
-          "log2FC": 1.95,
-          "pvalue": 0.0002,
-          "FDR": 0.002,
-          "degree": 1,
-          "betweenness": 0.0,
-          "role": "Key myosin XI motor for root hair elongation and vesicle docking",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "MAP65-1",
-          "label": "MAP65-1",
-          "gene_id": "AT5G55230",
-          "gene_family": "MAP65 Crosslinker",
-          "pathway": "Microtubule Organization",
-          "log2FC": -1.35,
-          "pvalue": 0.0022,
-          "FDR": 0.012,
-          "degree": 4,
-          "betweenness": 0.142,
-          "role": "Microtubule bundling protein responsive to mechanical/gravitational stress",
-          "color": "#2F5985"
-        }
-      },
-      {
-        "data": {
-          "id": "SPR1",
-          "label": "SPR1",
-          "gene_id": "AT1G09710",
-          "gene_family": "SPIRAL1 / Plus-End Tracker",
-          "pathway": "Microtubule Directionality",
-          "log2FC": -2.4,
-          "pvalue": 5e-05,
-          "FDR": 0.0008,
-          "degree": 4,
-          "betweenness": 0.179,
-          "role": "Cortical MT plus-end regulator controlling directional cell expansion and root skewing",
-          "color": "#2F5985"
-        }
-      },
-      {
-        "data": {
-          "id": "CLASP",
-          "label": "CLASP",
-          "gene_id": "AT2G35630",
-          "gene_family": "CLASP Microtubule Tracker",
-          "pathway": "Microtubule Organization",
-          "log2FC": -1.52,
-          "pvalue": 0.0015,
-          "FDR": 0.009,
-          "degree": 3,
-          "betweenness": 0.091,
-          "role": "Tethers cortical microtubules to edge domains; regulates PIN2 trafficking",
-          "color": "#2F5985"
-        }
-      },
-      {
-        "data": {
-          "id": "MOR1",
-          "label": "MOR1",
-          "gene_id": "AT2G16060",
-          "gene_family": "MAP215 / MOR1",
-          "pathway": "Microtubule Polymerization",
-          "log2FC": 1.1,
-          "pvalue": 0.008,
-          "FDR": 0.035,
-          "degree": 1,
-          "betweenness": 0.0,
-          "role": "Major MT polymerase sustaining rapid cortical MT array dynamics",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "ARP2",
-          "label": "ARP2",
-          "gene_id": "AT5G46400",
-          "gene_family": "ARP2/3 Complex",
-          "pathway": "Actin Nucleation",
-          "log2FC": 1.3,
-          "pvalue": 0.0035,
-          "FDR": 0.018,
-          "degree": 2,
-          "betweenness": 0.0,
-          "role": "Nucleates branched actin networks required for endomembrane trafficking",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "ARP3",
-          "label": "ARP3",
-          "gene_id": "AT1G43170",
-          "gene_family": "ARP2/3 Complex",
-          "pathway": "Actin Nucleation",
-          "log2FC": 1.42,
-          "pvalue": 0.002,
-          "FDR": 0.011,
-          "degree": 2,
-          "betweenness": 0.0,
-          "role": "Actin branching subunit coupling cell cortex to vesicular delivery",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "PRF1",
-          "label": "PRF1",
-          "gene_id": "AT5G59890",
-          "gene_family": "Profilin",
-          "pathway": "Actin Polymerization",
-          "log2FC": -1.15,
-          "pvalue": 0.0075,
-          "FDR": 0.032,
-          "degree": 2,
-          "betweenness": 0.205,
-          "role": "Monomeric G-actin sequestering and ADP-ATP exchange factor",
-          "color": "#2F5985"
-        }
-      },
-      {
-        "data": {
-          "id": "VLN1",
-          "label": "VLN1",
-          "gene_id": "AT2G28290",
-          "gene_family": "Villin",
-          "pathway": "Actin Bundling",
-          "log2FC": 1.6,
-          "pvalue": 0.0009,
-          "FDR": 0.006,
-          "degree": 2,
-          "betweenness": 0.262,
-          "role": "F-actin crosslinker maintaining transvacuolar cytoplasmic streaming cables",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "FH1",
-          "label": "FH1",
-          "gene_id": "AT3G25500",
-          "gene_family": "Formin-1",
-          "pathway": "Membrane-Actin Nucleation",
-          "log2FC": 1.78,
-          "pvalue": 0.0005,
-          "FDR": 0.003,
-          "degree": 3,
-          "betweenness": 0.142,
-          "role": "Plasma membrane formin connecting subcortical actin cables to cell wall matrix",
-          "color": "#E85D50"
-        }
-      },
-      {
-        "data": {
-          "id": "CESA1",
-          "label": "CESA1",
-          "gene_id": "AT4G32410",
-          "gene_family": "Cellulose Synthase (Primary)",
-          "pathway": "Cell Wall Biosynthesis",
-          "log2FC": -1.85,
-          "pvalue": 0.0003,
-          "FDR": 0.002,
-          "degree": 3,
-          "betweenness": 0.205,
-          "role": "Catalytic subunit of CSC synthesizing primary wall cellulose along MT tracks",
-          "color": "#2F5985"
-        }
-      },
-      {
-        "data": {
-          "id": "CESA3",
-          "label": "CESA3",
-          "gene_id": "AT5G05170",
-          "gene_family": "Cellulose Synthase (Primary)",
-          "pathway": "Cell Wall Biosynthesis",
-          "log2FC": -1.62,
-          "pvalue": 0.0007,
-          "FDR": 0.004,
-          "degree": 2,
-          "betweenness": 0.0,
-          "role": "Primary wall cellulose synthase interacting with CSI1/POM2",
-          "color": "#2F5985"
-        }
-      },
-      {
-        "data": {
           "id": "CESA4",
           "label": "CESA4",
-          "gene_id": "AT5G44030",
-          "gene_family": "Cellulose Synthase (Secondary)",
-          "pathway": "Vascular Secondary Wall",
-          "log2FC": 2.65,
-          "pvalue": 1e-05,
-          "FDR": 0.0001,
-          "degree": 2,
-          "betweenness": 0.036,
-          "role": "Secondary wall cellulose synthase upregulated during accelerated vascular maturation",
+          "compartment": "Plasma Membrane",
+          "subcellular_zone": "Plasma Membrane",
+          "reaction": "\u03b2-(1,4)-D-glucan polymerization (Secondary Wall)",
+          "substrates": "UDP-\u03b1-D-glucose (donor)",
+          "products": "Crystalline cellulose microfibril (secondary wall) + UDP",
+          "cofactors": "Mg2+, Cellobiose-lipid primer",
+          "ec_number": "EC 2.4.1.12",
+          "log2fc": 2.65,
           "color": "#E85D50"
         }
       },
@@ -309,47 +20,74 @@
         "data": {
           "id": "CESA7",
           "label": "CESA7",
-          "gene_id": "AT5G17420",
-          "gene_family": "Cellulose Synthase (Secondary)",
-          "pathway": "Vascular Secondary Wall",
-          "log2FC": 2.45,
-          "pvalue": 2e-05,
-          "FDR": 0.0003,
-          "degree": 3,
-          "betweenness": 0.207,
-          "role": "Secondary wall catalytic subunit forming xylan-cellulose vascular reinforcement",
+          "compartment": "Plasma Membrane",
+          "subcellular_zone": "Plasma Membrane",
+          "reaction": "\u03b2-(1,4)-D-glucan polymerization (Secondary Wall)",
+          "substrates": "UDP-\u03b1-D-glucose (donor)",
+          "products": "Crystalline cellulose microfibril (secondary wall) + UDP",
+          "cofactors": "Mg2+",
+          "ec_number": "EC 2.4.1.12",
+          "log2fc": 2.45,
           "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "CESA1",
+          "label": "CESA1",
+          "compartment": "Plasma Membrane",
+          "subcellular_zone": "Plasma Membrane",
+          "reaction": "\u03b2-(1,4)-D-glucan polymerization (Primary Wall)",
+          "substrates": "UDP-\u03b1-D-glucose (donor)",
+          "products": "Primary wall amorphous/crystalline cellulose + UDP",
+          "cofactors": "Mg2+",
+          "ec_number": "EC 2.4.1.12",
+          "log2fc": -0.85,
+          "color": "#3FB6A8"
+        }
+      },
+      {
+        "data": {
+          "id": "CESA3",
+          "label": "CESA3",
+          "compartment": "Plasma Membrane",
+          "subcellular_zone": "Plasma Membrane",
+          "reaction": "\u03b2-(1,4)-D-glucan polymerization (Primary Wall)",
+          "substrates": "UDP-\u03b1-D-glucose (donor)",
+          "products": "Primary wall cellulose microfibrils + UDP",
+          "cofactors": "Mg2+",
+          "ec_number": "EC 2.4.1.12",
+          "log2fc": -0.72,
+          "color": "#3FB6A8"
         }
       },
       {
         "data": {
           "id": "CSI1",
           "label": "CSI1",
-          "gene_id": "AT2G22120",
-          "gene_family": "Cellulose Synthase Interactive 1",
-          "pathway": "CSC-Microtubule Alignment",
-          "log2FC": -1.9,
-          "pvalue": 0.0002,
-          "FDR": 0.002,
-          "degree": 5,
-          "betweenness": 0.526,
-          "role": "Direct physical linker linking cellulose synthase complexes to cortical microtubules",
-          "color": "#2F5985"
+          "compartment": "Plasma Membrane",
+          "subcellular_zone": "Plasma Membrane",
+          "reaction": "CSC-Microtubule physical linking & trajectory alignment",
+          "substrates": "Plasma membrane CesA catalytic core + Cortical Microtubule",
+          "products": "Guided, linear cellulose microfibril deposition trajectory",
+          "cofactors": "Phospholipid binding (C2 domain)",
+          "ec_number": "Structural Linker",
+          "log2fc": -1.15,
+          "color": "#3FB6A8"
         }
       },
       {
         "data": {
           "id": "IRX9",
           "label": "IRX9",
-          "gene_id": "AT3G18660",
-          "gene_family": "GT43 Xylan Synthase",
-          "pathway": "Xylan Biosynthesis",
-          "log2FC": 2.8,
-          "pvalue": 1e-05,
-          "FDR": 0.0001,
-          "degree": 2,
-          "betweenness": 0.036,
-          "role": "Core glycosyltransferase elongating \u03b2-(1,4)-xylan backbone in Golgi",
+          "compartment": "Golgi / TGN",
+          "subcellular_zone": "Golgi Lumen",
+          "reaction": "\u03b2-(1,4)-xylosyltransferase (Xylan backbone chain elongation)",
+          "substrates": "UDP-\u03b1-D-xylose (donor) + (1,4)-\u03b2-D-xylan acceptor",
+          "products": "Elongated (1,4)-\u03b2-D-xylan polysaccharide backbone + UDP",
+          "cofactors": "Mn2+",
+          "ec_number": "EC 2.4.2.24",
+          "log2fc": 2.8,
           "color": "#E85D50"
         }
       },
@@ -357,79 +95,209 @@
         "data": {
           "id": "IRX10",
           "label": "IRX10",
-          "gene_id": "AT5G15630",
-          "gene_family": "GT47 Xylan Glucuronosyltransferase",
-          "pathway": "Xylan Biosynthesis",
-          "log2FC": 2.35,
-          "pvalue": 4e-05,
-          "FDR": 0.0005,
-          "degree": 2,
-          "betweenness": 0.001,
-          "role": "Xylan backbone synthase core component",
+          "compartment": "Golgi / TGN",
+          "subcellular_zone": "Golgi Lumen",
+          "reaction": "Glycosyltransferase family 47 (Xylan backbone elongation)",
+          "substrates": "UDP-\u03b1-D-xylose (donor) + Xylo-oligosaccharide acceptor",
+          "products": "Linear xylan backbone polymer + UDP",
+          "cofactors": "Mn2+",
+          "ec_number": "EC 2.4.2.24",
+          "log2fc": 2.35,
           "color": "#E85D50"
         }
       },
       {
         "data": {
-          "id": "XTH4",
-          "label": "XTH4",
-          "gene_id": "AT4G02290",
-          "gene_family": "Xyloglucan Endotransglucosylase",
-          "pathway": "Xyloglucan Remodeling",
-          "log2FC": 2.1,
-          "pvalue": 0.0001,
-          "FDR": 0.001,
-          "degree": 2,
-          "betweenness": 0.142,
-          "role": "Cleaves and religates xyloglucan crosslinks during spaceflight cell wall expansion",
+          "id": "CSLC4",
+          "label": "CSLC4",
+          "compartment": "Golgi / TGN",
+          "subcellular_zone": "Golgi Lumen",
+          "reaction": "\u03b2-(1,4)-glucan synthase (Xyloglucan backbone synthesis)",
+          "substrates": "UDP-\u03b1-D-glucose (donor) + Oligo-glucan acceptor",
+          "products": "Cellotetraose / xyloglucan glucan backbone + UDP",
+          "cofactors": "Mg2+",
+          "ec_number": "EC 2.4.1.12",
+          "log2fc": 0.65,
+          "color": "#F59E0B"
+        }
+      },
+      {
+        "data": {
+          "id": "GAUT1",
+          "label": "GAUT1",
+          "compartment": "Golgi / TGN",
+          "subcellular_zone": "Golgi Lumen",
+          "reaction": "\u03b1-(1,4)-galacturonosyltransferase (Pectin HG synthesis)",
+          "substrates": "UDP-D-galacturonic acid (donor) + Homogalacturonan chain",
+          "products": "(1,4)-\u03b1-D-galacturonan (HG backbone) + UDP",
+          "cofactors": "Mn2+",
+          "ec_number": "EC 2.4.1.43",
+          "log2fc": 0.45,
+          "color": "#F59E0B"
+        }
+      },
+      {
+        "data": {
+          "id": "MUR3",
+          "label": "MUR3",
+          "compartment": "Golgi / TGN",
+          "subcellular_zone": "Golgi Lumen",
+          "reaction": "Galactosyltransferase (Xyloglucan side-chain galactosylation)",
+          "substrates": "UDP-D-galactose + Xyloglucan side chain",
+          "products": "Galactosylated xyloglucan (XLFG/XXLG) + UDP",
+          "cofactors": "Mn2+",
+          "ec_number": "EC 2.4.1.-",
+          "log2fc": 0.52,
+          "color": "#F59E0B"
+        }
+      },
+      {
+        "data": {
+          "id": "MYA1",
+          "label": "MYA1",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Actin Cables",
+          "reaction": "High-velocity ATP-driven vesicle transport along F-actin",
+          "substrates": "ATP + Mg2+ + Post-Golgi Secretory Vesicle Cargo",
+          "products": "ADP + Pi + Directional mechanical motive force (~5-7 pN)",
+          "cofactors": "Ca2+ / Calmodulin light chains",
+          "ec_number": "EC 3.6.4.4",
+          "log2fc": 2.15,
           "color": "#E85D50"
         }
       },
       {
         "data": {
-          "id": "EXPA1",
-          "label": "EXPA1",
-          "gene_id": "AT1G65310",
-          "gene_family": "\u03b1-Expansin",
-          "pathway": "Wall Loosening",
-          "log2FC": 2.25,
-          "pvalue": 8e-05,
-          "FDR": 0.0008,
-          "degree": 2,
-          "betweenness": 0.074,
-          "role": "Non-enzymatic cell wall loosening protein facilitating turgor-driven wall extension",
+          "id": "MYA2",
+          "label": "MYA2",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Actin Cables",
+          "reaction": "Class XI Myosin motor organelle & vesicle streaming",
+          "substrates": "ATP + F-actin tracks + Membrane vesicles",
+          "products": "ADP + Pi + Rapid cytoplasmic streaming (~5-10 \u00b5m/s)",
+          "cofactors": "Ca2+",
+          "ec_number": "EC 3.6.4.4",
+          "log2fc": 1.74,
           "color": "#E85D50"
         }
       },
       {
         "data": {
-          "id": "PME3",
-          "label": "PME3",
-          "gene_id": "AT3G10720",
-          "gene_family": "Pectin Methylesterase",
-          "pathway": "Pectin De-esterification",
-          "log2FC": -1.75,
-          "pvalue": 0.0005,
-          "FDR": 0.003,
-          "degree": 1,
-          "betweenness": 0.0,
-          "role": "Removes methyl esters from HG pectin, regulating calcium crosslinking and stiffness",
-          "color": "#2F5985"
+          "id": "XI-K",
+          "label": "XI-K",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Actin Cables",
+          "reaction": "Primary driver of post-Golgi vesicle targeting & streaming",
+          "substrates": "ATP + Rab-GTPase vesicle cargo complex",
+          "products": "Targeted matrix vesicle delivery to plasma membrane",
+          "cofactors": "Mg2+",
+          "ec_number": "EC 3.6.4.4",
+          "log2fc": 1.95,
+          "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "ACT7",
+          "label": "ACT7",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Subcortical Cytoplasm",
+          "reaction": "Filamentous actin (F-actin) track polymerization",
+          "substrates": "G-actin-ATP monomers",
+          "products": "Polarized F-actin double-helical cable tracks + ADP",
+          "cofactors": "Mg2+, K+",
+          "ec_number": "Structural Cytoskeleton",
+          "log2fc": 1.25,
+          "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "VLN1",
+          "label": "VLN1",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Actin Cables",
+          "reaction": "Calcium-insensitive actin filament bundling & stabilization",
+          "substrates": "Individual F-actin filaments",
+          "products": "Thick longitudinal subcortical actin cables",
+          "cofactors": "None (Ca2+-independent)",
+          "ec_number": "Actin Bundler",
+          "log2fc": 0.95,
+          "color": "#F59E0B"
+        }
+      },
+      {
+        "data": {
+          "id": "PRF1",
+          "label": "PRF1",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Cytosol",
+          "reaction": "G-actin ADP/ATP nucleotide exchange and barbed-end delivery",
+          "substrates": "G-actin-ADP + ATP",
+          "products": "G-actin-ATP:Profilin complex ready for Formin elongation",
+          "cofactors": "PIP2 signaling",
+          "ec_number": "Actin Monomer Regulator",
+          "log2fc": 0.88,
+          "color": "#F59E0B"
+        }
+      },
+      {
+        "data": {
+          "id": "ARP2",
+          "label": "ARP2",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Cortex / Cytosol",
+          "reaction": "Actin filament branching nucleation at 70\u00b0 angles",
+          "substrates": "Mother F-actin filament + G-actin-ATP monomers",
+          "products": "Branched 70\u00b0 cortical actin filament network",
+          "cofactors": "WASP/SCAR nucleation promoting factors",
+          "ec_number": "Actin Nucleator",
+          "log2fc": 0.65,
+          "color": "#F59E0B"
+        }
+      },
+      {
+        "data": {
+          "id": "ARP3",
+          "label": "ARP3",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Cortex / Cytosol",
+          "reaction": "Core subunit of heptameric ARP2/3 nucleation complex",
+          "substrates": "Mother F-actin filament + G-actin",
+          "products": "Branched daughter actin filaments",
+          "cofactors": "ATP",
+          "ec_number": "Actin Nucleator",
+          "log2fc": 0.58,
+          "color": "#F59E0B"
+        }
+      },
+      {
+        "data": {
+          "id": "FH1",
+          "label": "FH1",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Plasma Membrane / Cortex",
+          "reaction": "Processive unbranched actin cable elongation from membrane",
+          "substrates": "Profilin-actin complexes + Membrane lipids",
+          "products": "Fast-growing unbranched F-actin streaming tracks",
+          "cofactors": "Rho/ROP GTPases",
+          "ec_number": "Formin Nucleator",
+          "log2fc": 0.72,
+          "color": "#F59E0B"
         }
       },
       {
         "data": {
           "id": "SEC",
           "label": "SEC",
-          "gene_id": "AT2G35940",
-          "gene_family": "SECRET AGENT (OGT)",
-          "pathway": "Intracellular O-GlcNAcylation",
-          "log2FC": 1.55,
-          "pvalue": 0.001,
-          "FDR": 0.007,
-          "degree": 4,
-          "betweenness": 0.457,
-          "role": "Plant O-GlcNAc transferase modifying cytoskeletal proteins and transcription factors",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Nucleocytoplasm",
+          "reaction": "Protein O-GlcNAcylation (O-GlcNAc transferase)",
+          "substrates": "UDP-N-acetyl-D-glucosamine (donor) + Target Ser/Thr",
+          "products": "O-GlcNAcylated motor/cytoskeletal target protein + UDP",
+          "cofactors": "TPR repeat domain binding",
+          "ec_number": "EC 2.4.1.255",
+          "log2fc": 1.55,
           "color": "#E85D50"
         }
       },
@@ -437,158 +305,424 @@
         "data": {
           "id": "SPY",
           "label": "SPY",
-          "gene_id": "AT2G36400",
-          "gene_family": "SPINDLY (O-FucT / O-GlcNAc)",
-          "pathway": "Intracellular Glycosylation",
-          "log2FC": 1.35,
-          "pvalue": 0.0025,
-          "FDR": 0.015,
-          "degree": 3,
-          "betweenness": 0.47,
-          "role": "Modifies nuclear and cytoplasmic proteins regulating GA signaling and motor docking",
+          "compartment": "Cytoplasm",
+          "subcellular_zone": "Nucleocytoplasm",
+          "reaction": "Protein O-fucosylation / O-GlcNAc regulator",
+          "substrates": "GDP-\u03b2-L-fucose / UDP-GlcNAc + Target Ser/Thr",
+          "products": "O-fucosylated signaling & cytoskeletal proteins + GDP",
+          "cofactors": "TPR repeat scaffold",
+          "ec_number": "EC 2.4.1.-",
+          "log2fc": 1.35,
           "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "SPR1",
+          "label": "SPR1",
+          "compartment": "Cortical MTs",
+          "subcellular_zone": "Microtubule Lattice",
+          "reaction": "Cortical MT plus-end tracking & directional array stability",
+          "substrates": "Polymerizing MT plus-ends (+TIPs) + Tubulin dimers",
+          "products": "Stabilized, parallel transverse cortical MT array",
+          "cofactors": "Phosphorylation / O-GlcNAc",
+          "ec_number": "Microtubule Plus-End (+TIP)",
+          "log2fc": -2.4,
+          "color": "#3FB6A8"
+        }
+      },
+      {
+        "data": {
+          "id": "MAP65-1",
+          "label": "MAP65-1",
+          "compartment": "Cortical MTs",
+          "subcellular_zone": "Microtubule Lattice",
+          "reaction": "Antiparallel cortical microtubule cross-linking & bundling",
+          "substrates": "Adjacent cortical microtubule filaments",
+          "products": "Ordered, bundled 25-nm spaced MT arrays",
+          "cofactors": "Cyclin-dependent kinase (CDK) phosphorylation",
+          "ec_number": "MT Crosslinker (MAP65)",
+          "log2fc": -1.35,
+          "color": "#3FB6A8"
+        }
+      },
+      {
+        "data": {
+          "id": "CLASP",
+          "label": "CLASP",
+          "compartment": "Cortical MTs",
+          "subcellular_zone": "Cell Cortex / MTs",
+          "reaction": "Microtubule rescue factor and sharp cell-edge transition guide",
+          "substrates": "Depolymerizing MT ends + Sharp membrane curvature",
+          "products": "Suppression of MT catastrophe; seam-crossing MT arrays",
+          "cofactors": "TOG domains",
+          "ec_number": "+TIP Rescue Factor",
+          "log2fc": -0.92,
+          "color": "#3FB6A8"
+        }
+      },
+      {
+        "data": {
+          "id": "MOR1",
+          "label": "MOR1",
+          "compartment": "Cortical MTs",
+          "subcellular_zone": "Microtubule Lattice",
+          "reaction": "Microtubule polymerase (XMAP215 family)",
+          "substrates": "Free \u03b1/\u03b2-tubulin heterodimers-GTP",
+          "products": "Rapid plus-end MT elongation (10-fold acceleration)",
+          "cofactors": "TOG1-TOG5 domains",
+          "ec_number": "MT Polymerase",
+          "log2fc": -0.68,
+          "color": "#3FB6A8"
+        }
+      },
+      {
+        "data": {
+          "id": "FRA1",
+          "label": "FRA1",
+          "compartment": "Cortical MTs",
+          "subcellular_zone": "Microtubule Lattice",
+          "reaction": "Kinesin-4 motor directing cellulose microfibril order",
+          "substrates": "ATP + Cortical Microtubule + Matrix vesicles",
+          "products": "ADP + Pi + Oriented secondary wall microfibril packing",
+          "cofactors": "Mg2+",
+          "ec_number": "EC 3.6.4.4",
+          "log2fc": 1.42,
+          "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "KIN12A",
+          "label": "KIN12A",
+          "compartment": "Cortical MTs",
+          "subcellular_zone": "Phragmoplast / MTs",
+          "reaction": "Phragmoplast & cortical kinesin motor transport",
+          "substrates": "ATP + Plus-end oriented MT tracks",
+          "products": "Targeted matrix vesicle delivery to cell division/expansion plate",
+          "cofactors": "Mg2+",
+          "ec_number": "EC 3.6.4.4",
+          "log2fc": 1.82,
+          "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "KIN14A",
+          "label": "KIN14A",
+          "compartment": "Cortical MTs",
+          "subcellular_zone": "Microtubule Lattice",
+          "reaction": "Minus-end directed kinesin-14 motor array organizer",
+          "substrates": "ATP + Overlapping MT filaments",
+          "products": "Focused, convergent microtubule arrays",
+          "cofactors": "Calmodulin-like tail domain",
+          "ec_number": "EC 3.6.4.4",
+          "log2fc": 1.45,
+          "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "XTH4",
+          "label": "XTH4",
+          "compartment": "Cell Wall",
+          "subcellular_zone": "Apoplastic Matrix",
+          "reaction": "Xyloglucan endotransglucosylase/hydrolase (XTH)",
+          "substrates": "High-MW xyloglucan polymer + Xylo-oligosaccharide acceptor",
+          "products": "Re-ligated / loosened xyloglucan-cellulose tether network",
+          "cofactors": "Apoplastic pH (5.0 - 5.5)",
+          "ec_number": "EC 2.4.1.207",
+          "log2fc": 1.85,
+          "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "EXPA1",
+          "label": "EXPA1",
+          "compartment": "Cell Wall",
+          "subcellular_zone": "Apoplastic Matrix",
+          "reaction": "Non-enzymatic cell wall loosening (hydrogen-bond disruption)",
+          "substrates": "Cellulose-xyloglucan non-covalent junction zones",
+          "products": "Turgor-driven irreversible cell wall creep & expansion",
+          "cofactors": "Acidic apoplastic pH (< 5.5)",
+          "ec_number": "Wall Loosening Protein",
+          "log2fc": 1.65,
+          "color": "#E85D50"
+        }
+      },
+      {
+        "data": {
+          "id": "PME3",
+          "label": "PME3",
+          "compartment": "Cell Wall",
+          "subcellular_zone": "Apoplastic Matrix",
+          "reaction": "Pectin methylesterase (Demethylesterification of HG)",
+          "substrates": "Methyl-esterified homogalacturonan (HG) pectin",
+          "products": "De-esterified HG + Methanol (facilitates Ca2+ crosslinking / pectin gelation)",
+          "cofactors": "Apoplastic cations",
+          "ec_number": "EC 3.1.1.11",
+          "log2fc": 0.78,
+          "color": "#F59E0B"
         }
       }
     ],
     "edges": [
       {
         "data": {
-          "id": "e0_KIN14A_MAP65-1",
-          "source": "KIN14A",
-          "target": "MAP65-1",
-          "score": 0.8,
-          "interaction_type": "Minus-End MT Organization"
+          "id": "CESA4_CESA7",
+          "source": "CESA4",
+          "target": "CESA7",
+          "score": 0.99,
+          "interaction_type": "Catalytic Secondary Wall CSC Rosette"
         }
       },
       {
         "data": {
-          "id": "e1_KIN14A_SEC",
-          "source": "KIN14A",
-          "target": "SEC",
-          "score": 0.79,
-          "interaction_type": "O-GlcNAcylation of Kinesin Motor"
-        }
-      },
-      {
-        "data": {
-          "id": "e2_KIN12A_CLASP",
-          "source": "KIN12A",
-          "target": "CLASP",
-          "score": 0.76,
-          "interaction_type": "Phragmoplast MT Motor Docking"
-        }
-      },
-      {
-        "data": {
-          "id": "e3_FRA1_CSI1",
-          "source": "FRA1",
+          "id": "CESA7_CSI1",
+          "source": "CESA7",
           "target": "CSI1",
-          "score": 0.82,
-          "interaction_type": "Kinesin-4 Motor Transport of CSC"
+          "score": 0.92,
+          "interaction_type": "CSI1/POM2 Guiding Secondary Wall CSC"
         }
       },
       {
         "data": {
-          "id": "e4_FRA1_MAP65-1",
-          "source": "FRA1",
-          "target": "MAP65-1",
-          "score": 0.78,
-          "interaction_type": "Microtubule Crosslinking Coordination"
+          "id": "CESA7_IRX9",
+          "source": "CESA7",
+          "target": "IRX9",
+          "score": 0.89,
+          "interaction_type": "Vascular Secondary Wall Co-deposition"
         }
       },
       {
         "data": {
-          "id": "e5_KIN7A_SPR1",
-          "source": "KIN7A",
+          "id": "CESA1_CSI1",
+          "source": "CESA1",
+          "target": "CSI1",
+          "score": 0.99,
+          "interaction_type": "CSI1/POM2 Guiding Primary Wall CSC"
+        }
+      },
+      {
+        "data": {
+          "id": "CESA1_CESA3",
+          "source": "CESA1",
+          "target": "CESA3",
+          "score": 0.99,
+          "interaction_type": "Catalytic Primary Wall CSC Rosette"
+        }
+      },
+      {
+        "data": {
+          "id": "CESA1_XTH4",
+          "source": "CESA1",
+          "target": "XTH4",
+          "score": 0.84,
+          "interaction_type": "Cellulose-Xyloglucan Network Interweaving"
+        }
+      },
+      {
+        "data": {
+          "id": "CESA3_CSI1",
+          "source": "CESA3",
+          "target": "CSI1",
+          "score": 0.98,
+          "interaction_type": "CSI1/POM2 Guiding Primary Wall CSC"
+        }
+      },
+      {
+        "data": {
+          "id": "CSI1_SPY",
+          "source": "CSI1",
+          "target": "SPY",
+          "score": 0.8,
+          "interaction_type": "O-Fucosylation of CSC Guide Linker"
+        }
+      },
+      {
+        "data": {
+          "id": "CSI1_SPR1",
+          "source": "CSI1",
           "target": "SPR1",
-          "score": 0.75,
-          "interaction_type": "Cortical MT Steering"
+          "score": 0.86,
+          "interaction_type": "Cortical MT-to-CSC Trajectory Coordination"
         }
       },
       {
         "data": {
-          "id": "e6_MYA1_MYA2",
+          "id": "CSI1_FRA1",
+          "source": "CSI1",
+          "target": "FRA1",
+          "score": 0.85,
+          "interaction_type": "Kinesin-4 Driven CSC Insertion"
+        }
+      },
+      {
+        "data": {
+          "id": "IRX9_IRX10",
+          "source": "IRX9",
+          "target": "IRX10",
+          "score": 0.98,
+          "interaction_type": "Golgi Core Xylan Synthase Complex"
+        }
+      },
+      {
+        "data": {
+          "id": "IRX9_CSLC4",
+          "source": "IRX9",
+          "target": "CSLC4",
+          "score": 0.75,
+          "interaction_type": "Hemicellulose Matrix Coordination"
+        }
+      },
+      {
+        "data": {
+          "id": "IRX9_MYA1",
+          "source": "IRX9",
+          "target": "MYA1",
+          "score": 0.82,
+          "interaction_type": "Post-Golgi Matrix Vesicle Loading"
+        }
+      },
+      {
+        "data": {
+          "id": "IRX10_GAUT1",
+          "source": "IRX10",
+          "target": "GAUT1",
+          "score": 0.72,
+          "interaction_type": "Matrix Polysaccharide Packaging"
+        }
+      },
+      {
+        "data": {
+          "id": "IRX10_MYA2",
+          "source": "IRX10",
+          "target": "MYA2",
+          "score": 0.79,
+          "interaction_type": "Secretory Vesicle Translocation"
+        }
+      },
+      {
+        "data": {
+          "id": "CSLC4_MUR3",
+          "source": "CSLC4",
+          "target": "MUR3",
+          "score": 0.85,
+          "interaction_type": "Xyloglucan Backbone Galactosylation"
+        }
+      },
+      {
+        "data": {
+          "id": "CSLC4_XI-K",
+          "source": "CSLC4",
+          "target": "XI-K",
+          "score": 0.84,
+          "interaction_type": "XG Vesicle Targeting to Membrane"
+        }
+      },
+      {
+        "data": {
+          "id": "GAUT1_PME3",
+          "source": "GAUT1",
+          "target": "PME3",
+          "score": 0.8,
+          "interaction_type": "Pectin Secretion & Maturation"
+        }
+      },
+      {
+        "data": {
+          "id": "MYA1_MYA2",
           "source": "MYA1",
           "target": "MYA2",
-          "score": 0.94,
-          "interaction_type": "Myosin XI Heterodimer Streaming"
+          "score": 0.95,
+          "interaction_type": "Class XI Myosin Heterodimer Streaming"
         }
       },
       {
         "data": {
-          "id": "e7_MYA1_XI-K",
+          "id": "MYA1_XI-K",
           "source": "MYA1",
           "target": "XI-K",
-          "score": 0.91,
+          "score": 0.93,
           "interaction_type": "Post-Golgi Vesicle Motility"
         }
       },
       {
         "data": {
-          "id": "e8_MYA1_SEC",
+          "id": "MYA1_ACT7",
+          "source": "MYA1",
+          "target": "ACT7",
+          "score": 0.96,
+          "interaction_type": "Actin-Activated ATP Hydrolysis"
+        }
+      },
+      {
+        "data": {
+          "id": "MYA1_SEC",
           "source": "MYA1",
           "target": "SEC",
-          "score": 0.82,
+          "score": 0.88,
           "interaction_type": "O-GlcNAcylation of Myosin Motor"
         }
       },
       {
         "data": {
-          "id": "e9_MYA2_VLN1",
+          "id": "MYA2_VLN1",
           "source": "MYA2",
           "target": "VLN1",
-          "score": 0.84,
-          "interaction_type": "Actin Cable Translocation"
+          "score": 0.86,
+          "interaction_type": "Subcortical Cable Translocation"
         }
       },
       {
         "data": {
-          "id": "e10_MAP65-1_CLASP",
-          "source": "MAP65-1",
-          "target": "CLASP",
-          "score": 0.85,
-          "interaction_type": "Microtubule Bundling / Edge Anchoring"
+          "id": "ACT7_VLN1",
+          "source": "ACT7",
+          "target": "VLN1",
+          "score": 0.94,
+          "interaction_type": "Longitudinal Actin Cable Bundling"
         }
       },
       {
         "data": {
-          "id": "e11_MAP65-1_SEC",
-          "source": "MAP65-1",
-          "target": "SEC",
-          "score": 0.83,
-          "interaction_type": "O-GlcNAcylation of MT Crosslinker"
+          "id": "ACT7_PRF1",
+          "source": "ACT7",
+          "target": "PRF1",
+          "score": 0.91,
+          "interaction_type": "G-Actin Monomer Sequestration & Feeding"
         }
       },
       {
         "data": {
-          "id": "e12_SPR1_CLASP",
-          "source": "SPR1",
-          "target": "CLASP",
+          "id": "ACT7_FH1",
+          "source": "ACT7",
+          "target": "FH1",
+          "score": 0.95,
+          "interaction_type": "Formin-Mediated Cable Nucleation"
+        }
+      },
+      {
+        "data": {
+          "id": "ACT7_ARP2",
+          "source": "ACT7",
+          "target": "ARP2",
           "score": 0.92,
-          "interaction_type": "Cortical MT Plus-End Tracking"
+          "interaction_type": "70\u00b0 Actin Branching Nucleation"
         }
       },
       {
         "data": {
-          "id": "e13_SPR1_MOR1",
-          "source": "SPR1",
-          "target": "MOR1",
+          "id": "PRF1_FH1",
+          "source": "PRF1",
+          "target": "FH1",
           "score": 0.88,
-          "interaction_type": "Microtubule Polymerase Regulation"
+          "interaction_type": "Profilin-Actin Polymerization"
         }
       },
       {
         "data": {
-          "id": "e14_SPR1_SPY",
-          "source": "SPR1",
-          "target": "SPY",
-          "score": 0.81,
-          "interaction_type": "Intracellular Glycosylation of Plus-End Tracker"
-        }
-      },
-      {
-        "data": {
-          "id": "e15_ARP2_ARP3",
+          "id": "ARP2_ARP3",
           "source": "ARP2",
           "target": "ARP3",
           "score": 0.99,
@@ -597,183 +731,111 @@
       },
       {
         "data": {
-          "id": "e16_ARP2_FH1",
-          "source": "ARP2",
-          "target": "FH1",
-          "score": 0.83,
-          "interaction_type": "Formin-Mediated Cable Nucleation"
-        }
-      },
-      {
-        "data": {
-          "id": "e17_ARP3_FH1",
-          "source": "ARP3",
-          "target": "FH1",
+          "id": "SEC_KIN14A",
+          "source": "SEC",
+          "target": "KIN14A",
           "score": 0.82,
-          "interaction_type": "Cortical Actin Network Assembly"
+          "interaction_type": "O-GlcNAcylation of Kinesin Motor"
         }
       },
       {
         "data": {
-          "id": "e18_PRF1_VLN1",
-          "source": "PRF1",
-          "target": "VLN1",
-          "score": 0.87,
-          "interaction_type": "Actin Filament Turnover"
-        }
-      },
-      {
-        "data": {
-          "id": "e19_PRF1_FH1",
-          "source": "PRF1",
-          "target": "FH1",
-          "score": 0.79,
-          "interaction_type": "G-actin Profilin Feeding"
-        }
-      },
-      {
-        "data": {
-          "id": "e20_CESA1_CSI1",
-          "source": "CESA1",
-          "target": "CSI1",
-          "score": 0.98,
-          "interaction_type": "Physical Association / CSC Guide"
-        }
-      },
-      {
-        "data": {
-          "id": "e21_CESA1_CESA3",
-          "source": "CESA1",
-          "target": "CESA3",
-          "score": 0.99,
-          "interaction_type": "Catalytic CSC Trimer"
-        }
-      },
-      {
-        "data": {
-          "id": "e22_CESA1_XTH4",
-          "source": "CESA1",
-          "target": "XTH4",
-          "score": 0.78,
-          "interaction_type": "Primary Wall Matrix Integration"
-        }
-      },
-      {
-        "data": {
-          "id": "e23_CESA3_CSI1",
-          "source": "CESA3",
-          "target": "CSI1",
-          "score": 0.97,
-          "interaction_type": "Physical Association / CSC Guide"
-        }
-      },
-      {
-        "data": {
-          "id": "e24_CESA4_CESA7",
-          "source": "CESA4",
-          "target": "CESA7",
-          "score": 0.99,
-          "interaction_type": "Secondary Wall CSC Trimer"
-        }
-      },
-      {
-        "data": {
-          "id": "e25_CESA4_IRX10",
-          "source": "CESA4",
-          "target": "IRX10",
-          "score": 0.86,
-          "interaction_type": "Vascular Secondary Wall Co-deposition"
-        }
-      },
-      {
-        "data": {
-          "id": "e26_CESA7_CSI1",
-          "source": "CESA7",
-          "target": "CSI1",
+          "id": "SEC_MAP65-1",
+          "source": "SEC",
+          "target": "MAP65-1",
           "score": 0.85,
-          "interaction_type": "Physical Association / CSC Guide"
+          "interaction_type": "O-GlcNAcylation of MT Bundler"
         }
       },
       {
         "data": {
-          "id": "e27_CESA7_IRX9",
-          "source": "CESA7",
-          "target": "IRX9",
-          "score": 0.88,
-          "interaction_type": "Vascular Secondary Wall Co-deposition"
-        }
-      },
-      {
-        "data": {
-          "id": "e28_CSI1_SPY",
-          "source": "CSI1",
-          "target": "SPY",
-          "score": 0.77,
-          "interaction_type": "O-Fucosylation / O-GlcNAcylation of CSC Linker"
-        }
-      },
-      {
-        "data": {
-          "id": "e29_IRX9_IRX10",
-          "source": "IRX9",
-          "target": "IRX10",
-          "score": 0.96,
-          "interaction_type": "Golgi Xylan Synthase Complex"
-        }
-      },
-      {
-        "data": {
-          "id": "e30_XTH4_EXPA1",
-          "source": "XTH4",
-          "target": "EXPA1",
-          "score": 0.85,
-          "interaction_type": "Cell Wall Loosening Coordination"
-        }
-      },
-      {
-        "data": {
-          "id": "e31_EXPA1_PME3",
-          "source": "EXPA1",
-          "target": "PME3",
-          "score": 0.8,
-          "interaction_type": "Pectin De-esterification & Wall Porosity"
-        }
-      },
-      {
-        "data": {
-          "id": "e32_SEC_SPY",
+          "id": "SEC_SPY",
           "source": "SEC",
           "target": "SPY",
-          "score": 0.89,
-          "interaction_type": "Co-regulatory Intracellular Glycosylation Axis"
+          "score": 0.92,
+          "interaction_type": "Co-regulatory Glycosylation Cascade"
         }
-      }
-    ]
-  },
-  "stats": {
-    "node_count": 28,
-    "edge_count": 33,
-    "avg_degree": 2.36,
-    "top_hubs": [
-      {
-        "node": "CSI1",
-        "degree": 5
       },
       {
-        "node": "MAP65-1",
-        "degree": 4
+        "data": {
+          "id": "SPY_SPR1",
+          "source": "SPY",
+          "target": "SPR1",
+          "score": 0.84,
+          "interaction_type": "Intracellular Glycosylation of Plus-End Tracker"
+        }
       },
       {
-        "node": "SPR1",
-        "degree": 4
+        "data": {
+          "id": "SPR1_CLASP",
+          "source": "SPR1",
+          "target": "CLASP",
+          "score": 0.94,
+          "interaction_type": "Cortical MT Plus-End Tracking (+TIP)"
+        }
       },
       {
-        "node": "SEC",
-        "degree": 4
+        "data": {
+          "id": "SPR1_MOR1",
+          "source": "SPR1",
+          "target": "MOR1",
+          "score": 0.9,
+          "interaction_type": "MT Polymerase Acceleration"
+        }
       },
       {
-        "node": "MYA1",
-        "degree": 3
+        "data": {
+          "id": "MAP65-1_CLASP",
+          "source": "MAP65-1",
+          "target": "CLASP",
+          "score": 0.87,
+          "interaction_type": "Edge-Crossing MT Array Anchoring"
+        }
+      },
+      {
+        "data": {
+          "id": "MAP65-1_KIN14A",
+          "source": "MAP65-1",
+          "target": "KIN14A",
+          "score": 0.83,
+          "interaction_type": "Antiparallel MT Bundle Organization"
+        }
+      },
+      {
+        "data": {
+          "id": "MAP65-1_FRA1",
+          "source": "MAP65-1",
+          "target": "FRA1",
+          "score": 0.81,
+          "interaction_type": "Kinesin-4 MT Lattice Crosslinking"
+        }
+      },
+      {
+        "data": {
+          "id": "CLASP_KIN12A",
+          "source": "CLASP",
+          "target": "KIN12A",
+          "score": 0.78,
+          "interaction_type": "Phragmoplast MT Motor Docking"
+        }
+      },
+      {
+        "data": {
+          "id": "XTH4_EXPA1",
+          "source": "XTH4",
+          "target": "EXPA1",
+          "score": 0.88,
+          "interaction_type": "Coordinated Acid Growth Wall Loosening"
+        }
+      },
+      {
+        "data": {
+          "id": "EXPA1_PME3",
+          "source": "EXPA1",
+          "target": "PME3",
+          "score": 0.82,
+          "interaction_type": "Pectin De-esterification & Wall Porosity"
+        }
       }
     ]
   }
