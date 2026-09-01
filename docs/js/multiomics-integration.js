@@ -1,14 +1,23 @@
 // Multi-Omics sPLS Integration Module
+let multiomicsData = null;
 
 export function initMultiOmicsIntegration() {
     fetch('data/integration_results.json')
         .then(r => r.json())
         .then(data => {
+            multiomicsData = data;
             renderCorrelationCircle(data.x_loadings, data.y_loadings);
             renderCIMHeatmap(data.top_correlated_pairs);
             renderTopPairsTable(data.top_correlated_pairs);
         })
         .catch(err => console.error('Error loading integration results:', err));
+
+    window.addEventListener('themeChanged', () => {
+        if (multiomicsData) {
+            renderCorrelationCircle(multiomicsData.x_loadings, multiomicsData.y_loadings);
+            renderCIMHeatmap(multiomicsData.top_correlated_pairs);
+        }
+    });
 }
 
 function renderCorrelationCircle(xLoadings, yLoadings) {
@@ -39,23 +48,35 @@ function renderCorrelationCircle(xLoadings, yLoadings) {
         type: 'scatter',
         name: 'Cytoskeletal Transcripts (28 Genes)',
         marker: { color: '#E85D50', size: 10, symbol: 'triangle-up' },
-        textfont: { size: 9, color: textColor }
+        textfont: { size: 9.5, color: textColor }
     };
 
     const layout = {
         title: { text: 'sPLS Correlation Circle (Component 1 vs Component 2)', font: { size: 13, color: textColor } },
-        xaxis: { range: [-1.2, 1.2], title: 'Component 1 (38.4% Covariance)', color: textColor },
-        yaxis: { range: [-1.2, 1.2], title: 'Component 2 (21.6% Covariance)', scaleanchor: 'x', color: textColor },
-        margin: { l: 50, r: 20, t: 40, b: 50 },
+        xaxis: { 
+            range: [-1.2, 1.2], 
+            title: { text: 'Component 1 (38.4% Covariance)', font: { size: 12, color: textColor } },
+            tickfont: { size: 10, color: textColor },
+            automargin: true
+        },
+        yaxis: { 
+            range: [-1.2, 1.2], 
+            title: { text: 'Component 2 (21.6% Covariance)', font: { size: 12, color: textColor } },
+            scaleanchor: 'x', 
+            tickfont: { size: 10, color: textColor },
+            automargin: true
+        },
+        margin: { l: 60, r: 30, t: 45, b: 60 },
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
         font: { color: textColor },
         shapes: [
-            { type: 'circle', x0: -1, y0: -1, x1: 1, y1: 1, line: { color: 'gray', dash: 'dash', width: 1.5 } },
-            { type: 'circle', x0: -0.5, y0: -0.5, x1: 0.5, y1: 0.5, line: { color: 'lightgray', dash: 'dot', width: 1 } },
-            { type: 'line', x0: -1.2, x1: 1.2, y0: 0, y1: 0, line: { color: 'gray', width: 0.8 } },
-            { type: 'line', x0: 0, x1: 0, y0: -1.2, y1: 1.2, line: { color: 'gray', width: 0.8 } }
-        ]
+            { type: 'circle', x0: -1, y0: -1, x1: 1, y1: 1, line: { color: isDark ? '#475569' : '#94a3b8', dash: 'dash', width: 1.5 } },
+            { type: 'circle', x0: -0.5, y0: -0.5, x1: 0.5, y1: 0.5, line: { color: isDark ? '#334155' : '#cbd5e1', dash: 'dot', width: 1 } },
+            { type: 'line', x0: -1.2, x1: 1.2, y0: 0, y1: 0, line: { color: isDark ? '#334155' : '#cbd5e1', width: 0.8 } },
+            { type: 'line', x0: 0, x1: 0, y0: -1.2, y1: 1.2, line: { color: isDark ? '#334155' : '#cbd5e1', width: 0.8 } }
+        ],
+        legend: { font: { color: textColor, size: 9.5 } }
     };
 
     Plotly.newPlot('circle-plot', [traceGlycans, traceGenes], layout, { responsive: true, displaylogo: false });
@@ -84,17 +105,34 @@ function renderCIMHeatmap(pairs) {
         x: mabs,
         y: genes,
         type: 'heatmap',
-        colorscale: 'RdBu_r',
+        colorscale: [
+            [0.0, '#1d4ed8'],
+            [0.5, '#ffffff'],
+            [1.0, '#b91c1c']
+        ],
         zmin: -1,
         zmax: 1,
+        colorbar: {
+            title: { text: 'r', font: { color: textColor, size: 11 } },
+            tickfont: { color: textColor, size: 10 }
+        },
         hovertemplate: '<b>Gene:</b> %{y}<br><b>mAb:</b> %{x}<br><b>r:</b> %{z:.3f}<extra></extra>'
     };
 
     const layout = {
         title: { text: 'Clustered Cross-Correlation Map (CIM)', font: { size: 13, color: textColor } },
-        xaxis: { tickangle: -45, tickfont: { size: 9, color: textColor } },
-        yaxis: { tickfont: { size: 9, color: textColor } },
-        margin: { l: 80, r: 20, t: 40, b: 80 },
+        xaxis: { 
+            title: { text: 'Monoclonal Antibodies', font: { size: 11, color: textColor } },
+            tickangle: -45, 
+            tickfont: { size: 9.5, color: textColor },
+            automargin: true
+        },
+        yaxis: { 
+            title: { text: 'Cytoskeletal & Synthase Genes', font: { size: 11, color: textColor } },
+            tickfont: { size: 10, color: textColor },
+            automargin: true
+        },
+        margin: { l: 110, r: 30, t: 45, b: 90 },
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
         font: { color: textColor }
@@ -104,22 +142,21 @@ function renderCIMHeatmap(pairs) {
 }
 
 function renderTopPairsTable(pairs) {
-    const tbody = document.querySelector('#top-correlations-table tbody, #top-pairs-table tbody');
+    const tbody = document.querySelector('#top-pairs-table tbody');
     if (!tbody || !pairs) return;
 
-    let html = '';
-    pairs.slice(0, 15).forEach(p => {
-        const signColor = p.Correlation > 0 ? '#E85D50' : '#2F5985';
-        html += `<tr>
-            <td><strong>${p.mAb}</strong></td>
-            <td>${p.Glycan_Class}</td>
-            <td><strong style="color:var(--teal)">${p.Gene_Symbol}</strong> <span style="font-size:0.75rem; color:#888;">(${p.Gene_ID || ''})</span></td>
-            <td>${p.Pathway || p.Gene_Family || 'Cell Wall / Cytoskeleton'}</td>
-            <td><span style="font-weight:700; color:${signColor}">${p.Correlation > 0 ? '+' : ''}${p.Correlation.toFixed(3)}</span></td>
-            <td style="font-size:0.82rem; color:#cbd5e1;">${p.Biological_Mechanism || 'Direct physical/secretory coupling'}</td>
-        </tr>`;
+    tbody.innerHTML = '';
+    pairs.slice(0, 10).forEach(pair => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><strong>${pair.mAb}</strong></td>
+            <td><span class="badge badge-primary">${pair.Glycan_Class || 'Unknown'}</span></td>
+            <td><code>${pair.Gene_Symbol}</code> (${pair.Gene_ID || ''})</td>
+            <td>${pair.Pathway || ''}</td>
+            <td style="font-weight:bold; color:${pair.Correlation > 0 ? 'var(--coral)' : 'var(--teal)'}">${pair.Correlation > 0 ? '+' : ''}${pair.Correlation.toFixed(3)}</td>
+        `;
+        tbody.appendChild(tr);
     });
-    tbody.innerHTML = html;
 }
 
 // Safe DOM initialization

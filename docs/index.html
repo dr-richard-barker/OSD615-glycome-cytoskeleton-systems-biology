@@ -64,6 +64,9 @@
       <a class="nav-link" data-tab="tab-tabpfn"><i class="fas fa-brain"></i> TabPFN AI Model</a>
       <a class="nav-link" data-tab="tab-veggie"><i class="fas fa-seedling"></i> VEGGIE Studies</a>
       <a class="nav-link" data-tab="tab-manuscript"><i class="fas fa-file-alt"></i> Manuscript</a>
+      <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light / Dark Mode">
+        <i class="fas fa-moon" id="theme-icon"></i> <span id="theme-text">Dark Mode</span>
+      </button>
     </div>
   </nav>
 
@@ -116,9 +119,17 @@
           <p style="margin-top:8px; font-size:0.88rem; color:#94a3b8;">Sequential extraction across 6 chemical fractions: 50mM CDTA, 1M KOH, 4M KOH, 100mM NaClO2, 4M KOHPC, and 0.1M H2SO4.</p>
         </div>
         <div class="card">
-          <h3><i class="fas fa-layer-group"></i> Multi-Omics Integration Scope</h3>
-          <p>Supervised sparse Partial Least Squares (sPLS) cross-correlates 155 glycan epitope vectors against 28 curated cytoskeletal motor, microtubule-associated, and cell wall biosynthetic transcripts from companion studies (OSD-218, OSD-217).</p>
+          <h3><i class="fas fa-microscope"></i> Multi-Scale Systems Biology Pipeline</h3>
+          <p>Integrated glycomics, transcriptomics, Salk Single-Cell Foundation Model (Lee et al. 2025), ggPlantmap spatial vector anatomy, PMC10444889 confocal microscopy database, and TabPFN cross-study foundation model.</p>
+          <p style="margin-top:8px; font-size:0.88rem; color:#94a3b8;">Full FAIR metadata compliance (RO-Crate 1.1, Zenodo schema, and Frictionless Data Tables).</p>
         </div>
+      </div>
+
+      <!-- INTERACTIVE FIGURE 1 OVERVIEW DIAGRAM -->
+      <div class="card" style="margin-top: 20px;">
+        <h3><i class="fas fa-project-diagram"></i> Multi-Scale Experimental & Computational Architecture (Figure 1)</h3>
+        <p style="color:#94a3b8; margin-bottom: 10px;">End-to-end integration of spaceflight glycome ELISA profiling, transcriptomics, single-cell atlas mapping, and live biophysical transport simulation.</p>
+        <img src="figures/01_experimental_design_and_workflow.png" alt="Figure 1 Systems Biology Workflow" style="max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-dark);">
       </div>
     </section>
 
@@ -140,10 +151,12 @@
         </select>
         <label for="heatmap-colorscale">Colorscale:</label>
         <select id="heatmap-colorscale">
+          <option value="RdBu_r" selected>Blue to White to Red (RdBu_r Diverging)</option>
+          <option value="YlOrRd">Yellow to Orange to Red (Sequential)</option>
           <option value="Viridis">Viridis</option>
           <option value="Plasma">Plasma</option>
-          <option value="RdBu_r">Red-Blue</option>
-          <option value="YlOrRd" selected>Yellow-Orange-Red</option>
+          <option value="Blues">Single-Hue Blues</option>
+          <option value="Reds">Single-Hue Reds</option>
         </select>
         <button id="btn-export-heatmap" class="btn btn-secondary"><i class="fas fa-download"></i> Export Heatmap</button>
       </div>

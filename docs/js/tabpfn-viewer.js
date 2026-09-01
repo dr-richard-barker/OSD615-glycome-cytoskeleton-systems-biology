@@ -14,6 +14,13 @@ export function initTabPFNViewer() {
             setupGravitySimulation(data.partial_gravity_simulation);
         })
         .catch(err => console.error('Error loading TabPFN meta-analysis data:', err));
+
+    window.addEventListener('themeChanged', () => {
+        if (tabpfnData) {
+            renderROCCurve(tabpfnData.cross_study_metrics);
+            renderFeatureImportance(tabpfnData.feature_importances);
+        }
+    });
 }
 
 function renderROCCurve(metrics) {
@@ -44,14 +51,22 @@ function renderROCCurve(metrics) {
         y: [0, 1],
         mode: 'lines',
         name: 'Random Chance (AUC = 0.500)',
-        line: { color: '#94a3b8', dash: 'dash', width: 1.5 }
+        line: { color: isDark ? '#64748b' : '#94a3b8', dash: 'dash', width: 1.5 }
     };
 
     const layout = {
         title: { text: 'TabPFN Zero-Shot Cross-Mission Transfer (ROC Curves)', font: { size: 13, color: textColor } },
-        xaxis: { title: 'False Positive Rate', color: textColor },
-        yaxis: { title: 'True Positive Rate', color: textColor },
-        margin: { l: 50, r: 20, t: 40, b: 50 },
+        xaxis: { 
+            title: { text: 'False Positive Rate (1 - Specificity)', font: { size: 12, color: textColor } },
+            tickfont: { size: 10, color: textColor },
+            automargin: true
+        },
+        yaxis: { 
+            title: { text: 'True Positive Rate (Sensitivity)', font: { size: 12, color: textColor } },
+            tickfont: { size: 10, color: textColor },
+            automargin: true
+        },
+        margin: { l: 65, r: 25, t: 45, b: 60 },
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
         font: { color: textColor },
@@ -84,9 +99,17 @@ function renderFeatureImportance(importances) {
 
     const layout = {
         title: { text: 'Bayesian Multi-Omics Saliency (Top 10 Universal Drivers)', font: { size: 13, color: textColor } },
-        xaxis: { title: 'Bayesian Posterior Importance', color: textColor },
-        yaxis: { automargin: true, tickfont: { size: 10, color: textColor } },
-        margin: { l: 110, r: 30, t: 40, b: 50 },
+        xaxis: { 
+            title: { text: 'Bayesian Posterior Importance', font: { size: 12, color: textColor } },
+            tickfont: { size: 10, color: textColor },
+            automargin: true
+        },
+        yaxis: { 
+            title: { text: 'Multi-Omics Feature', font: { size: 11, color: textColor } },
+            automargin: true, 
+            tickfont: { size: 10.5, color: textColor } 
+        },
+        margin: { l: 120, r: 40, t: 45, b: 60 },
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
         font: { color: textColor }

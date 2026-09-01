@@ -73,6 +73,20 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function updateThemeUI(theme) {
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+    if (themeIcon && themeText) {
+        if (theme === 'light') {
+            themeIcon.className = 'fas fa-sun';
+            themeText.innerText = 'Light Mode';
+        } else {
+            themeIcon.className = 'fas fa-moon';
+            themeText.innerText = 'Dark Mode';
+        }
+    }
+}
+
 // Dark / Light Theme Toggle with LocalStorage Persistence
 const themeToggle = document.getElementById('theme-toggle');
 if (themeToggle) {
@@ -81,12 +95,15 @@ if (themeToggle) {
         const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
         html.dataset.theme = nextTheme;
         localStorage.setItem('theme', nextTheme);
+        updateThemeUI(nextTheme);
+        
+        // Broadcast custom event for all charts to re-theme
+        window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: nextTheme } }));
         window.dispatchEvent(new Event('resize'));
     });
 }
 
 // Restore saved theme on startup
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    document.documentElement.dataset.theme = savedTheme;
-}
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.dataset.theme = savedTheme;
+updateThemeUI(savedTheme);

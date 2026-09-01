@@ -58,9 +58,17 @@ function renderVolcanoPlot(items, timepoint, pthresh) {
 
     const layout = {
         title: { text: `Volcano Plot: Spaceflight vs Ground (${timepoint.toUpperCase()})`, font: { size: 13, color: textColor } },
-        xaxis: { title: 'Log2 Fold Change (Spaceflight / Ground)', color: textColor },
-        yaxis: { title: '-Log10 p-value', color: textColor },
-        margin: { l: 60, r: 20, t: 40, b: 60 },
+        xaxis: { 
+            title: { text: 'Log2 Fold Change (Spaceflight / Ground)', font: { size: 12, color: textColor } },
+            tickfont: { size: 10.5, color: textColor },
+            automargin: true
+        },
+        yaxis: { 
+            title: { text: '-Log10 p-value', font: { size: 12, color: textColor } },
+            tickfont: { size: 10.5, color: textColor },
+            automargin: true
+        },
+        margin: { l: 70, r: 30, t: 45, b: 60 },
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
         font: { color: textColor },
@@ -82,7 +90,7 @@ function renderBarChart(items, timepoint) {
     const getFC = d => timepoint === '6d' ? d.log2FC_6d : timepoint === '11d' ? d.log2FC_11d : d.log2FC;
 
     // Top 15 by absolute log2FC
-    const sorted = [...items].sort((a, b) => Math.abs(getFC(b)) - Math.abs(getFC(a))).slice(0, 15);
+    const sorted = [...items].sort((a, b) => Math.abs(getFC(b)) - Math.abs(getFC(a))).slice(0, 15).reverse();
 
     const trace = {
         x: sorted.map(d => getFC(d)),
@@ -98,9 +106,17 @@ function renderBarChart(items, timepoint) {
 
     const layout = {
         title: { text: `Top 15 Altered Cell Wall Epitopes (${timepoint.toUpperCase()})`, font: { size: 13, color: textColor } },
-        xaxis: { title: 'Log2 Fold Change', color: textColor },
-        yaxis: { automargin: true, tickfont: { size: 9, color: textColor } },
-        margin: { l: 150, r: 30, t: 40, b: 50 },
+        xaxis: { 
+            title: { text: 'Log2 Fold Change (Spaceflight vs Ground)', font: { size: 12, color: textColor } },
+            tickfont: { size: 10.5, color: textColor },
+            automargin: true
+        },
+        yaxis: { 
+            title: { text: 'Monoclonal Antibody & Glycan Target', font: { size: 11, color: textColor } },
+            tickfont: { size: 10, color: textColor },
+            automargin: true
+        },
+        margin: { l: 190, r: 40, t: 45, b: 60 },
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'transparent',
         font: { color: textColor }
@@ -112,18 +128,20 @@ function renderBarChart(items, timepoint) {
 function setupControls() {
     const timepointSelect = document.getElementById('diff-timepoint');
     const pthreshSlider = document.getElementById('diff-pthresh');
-    const pthreshVal = document.getElementById('diff-pthresh-val');
+    const pthreshVal = document.getElementById('pthresh-val');
 
     if (timepointSelect) {
         timepointSelect.addEventListener('change', updateCharts);
     }
     if (pthreshSlider) {
         pthreshSlider.addEventListener('input', e => {
-            const val = parseFloat(e.target.value);
-            if (pthreshVal) pthreshVal.innerText = `p < ${val.toFixed(3)}`;
+            if (pthreshVal) pthreshVal.innerText = e.target.value;
             updateCharts();
         });
     }
+
+    // Reactive listener on theme changes
+    window.addEventListener('themeChanged', updateCharts);
 }
 
 // Safe DOM initialization

@@ -212,6 +212,7 @@ nav.nav-bar {
   border-bottom: 3px solid transparent;
   transition: all 0.2s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -220,9 +221,90 @@ nav.nav-bar {
 }
 
 .nav-link.active {
-  color: var(--teal);
+  color: #ffffff;
   border-bottom-color: var(--teal);
-  background: rgba(63, 182, 168, 0.08);
+  background: rgba(63, 182, 168, 0.15);
+}
+
+.theme-toggle-btn {
+  margin-left: auto;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--teal);
+  color: #ffffff;
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] nav.nav-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+[data-theme="light"] .nav-link {
+  color: #475569;
+}
+
+[data-theme="light"] .nav-link:hover {
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+[data-theme="light"] .nav-link.active {
+  color: #005696;
+  border-bottom-color: #005696;
+  background: #eef4f8;
+}
+
+[data-theme="light"] .theme-toggle-btn {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+  background: #e2e8f0;
+  border-color: #005696;
+}
+
+[data-theme="light"] .card {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .control-panel {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .control-panel label,
+[data-theme="light"] .control-panel span {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .control-panel select,
+[data-theme="light"] .control-panel input[type="text"] {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
 }
 
 /* MAIN CONTAINER */
