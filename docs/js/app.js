@@ -10,22 +10,59 @@ import './veggie-study-explorer.js';
 import './ggplantmap-viewer.js';
 import './microscopy-database.js';
 
-// Navigation & Tab Switching
-document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', e => {
-        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
-        
-        e.currentTarget.classList.add('active');
-        const tabId = e.currentTarget.getAttribute('data-tab');
-        const targetTab = document.getElementById(tabId);
-        if (targetTab) {
-            targetTab.classList.add('active');
+// Global Tab Switching Function
+export function switchTab(tabId) {
+    if (!tabId) return;
+    
+    // Update active state on nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('data-tab') === tabId) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
-
-        // Trigger Plotly / Cytoscape / Canvas resizes
-        window.dispatchEvent(new Event('resize'));
     });
+
+    // Update active state on tab panes
+    document.querySelectorAll('.tab-pane, .tab-content').forEach(pane => {
+        if (pane.id === tabId) {
+            pane.classList.add('active');
+        } else {
+            pane.classList.remove('active');
+        }
+    });
+
+    // Scroll to top of main container smoothly
+    const mainContainer = document.querySelector('main.container');
+    if (mainContainer && window.scrollY > 300) {
+        window.scrollTo({ top: 320, behavior: 'smooth' });
+    }
+
+    // Trigger window resize for Plotly, Cytoscape, and HTML5 Canvas redraws
+    setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+    }, 50);
+}
+
+// Navigation Event Listeners
+document.querySelectorAll('.nav-link, .nav-trigger').forEach(el => {
+    el.addEventListener('click', e => {
+        e.preventDefault();
+        const tabId = el.getAttribute('data-tab') || el.getAttribute('href')?.replace('#', '');
+        if (tabId) {
+            switchTab(tabId);
+            // Update hash in URL
+            history.pushState(null, '', `#${tabId}`);
+        }
+    });
+});
+
+// Deep linking on load from URL hash
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById(hash)) {
+        switchTab(hash);
+    }
 });
 
 // Dark / Light Theme Toggle with LocalStorage Persistence
