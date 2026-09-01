@@ -76,5 +76,9 @@ function setupFilters() {
     });
 }
 
-// Auto init
-initMicroscopyDatabase();
+// Safe DOM initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMicroscopyDatabase);
+} else {
+    initMicroscopyDatabase();
+}

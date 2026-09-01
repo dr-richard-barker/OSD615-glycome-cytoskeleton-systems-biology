@@ -178,5 +178,9 @@ function renderMaps() {
     }
 }
 
-// Auto init
-initGGPlantmapViewer();
+// Safe DOM initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGGPlantmapViewer);
+} else {
+    initGGPlantmapViewer();
+}

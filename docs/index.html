@@ -183,39 +183,43 @@
 
         <!-- Tab 7: Transport Simulator -->
         <section id="tab-simulation" class="tab-content">
-            <h2>Dynamic Stochastic Vesicle Transport Simulator</h2>
-            <p>Real-time Monte Carlo physics simulation of secretory vesicles moving along cortical microtubules (green) and actin filaments (red) from Golgi stacks to the cell cortex.</p>
-            <div class="control-panel sim-controls">
-                <button id="sim-ground" class="btn-preset ground-btn">🌿 1g Ground Preset</button>
-                <button id="sim-micro" class="btn-preset space-btn">🚀 0g Microgravity Preset</button>
+            <h2>Dual-Condition Plant Cell Vesicle Transport Simulator</h2>
+            <p class="tab-desc">Simultaneous real-time comparative physics simulation of Golgi-derived secretory vesicle transport along cytoskeletal tracks within an <em>Arabidopsis thaliana</em> root cell under <strong>1g Ground Control (Top)</strong> vs. <strong>0g Microgravity (Bottom)</strong>. Modeled with authentic plant cell anatomy: central vacuole, subcortical cytoplasmic streaming sleeve, Golgi/TGN stacks, and layered cell walls.</p>
+            
+            <div class="control-panel" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 15px;">
+                <button id="sim-start" class="btn-primary">▶ Start Simulation</button>
+                <button id="sim-stop" class="btn-danger">⏹ Pause</button>
+                <button id="sim-reset" class="btn-secondary">🔄 Reset</button>
                 <span class="divider">|</span>
-                <label>Active Motors: <input type="range" id="sim-motors" min="5" max="50" value="25"> <span id="val-motors">25</span></label>
-                <label>Track Density: <input type="range" id="sim-density" min="0.2" max="1.0" step="0.05" value="0.85"> <span id="val-density">0.85</span></label>
-                <label>Gravity Vector: <input type="range" id="sim-gravity" min="0" max="1" step="0.1" value="1.0"> <span id="val-gravity">1.0g</span></label>
-                <span class="divider">|</span>
-                <button id="sim-start" class="btn-primary">▶ Start</button>
-                <button id="sim-stop" class="btn-danger">⏹ Stop</button>
+                <label for="sim-motors">Active Motors:</label>
+                <input type="range" id="sim-motors" min="10" max="60" value="28">
+                <span id="val-motors" class="badge">28</span>
             </div>
-            <div class="sim-wrapper">
-                <canvas id="sim-canvas" width="800" height="450"></canvas>
-                <div class="sim-stats-panel">
-                    <div class="card stat-card">
-                        <h4>Mean Velocity</h4>
-                        <div id="stat-vel" class="stat-value">0.00 µm/s</div>
-                    </div>
-                    <div class="card stat-card">
-                        <h4>Delivery Rate</h4>
-                        <div id="stat-del" class="stat-value">0.00 /s</div>
-                    </div>
-                    <div class="card stat-card">
-                        <h4>Total Delivered</h4>
-                        <div id="stat-total" class="stat-value">0 vesicles</div>
-                    </div>
-                    <div class="card stat-card">
-                        <h4>Stalled / Diffusing</h4>
-                        <div id="stat-stalled" class="stat-value">0</div>
+
+            <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 15px;">
+                <div class="card" style="border-left: 4px solid var(--teal); padding: 12px;">
+                    <h3 style="color: var(--teal); margin-bottom: 8px;">🌱 1g Ground Control (Top Cell)</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem;">
+                        <div>Delivery Rate: <strong id="stat-del-1g" style="color:var(--teal);">0.00 /s</strong></div>
+                        <div>Mean Velocity: <strong id="stat-vel-1g">0.00 µm/s</strong></div>
+                        <div>Total Delivered: <strong id="stat-tot-1g">0</strong></div>
+                        <div>Stalled Count: <strong id="stat-stall-1g">0</strong></div>
                     </div>
                 </div>
+
+                <div class="card" style="border-left: 4px solid var(--coral); padding: 12px;">
+                    <h3 style="color: var(--coral); margin-bottom: 8px;">🚀 0g Microgravity (Bottom Cell)</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem;">
+                        <div>Delivery Rate: <strong id="stat-del-0g" style="color:var(--coral);">0.00 /s</strong></div>
+                        <div>Mean Velocity: <strong id="stat-vel-0g">0.00 µm/s</strong></div>
+                        <div>Total Delivered: <strong id="stat-tot-0g">0</strong></div>
+                        <div>Stalled Count: <strong id="stat-stall-0g">0</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sim-wrapper" style="width: 100%; text-align: center;">
+                <canvas id="sim-canvas" width="850" height="620" style="width: 100%; max-width: 850px; background: #0a0f1d; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.3);"></canvas>
             </div>
         </section>
 
@@ -254,6 +258,9 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+            </div>
+        </section>
+        
         <!-- Tab 11: Single-Cell Spatial Mapping (ggPlantmap) -->
         <section id="tab-singlecell" class="tab-content">
             <h2>Single-Cell Spatial Prediction & ggPlantmap Root Anatomy</h2>
