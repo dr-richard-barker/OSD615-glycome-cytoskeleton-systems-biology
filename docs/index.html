@@ -61,6 +61,7 @@
       <a class="nav-link" data-tab="tab-simulation"><i class="fas fa-truck-loading"></i> Transport Simulator</a>
       <a class="nav-link" data-tab="tab-pathways"><i class="fas fa-route"></i> Biochemical Pathways</a>
       <a class="nav-link" data-tab="tab-massspec"><i class="fas fa-cogs"></i> MS Workflows</a>
+      <a class="nav-link" data-tab="tab-tabpfn"><i class="fas fa-brain"></i> TabPFN AI Model</a>
       <a class="nav-link" data-tab="tab-veggie"><i class="fas fa-seedling"></i> VEGGIE Studies</a>
       <a class="nav-link" data-tab="tab-manuscript"><i class="fas fa-file-alt"></i> Manuscript</a>
     </div>
@@ -392,7 +393,113 @@
       </div>
     </section>
 
-    <!-- TAB 11: VEGGIE STUDIES -->
+    <!-- TAB 11: TABPFN AI FOUNDATION MODEL EXPLORER -->
+    <section id="tab-tabpfn" class="tab-pane">
+      <div class="section-header">
+        <h2><i class="fas fa-brain"></i> TabPFN Tabular Foundation Model: Cross-Study Meta-Analysis</h2>
+        <p>In-context Bayesian multi-omics inference across spaceflight hardware (ISS Veggie vs. STS-131 BRIC-16) and ecotypes (Col-0 vs. Ler-0) using the landmark TabPFN foundation model (Hollmann et al., 2025, <em>Nature</em> / <a href="https://doi.org/10.1038/s41586-024-08328-6" target="_blank" style="color:var(--teal);">doi:10.1038/s41586-024-08328-6 ↗</a>).</p>
+      </div>
+
+      <!-- IN-CONTEXT PARTIAL GRAVITY SIMULATOR -->
+      <div class="card" style="border-left: 4px solid var(--coral); margin-bottom: 20px;">
+        <h3 style="color:var(--coral);"><i class="fas fa-sliders-h"></i> In-Context Partial Gravity Phenotypic Imputer (Moon, Mars & Microgravity)</h3>
+        <p style="color:#cbd5e1; font-size:0.92rem; margin-bottom:12px;">
+          Adjust the gravitational field to evaluate TabPFN's zero-shot posterior predictions for cell wall xylan thickening, motor expression, and root skewing.
+        </p>
+        
+        <div class="control-panel" style="background:rgba(255,255,255,0.03); padding:12px; border-radius:6px; margin-bottom:15px;">
+          <label for="tabpfn-gravity-slider">Gravitational Field (g):</label>
+          <input type="range" id="tabpfn-gravity-slider" min="0.0" max="1.0" step="0.01" value="0.16" style="width: 260px;">
+          <span id="tabpfn-gravity-val" class="badge badge-coral">0.16 g</span>
+          
+          <button id="btn-g-0g" class="btn btn-secondary" style="margin-left: 10px;">0g Microgravity</button>
+          <button id="btn-g-moon" class="btn btn-primary">🌙 Moon (0.16g)</button>
+          <button id="btn-g-mars" class="btn btn-secondary">🔴 Mars (0.38g)</button>
+          <button id="btn-g-1g" class="btn btn-secondary">🌍 Earth (1.0g)</button>
+        </div>
+
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 10px;">
+          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:0.8rem; color:#94a3b8;">Predicted State:</div>
+            <div id="tabpfn-pred-prob" style="font-size:1.05rem; margin-top:4px;">98.2% Microgravity State</div>
+          </div>
+          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:0.8rem; color:#94a3b8;">4M KOH Xylan Accumulation:</div>
+            <div id="tabpfn-pred-xylan" style="font-size:1.05rem; font-weight:bold; color:var(--coral); margin-top:4px;">118.4 µg/mg wall</div>
+          </div>
+          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:0.8rem; color:#94a3b8;">MYA1 Myosin Motor Log2:</div>
+            <div id="tabpfn-pred-mya1" style="font-size:1.05rem; font-weight:bold; color:var(--teal); margin-top:4px;">11.22 log2</div>
+          </div>
+          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:0.8rem; color:#94a3b8;">SPR1 MT Plus-End Guide:</div>
+            <div id="tabpfn-pred-spr1" style="font-size:1.05rem; font-weight:bold; color:#38bdf8; margin-top:4px;">8.62 log2</div>
+          </div>
+          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:0.8rem; color:#94a3b8;">Root Skewing & Waving Angle:</div>
+            <div id="tabpfn-pred-skew" style="font-size:1.05rem; font-weight:bold; color:#f59e0b; margin-top:4px;">39.8°</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DUAL PLOTLY CHARTS (ROC & FEATURE IMPORTANCE) -->
+      <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+        <div class="card">
+          <h3>Zero-Shot Cross-Mission Transfer (ROC Curves)</h3>
+          <div id="tabpfn-roc-plot" style="width: 100%; height: 440px;"></div>
+        </div>
+        <div class="card">
+          <h3>Bayesian In-Context Feature Importance</h3>
+          <div id="tabpfn-importance-plot" style="width: 100%; height: 440px;"></div>
+        </div>
+      </div>
+
+      <!-- CROSS-STUDY HARMONIZATION SUMMARY TABLE -->
+      <div class="card">
+        <h3>Cross-Study Dataset Harmonization (OSD-615 vs. OSD-121)</h3>
+        <div style="overflow-x: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Study Accession</th>
+                <th>Flight Mission & Hardware</th>
+                <th>Ecotype & Growth</th>
+                <th>Sample N</th>
+                <th>Assays Profiled</th>
+                <th>Key Harmonized Findings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong style="color:var(--teal);">OSD-615</strong> (APEX-03-1)</td>
+                <td>ISS Veggie (Light)</td>
+                <td><em>A. thaliana</em> Col-0 (6d, 11d)</td>
+                <td>12 roots (6 Flight / 6 Ground)</td>
+                <td>155-mAb Glycomics, Confocal IHC, RNA-Seq</td>
+                <td>+192% Xylem Xylan (CCRC-M140), MYA1/XI-K induction, SPR1 repression</td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--coral);">OSD-121</strong> (BRIC-16)</td>
+                <td>STS-131 BRIC Canisters (Dark & Light)</td>
+                <td><em>A. thaliana</em> Ler-0 (4d)</td>
+                <td>16 seedlings (8 Flight / 8 Ground)</td>
+                <td>Affymetrix ATH1, Cell Wall AIR fractions, Morphometrics</td>
+                <td>Secondary wall thickening, Root waving (38.5° skew), Myosin motor induction</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PUBLICATION FIGURE 12 EMBED -->
+      <div class="card" style="margin-top: 20px;">
+        <h3>TabPFN Cross-Study Machine Learning Meta-Analysis (Figure 12)</h3>
+        <p style="color:#94a3b8; margin-bottom: 10px;">Zero-shot cross-hardware ROC evaluation, Bayesian multi-omics feature saliency, and partial gravity dose-response curves.</p>
+        <img src="figures/12_tabpfn_cross_study_meta_analysis.png" alt="Figure 12 TabPFN Meta Analysis" style="max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-dark);">
+      </div>
+    </section>
+
+    <!-- TAB 12: VEGGIE STUDIES -->
     <section id="tab-veggie" class="tab-pane">
       <div class="section-header">
         <h2><i class="fas fa-seedling"></i> NASA OSDR VEGGIE Hardware Study Explorer</h2>

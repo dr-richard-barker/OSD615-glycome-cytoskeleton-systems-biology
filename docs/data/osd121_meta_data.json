@@ -1,0 +1,55 @@
+{
+  "studies": [
+    {
+      "accession": "OSD-615",
+      "title": "Cell wall glycome profiling in Arabidopsis roots (APEX-03-1 / ISS Veggie)",
+      "mission": "ISS Veggie (2015)",
+      "hardware": "Veggie Facility",
+      "ecotype": "Col-0",
+      "sample_count": 12,
+      "assays": [
+        "ELISA Glycome Profiling (155 mAbs)",
+        "Confocal IHC",
+        "RNA-Seq Transcripts"
+      ]
+    },
+    {
+      "accession": "OSD-121",
+      "title": "Epigenetic & Cytoskeletal Cell Wall Adaptation in Arabidopsis (BRIC-16 / STS-131)",
+      "mission": "Space Shuttle STS-131 (2010)",
+      "hardware": "Biological Research in Canisters (BRIC-16)",
+      "ecotype": "Ler-0",
+      "sample_count": 16,
+      "assays": [
+        "Transcriptomics (Affymetrix ATH1)",
+        "Cell Wall AIR Fractionation",
+        "Seedling Morphometrics"
+      ]
+    }
+  ],
+  "shared_features": [
+    "MYA1",
+    "MYA2",
+    "XI_K",
+    "SPR1",
+    "MAP65_1",
+    "CLASP",
+    "FRA1",
+    "CESA4",
+    "CESA7",
+    "CESA1",
+    "CSI1",
+    "IRX9",
+    "IRX10",
+    "XTH4",
+    "EXPA1",
+    "SEC",
+    "SPY",
+    "Xylan_4M_KOH",
+    "Xyloglucan_1M_KOH",
+    "Pectin_CDTA",
+    "Cellulose_Residue",
+    "Root_Skewing_deg",
+    "Root_Length_mm"
+  ]
+}

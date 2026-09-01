@@ -9,6 +9,7 @@ import './mass-spec-workflow.js';
 import './veggie-study-explorer.js';
 import './ggplantmap-viewer.js';
 import './microscopy-database.js';
+import './tabpfn-viewer.js';
 
 // Global Tab Switching Function
 export function switchTab(tabId) {
@@ -41,7 +42,7 @@ export function switchTab(tabId) {
     // Trigger window resize and Plotly chart recalculation
     setTimeout(() => {
         window.dispatchEvent(new Event('resize'));
-        ['heatmap', 'volcano', 'bar-chart', 'circle-plot', 'cim-heatmap'].forEach(id => {
+        ['heatmap', 'volcano', 'bar-chart', 'circle-plot', 'cim-heatmap', 'tabpfn-roc-plot', 'tabpfn-importance-plot'].forEach(id => {
             const el = document.getElementById(id);
             if (el && window.Plotly && el.data) {
                 try {
