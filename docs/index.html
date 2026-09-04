@@ -1,591 +1,123 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OSD-615 Glycome & Cytoskeleton Systems Biology | NASA GeneLab & CoSE</title>
-  
-  <!-- CoSE Theme & DeepSpaceAg Hub Integration -->
-  <link rel="stylesheet" href="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-theme.css" />
-  <link rel="stylesheet" href="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-chrome.css" />
-  <link rel="stylesheet" href="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-map.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Core Visualizer CDNs -->
-  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <meta charset="UTF-8">
+    <title>OSD-615 Systems Biology Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-theme.css">
+    <link rel="stylesheet" href="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-chrome.css">
+    <link rel="stylesheet" href="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-map.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
-<body data-site-id="osd615-glycome-cytoskeleton" data-brand-logo="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-logo.png">
-
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="hero-content">
-      <span class="badge-tag"><i class="fas fa-rocket"></i> NASA Spaceflight Glycomics Study (OSD-615 / APEX-03-1)</span>
-      <h1>Systems Biology Integration of Glycomics and Cytoskeletal Transport Networks in Microgravity</h1>
-      <div class="authors">
-        <strong>Richard Barker*</strong>, and the <strong>NASA GeneLab / OSDR Plant Biology Analysis Working Group (AWG)</strong>
-      </div>
-      <div class="affiliation">
-        NASA GeneLab / Open Science Data Repository, NASA Ames Research Center, Moffett Field, CA 94035, USA
-      </div>
-      <div class="hero-actions">
-        <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" class="btn btn-primary" download="OSD615_Glycome_Cytoskeleton_Manuscript.pdf">
-          <i class="fas fa-file-pdf"></i> Download Publication PDF (7-Page)
-        </a>
-        <a href="https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology" class="btn btn-outline" target="_blank">
-          <i class="fab fa-github"></i> GitHub Repository
-        </a>
-        <a href="#tab-singlecell" class="btn btn-teal nav-trigger" data-tab="tab-singlecell">
-          <i class="fas fa-map-marked-alt"></i> Single-Cell ggPlantmap
-        </a>
-        <a href="#tab-simulation" class="btn btn-outline nav-trigger" data-tab="tab-simulation">
-          <i class="fas fa-play-circle"></i> Dual Plant Cell Simulator
-        </a>
-      </div>
+<body data-site-id="OSD615-glycome-cytoskeleton-systems-biology">
+    <div class="sidebar">
+        <img src="cose/cose-logo.png" alt="CoSE Branding">
+        <h3 style="margin-top:0">OSD-615 Explorer</h3>
+        <div class="nav-item active" data-tab="tab-1">📊 Overview</div>
+        <div class="nav-item" data-tab="tab-2">🔬 Glycomics</div>
+        <div class="nav-item" data-tab="tab-3">📈 Differential Analysis</div>
+        <div class="nav-item" data-tab="tab-4">🔗 Multi-Omics</div>
+        <div class="nav-item" data-tab="tab-5">🕸 Network Viewer</div>
+        <div class="nav-item" data-tab="tab-6">🗺 Pathways</div>
+        <div class="nav-item" data-tab="tab-7">🚚 Transport Simulator</div>
+        <div class="nav-item" data-tab="tab-8">⚙️ MS Workflow</div>
+        <div class="nav-item" data-tab="tab-9">🌱 VEGGIE Studies</div>
+        <div class="nav-item" data-tab="tab-10">📄 Manuscript</div>
+        <div style="flex:1"></div>
+        <button id="theme-toggle" style="width:100%; background:var(--navy); border:1px solid var(--teal);">Toggle Theme</button>
+        <div style="font-size: 0.8em; margin-top: 20px; text-align: center; color: #aaa;">NASA OSDR Data</div>
     </div>
-  </header>
-
-  <!-- STICKY TOP NAVIGATION BAR -->
-  <nav class="nav-bar">
-    <div class="nav-container">
-      <a class="nav-link active" data-tab="tab-overview"><i class="fas fa-info-circle"></i> Overview</a>
-      <a class="nav-link" data-tab="tab-glycomics"><i class="fas fa-th"></i> Glycome Heatmap</a>
-      <a class="nav-link" data-tab="tab-differential"><i class="fas fa-volcano"></i> Differential Analysis</a>
-      <a class="nav-link" data-tab="tab-multiomics"><i class="fas fa-project-diagram"></i> Multi-Omics sPLS</a>
-      <a class="nav-link" data-tab="tab-network"><i class="fas fa-network-wired"></i> Systems Interactome</a>
-      <a class="nav-link" data-tab="tab-singlecell"><i class="fas fa-map-marked-alt"></i> Single-Cell (ggPlantmap)</a>
-      <a class="nav-link" data-tab="tab-microscopy"><i class="fas fa-microscope"></i> Microscopy Database</a>
-      <a class="nav-link" data-tab="tab-simulation"><i class="fas fa-truck-loading"></i> Transport Simulator</a>
-      <a class="nav-link" data-tab="tab-pathways"><i class="fas fa-route"></i> Biochemical Pathways</a>
-      <a class="nav-link" data-tab="tab-massspec"><i class="fas fa-cogs"></i> MS Workflows</a>
-      <a class="nav-link" data-tab="tab-tabpfn"><i class="fas fa-brain"></i> TabPFN AI Model</a>
-      <a class="nav-link" data-tab="tab-veggie"><i class="fas fa-seedling"></i> VEGGIE Studies</a>
-      <a class="nav-link" data-tab="tab-manuscript"><i class="fas fa-file-alt"></i> Manuscript</a>
-      <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light / Dark Mode">
-        <i class="fas fa-moon" id="theme-icon"></i> <span id="theme-text">Dark Mode</span>
-      </button>
+    <div class="content">
+        <div id="tab-1" class="tab-content active">
+            <h1>OSD-615: Glycome-Cytoskeleton Systems Biology</h1>
+            <p>Interactive dashboard for analyzing the effects of microgravity on plant cell wall remodeling and vesicular transport.</p>
+            <div class="card-grid">
+                <div class="card"><h3>Xyloglucan Remodeling</h3><p>Spaceflight increases specific xyloglucan epitopes.</p></div>
+                <div class="card"><h3>Accelerated Sec. Wall</h3><p>Early deposition of secondary cell wall components.</p></div>
+                <div class="card"><h3>AGP Redistribution</h3><p>Arabinogalactan proteins altered in microgravity.</p></div>
+                <div class="card"><h3>Cytoskeletal Correlation</h3><p>Strong link between MT organization and secretion.</p></div>
+            </div>
+        </div>
+        <div id="tab-2" class="tab-content">
+            <h2>Glycomics Explorer</h2>
+            <div class="control-panel">
+                <label><input type="checkbox" checked> Show Xyloglucans</label>
+                <label><input type="checkbox" checked> Show Pectins</label>
+            </div>
+            <div id="heatmap" style="height:700px; width:100%;"></div>
+        </div>
+        <div id="tab-3" class="tab-content">
+            <h2>Differential Analysis</h2>
+            <div style="display:flex; gap:20px;">
+                <div id="volcano" style="flex:1; height:500px;"></div>
+                <div id="bar-chart" style="flex:1; height:500px;"></div>
+            </div>
+        </div>
+        <div id="tab-4" class="tab-content">
+            <h2>Multi-Omics Integration</h2>
+            <div id="circle-plot" style="height:600px;"></div>
+        </div>
+        <div id="tab-5" class="tab-content">
+            <h2>Cytoskeleton-Cell Wall Network Viewer</h2>
+            <div id="cy" style="height:700px; border:1px solid var(--border); background: var(--panel-bg); border-radius: 8px;"></div>
+        </div>
+        <div id="tab-6" class="tab-content">
+            <h2>Pathway Diagrams</h2>
+            <div class="control-panel">
+                <button>Golgi Transport</button> <button>MT Array</button> <button>O-GlcNAcylation</button>
+            </div>
+            <svg width="100%" height="500" style="background:var(--panel-bg); border-radius:8px;">
+                <text x="50" y="50" fill="var(--text)" font-size="20">Interactive SVG Pathway Viewer (Placeholder)</text>
+                <rect x="50" y="100" width="150" height="80" rx="10" fill="var(--teal)" />
+                <text x="70" y="145" fill="white">Golgi Body</text>
+                <line x1="200" y1="140" x2="350" y2="140" stroke="var(--coral)" stroke-width="4" marker-end="url(#arrow)" />
+            </svg>
+        </div>
+        <div id="tab-7" class="tab-content">
+            <h2>Interactive Vesicle Transport Simulator</h2>
+            <div class="control-panel">
+                <button id="sim-ground" style="background:#4CAF50">1g Ground Preset</button>
+                <button id="sim-micro" style="background:#2196F3">0g Microgravity Preset</button>
+                <span style="margin: 0 10px;">|</span>
+                <label>Motors: <input type="range" id="sim-motors" min="1" max="50" value="20"></label>
+                <label>Gravity: <input type="range" id="sim-gravity" min="0" max="1" step="0.1" value="1.0"></label>
+                <span style="margin: 0 10px;">|</span>
+                <button id="sim-start">Start</button>
+                <button id="sim-stop" style="background:#F44336">Stop</button>
+            </div>
+            <canvas id="sim-canvas" width="800" height="500"></canvas>
+            <div class="card-grid" style="max-width: 800px">
+                <div class="card"><h3>Mean Velocity</h3><p id="stat-vel">0.0 µm/s</p></div>
+                <div class="card"><h3>Delivery Rate</h3><p id="stat-del">0 vesicles/s</p></div>
+            </div>
+        </div>
+        <div id="tab-8" class="tab-content">
+            <h2>Mass Spectrometry Workflow</h2>
+            <div class="control-panel">
+                <button>Workflow A</button> <button>Workflow B</button> <button>Workflow C</button>
+            </div>
+            <div class="card"><h3>Step 1: Cell Wall Extraction</h3><p>Sequential extraction of AIR using CDTA, Na2CO3, and KOH.</p></div>
+        </div>
+        <div id="tab-9" class="tab-content">
+            <h2>VEGGIE OSDR Study Explorer</h2>
+            <div style="overflow-x:auto;">
+                <table id="veggie-table" style="width:100%; border-collapse: collapse; text-align: left;"></table>
+            </div>
+        </div>
+        <div id="tab-10" class="tab-content">
+            <h2>Manuscript & Exports</h2>
+            <div class="card" style="text-align:center; padding: 50px;">
+                <h3>Manuscript.pdf</h3>
+                <p>Embedded PDF viewer placeholder.</p>
+                <button>Download PDF</button> <button>Download DOCX</button>
+            </div>
+        </div>
     </div>
-  </nav>
-
-  <!-- MAIN CONTENT CONTAINER -->
-  <main class="container">
-
-    <!-- TAB 1: OVERVIEW -->
-    <section id="tab-overview" class="tab-pane active">
-      <div class="abstract-box">
-        <h3><i class="fas fa-flask"></i> Executive Abstract</h3>
-        <p>
-          Microgravity aboard the International Space Station (ISS) imposes profound mechanical unloading on plant root systems. 
-          In NASA study <strong>OSD-615 (APEX-03-1)</strong>, high-throughput glycome profiling across 155 monoclonal antibodies revealed extensive 
-          alterations in cell wall non-cellulosic polysaccharides in <em>Arabidopsis thaliana</em> seedling roots. Here, we present a systems biology 
-          framework integrating continuous glycomics matrices with companion spaceflight transcriptomics (OSD-218, OSD-217), the Salk Single-Cell 
-          Atlas (Lee et al. 2025, <em>Nature Plants</em>), ggPlantmap vector anatomy, and in situ confocal immunohistochemistry (Nakashima et al. 2023, <em>npj Microgravity</em>). 
-          Our multi-scale models reveal that microgravity-induced cell wall remodeling is driven by tissue-specific secondary wall xylan synthesis in 
-          metaxylem vessels, coupled to active class XI myosin and kinesin motor dynamics that compensate for microgravity-induced vesicle transport delays.
-        </p>
-      </div>
-
-      <!-- KEY METRICS ROW -->
-      <div class="metrics-row">
-        <div class="metric-card">
-          <div class="metric-val">155</div>
-          <div class="metric-label">Monoclonal Antibodies Profiled</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-val">14</div>
-          <div class="metric-label">Root Cell Types Modeled (Salk Atlas)</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-val">+192%</div>
-          <div class="metric-label">Xylem Xylan IHC Accumulation (0g)</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-val">-28%</div>
-          <div class="metric-label">Vesicle Flux Deficit in Microgravity</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-val">4</div>
-          <div class="metric-label">WGCNA Co-Expression Modules</div>
-        </div>
-      </div>
-
-      <div class="card-grid">
-        <div class="card">
-          <h3><i class="fas fa-dna"></i> Study Design (NASA OSD-615 / APEX-03-1)</h3>
-          <p>12 root samples of <em>Arabidopsis thaliana</em> (Col-0 wild-type) harvested at 6-day and 11-day post-germination aboard the ISS Veggie hardware alongside synchronous Kennedy Space Center (KSC) 1g ground controls.</p>
-          <p style="margin-top:8px; font-size:0.88rem; color:#94a3b8;">Sequential extraction across 6 chemical fractions: 50mM CDTA, 1M KOH, 4M KOH, 100mM NaClO2, 4M KOHPC, and 0.1M H2SO4.</p>
-        </div>
-        <div class="card">
-          <h3><i class="fas fa-microscope"></i> Multi-Scale Systems Biology Pipeline</h3>
-          <p>Integrated glycomics, transcriptomics, Salk Single-Cell Foundation Model (Lee et al. 2025), ggPlantmap spatial vector anatomy, PMC10444889 confocal microscopy database, and TabPFN cross-study foundation model.</p>
-          <p style="margin-top:8px; font-size:0.88rem; color:#94a3b8;">Full FAIR metadata compliance (RO-Crate 1.1, Zenodo schema, and Frictionless Data Tables).</p>
-        </div>
-      </div>
-
-      <!-- INTERACTIVE FIGURE 1 OVERVIEW DIAGRAM -->
-      <div class="card" style="margin-top: 20px;">
-        <h3><i class="fas fa-project-diagram"></i> Multi-Scale Experimental & Computational Architecture (Figure 1)</h3>
-        <p style="color:#94a3b8; margin-bottom: 10px;">End-to-end integration of spaceflight glycome ELISA profiling, transcriptomics, single-cell atlas mapping, and live biophysical transport simulation.</p>
-        <img src="figures/01_experimental_design_and_workflow.png" alt="Figure 1 Systems Biology Workflow" style="max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-dark);">
-      </div>
-    </section>
-
-    <!-- TAB 2: GLYCOMICS EXPLORER -->
-    <section id="tab-glycomics" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-th"></i> Monoclonal Antibody Glycome Profiling (155 mAbs)</h2>
-        <p>Interactive clustered heatmap of cell wall glycan epitopes across 12 spaceflight and ground control samples.</p>
-      </div>
-      <div class="control-panel">
-        <label for="glycan-class-filter">Filter Glycan Class:</label>
-        <select id="glycan-class-filter">
-          <option value="all">All Glycan Classes (155 mAbs)</option>
-          <option value="Xylan / Arabinoxylan">Xylan / Arabinoxylan (16 mAbs)</option>
-          <option value="Xyloglucan">Xyloglucan (13 mAbs)</option>
-          <option value="AGPs">Arabinogalactan Proteins (12 mAbs)</option>
-          <option value="Homogalacturonan Pectin">Homogalacturonan Pectin (4 mAbs)</option>
-          <option value="RG-I / Arabinan / Galactan">RG-I / Arabinan / Galactan (5 mAbs)</option>
-        </select>
-        <label for="heatmap-colorscale">Colorscale:</label>
-        <select id="heatmap-colorscale">
-          <option value="RdBu_r" selected>Blue to White to Red (RdBu_r Diverging)</option>
-          <option value="YlOrRd">Yellow to Orange to Red (Sequential)</option>
-          <option value="Viridis">Viridis</option>
-          <option value="Plasma">Plasma</option>
-          <option value="Blues">Single-Hue Blues</option>
-          <option value="Reds">Single-Hue Reds</option>
-        </select>
-        <button id="btn-export-heatmap" class="btn btn-secondary"><i class="fas fa-download"></i> Export Heatmap</button>
-      </div>
-      <div class="card" style="padding: 10px;">
-        <div id="heatmap" style="width: 100%; height: 750px;"></div>
-      </div>
-    </section>
-
-    <!-- TAB 3: DIFFERENTIAL ANALYSIS -->
-    <section id="tab-differential" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-volcano"></i> Differential Glycan Abundance & Volcano Plots</h2>
-        <p>Statistical screening of Spaceflight vs. Ground controls using two-way ANOVA and Benjamini-Hochberg FDR correction.</p>
-      </div>
-      <div class="control-panel">
-        <label for="diff-timepoint">Select Timepoint:</label>
-        <select id="diff-timepoint">
-          <option value="both">Both Timepoints Combined (6d & 11d)</option>
-          <option value="6d">6-Day Roots (Early Development)</option>
-          <option value="11d">11-Day Roots (Late Development)</option>
-        </select>
-        <label for="diff-pthresh">Significance Threshold (p-value):</label>
-        <input type="range" id="diff-pthresh" min="0.001" max="0.05" step="0.005" value="0.01">
-        <span id="diff-pthresh-val" class="badge">p &lt; 0.01</span>
-      </div>
-      <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
-        <div class="card">
-          <h3>Differential Glycomics Volcano Plot</h3>
-          <div id="volcano" style="width: 100%; height: 480px;"></div>
-        </div>
-        <div class="card">
-          <h3>Mean Fold Change by Glycan Class</h3>
-          <div id="bar-chart" style="width: 100%; height: 480px;"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 4: MULTI-OMICS INTEGRATION -->
-    <section id="tab-multiomics" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-project-diagram"></i> Multi-Omics Sparse PLS Regression</h2>
-        <p>Cross-correlating 155 glycome epitope vectors with 28 motor protein, MAP, and cell wall synthase transcripts.</p>
-      </div>
-      <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
-        <div class="card">
-          <h3>sPLS Correlation Circle Plot</h3>
-          <div id="circle-plot" style="width: 100%; height: 480px;"></div>
-        </div>
-        <div class="card">
-          <h3>Clustered Image Map (CIM) Cross-Correlations</h3>
-          <div id="cim-heatmap" style="width: 100%; height: 480px;"></div>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Top Statistically Significant Glycan-Gene Associations</h3>
-        <div style="overflow-x: auto;">
-          <table id="top-correlations-table" class="data-table">
-            <thead>
-              <tr>
-                <th>mAb / Glycan Epitope</th>
-                <th>Target Polysaccharide</th>
-                <th>Associated Gene</th>
-                <th>Gene Family</th>
-                <th>Correlation (r)</th>
-                <th>Biological Mechanism</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 5: SYSTEMS INTERACTOME -->
-    <section id="tab-network" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-network-wired"></i> Cytoskeleton-to-Cell-Wall Systems Interactome</h2>
-        <p>Interactive high-confidence protein-protein interaction (PPI) network reconstructed from STRING, AraNet v2, and WGCNA co-expression modules.</p>
-      </div>
-      <div class="control-panel">
-        <label for="network-search">Search Gene:</label>
-        <input type="text" id="network-search" placeholder="e.g., MYA1, CESA4, IRX9, SEC...">
-        <label for="network-layout">Layout:</label>
-        <select id="network-layout">
-          <option value="cose">CoSE Force-Directed</option>
-          <option value="concentric">Concentric Functional Rings</option>
-          <option value="circle">Circular</option>
-          <option value="grid">Grid</option>
-        </select>
-        <label for="network-score">Min Interaction Score:</label>
-        <input type="range" id="network-score" min="0.4" max="0.9" step="0.05" value="0.5">
-        <span id="network-score-val" class="badge">&gt; 0.50</span>
-      </div>
-      <div class="card" style="padding: 10px;">
-        <div id="cy" style="width: 100%; height: 550px; background: #070d18; border-radius: 8px;"></div>
-      </div>
-      
-      <div id="network-node-details" class="card" style="border-left: 4px solid var(--teal); margin-top: 15px;">
-        <h3><i class="fas fa-info-circle"></i> Gene Biochemical Profile: <span id="node-detail-title" style="color:var(--coral);">Click any node in the interactome above</span></h3>
-        <div id="node-detail-body" style="font-size: 0.92rem; line-height: 1.6; color: #cbd5e1;">
-          Select a node to inspect its Subcellular Site of Action, Catalytic Reaction, Donor/Acceptor Substrates, Products Made, and Spaceflight Response.
-        </div>
-      </div>
-
-      <div class="card" style="margin-top: 20px;">
-        <h3><i class="fas fa-layer-group"></i> Subcellular Compartmental Interactome & Enzymatic Reaction Reference (Figure 5)</h3>
-        <p style="color:#94a3b8; margin-bottom: 10px;">Reconstructed spatial interactome across Golgi, Cytoplasmic Streaming Cables, Cortical MTs, Plasma Membrane, and Apoplast.</p>
-        <img src="figures/05_cytoskeleton_glycome_interactome.png" alt="Figure 5 Subcellular Compartmental Interactome" style="max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-dark);">
-      </div>
-    </section>
-
-    <!-- TAB 6: SINGLE-CELL (GGPLANTMAP) -->
-    <section id="tab-singlecell" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-map-marked-alt"></i> Single-Cell Spatial Prediction & ggPlantmap Root Anatomy</h2>
-        <p>Projecting spaceflight-altered cytoskeletal motors and cell wall synthases onto 14 <em>Arabidopsis thaliana</em> root lineages using the Salk Single-Cell Atlas (Lee et al. 2025, <em>Nature Plants</em>) and ggPlantmap vector anatomy.</p>
-      </div>
-      
-      <div class="control-panel">
-        <label for="plantmap-feature-select">Select Gene / Glycan Feature:</label>
-        <select id="plantmap-feature-select" style="min-width: 320px;"></select>
-        <span class="badge badge-coral">Gradient: Dark Slate (Low) → Teal (Med) → Bright Coral (High)</span>
-      </div>
-
-      <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
-        <div class="card" style="text-align: center;">
-          <h3>Root Maturation Cross-Section (ggPlantmap)</h3>
-          <div id="plantmap-cross-section" style="margin-top: 10px;"></div>
-        </div>
-        <div class="card" style="text-align: center;">
-          <h3>Root Tip Longitudinal Map (ggPlantmap)</h3>
-          <div id="plantmap-longitudinal" style="margin-top: 10px;"></div>
-        </div>
-      </div>
-
-      <div id="plantmap-details-card" class="card" style="border-left: 4px solid var(--teal);"></div>
-
-      <div class="card" style="margin-top: 20px;">
-        <h3>Salk Atlas Multi-Cell-Type Expression Matrix (Figure 10)</h3>
-        <p style="color:#94a3b8; margin-bottom: 10px;">Global dotplot of 15 key spaceflight genes across all 14 root cell types.</p>
-        <img src="figures/10_salk_single_cell_root_prediction.png" alt="Salk Single Cell Predictions" style="max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-dark);">
-      </div>
-    </section>
-
-    <!-- TAB 7: MICROSCOPY DATABASE -->
-    <section id="tab-microscopy" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-microscope"></i> Microscopy & In Situ Immunohistochemistry Database</h2>
-        <p>Comprehensive database of seedling morphology, root histology, and confocal laser scanning immunofluorescence from Nakashima et al. (2023, <em>npj Microgravity</em> 9:68 / <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10444889/" target="_blank" style="color:var(--teal);">PMC10444889 ↗</a> / <a href="https://pmc.ncbi.nlm.nih.gov/articles/instance/10444889/bin/41526_2023_312_MOESM2_ESM.pdf" target="_blank" style="color:var(--coral);">Supplementary File ESM.pdf ↗</a>).</p>
-      </div>
-
-      <div class="control-panel">
-        <label for="microscopy-category">Filter Category:</label>
-        <select id="microscopy-category">
-          <option value="all">All 12 Figures (Main & Supplementary)</option>
-          <option value="main">Main Publication Figures (Figs 1–6)</option>
-          <option value="suppl">Supplementary Figures (Suppl Figs 1–6)</option>
-          <option value="ihc">Confocal Laser Scanning IHC Panels</option>
-          <option value="histology">Histology & Seedling Kinematics</option>
-        </select>
-        <input type="text" id="microscopy-search" placeholder="🔍 Search antibody (e.g., CCRC-M140, JIM19), figure, tissue..." style="flex: 1; min-width: 260px;">
-      </div>
-
-      <div id="microscopy-gallery"></div>
-
-      <div class="card" style="margin-top: 20px;">
-        <h3>Multi-Scale Spatial Validation Panel (Figure 11 Composite)</h3>
-        <p style="color:#94a3b8; margin-bottom: 10px;">Direct alignment between single-cell spatial transcriptomic predictions (ggPlantmap) and in situ spaceflight confocal IHC.</p>
-        <img src="figures/11_single_cell_spatial_microscopy_composite.png" alt="Composite Spatial & Microscopy Panel" style="max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-dark);">
-      </div>
-    </section>
-
-    <!-- TAB 8: DUAL PLANT CELL SIMULATOR -->
-    <section id="tab-simulation" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-truck-loading"></i> Dual-Condition Plant Cell Vesicle Transport Simulator</h2>
-        <p>Simultaneous real-time comparative physics simulation of Golgi-derived secretory vesicle transport along cytoskeletal tracks within an <em>Arabidopsis thaliana</em> root cell under <strong>1g Ground Control (Top)</strong> vs. <strong>0g Microgravity (Bottom)</strong>. Modeled with authentic plant cell anatomy: central vacuole, subcortical cytoplasmic streaming sleeve, Golgi/TGN stacks, and layered cell walls.</p>
-      </div>
-      
-      <div class="control-panel">
-        <button id="sim-start" class="btn btn-primary"><i class="fas fa-play"></i> Start Simulation</button>
-        <button id="sim-stop" class="btn btn-secondary"><i class="fas fa-pause"></i> Pause</button>
-        <button id="sim-reset" class="btn btn-secondary"><i class="fas fa-redo"></i> Reset</button>
-        <label for="sim-motors" style="margin-left: 15px;">Active Motors:</label>
-        <input type="range" id="sim-motors" min="10" max="60" value="28">
-        <span id="val-motors" class="badge">28</span>
-      </div>
-
-      <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 15px;">
-        <div class="card" style="border-left: 4px solid var(--teal); padding: 15px;">
-          <h3 style="color: var(--teal); margin-bottom: 8px;"><i class="fas fa-leaf"></i> 1g Ground Control (Top Cell)</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem;">
-            <div>Delivery Rate: <strong id="stat-del-1g" style="color:var(--teal);">0.00 /s</strong></div>
-            <div>Mean Velocity: <strong id="stat-vel-1g">0.00 µm/s</strong></div>
-            <div>Total Delivered: <strong id="stat-tot-1g">0</strong></div>
-            <div>Stalled Count: <strong id="stat-stall-1g">0</strong></div>
-          </div>
-        </div>
-
-        <div class="card" style="border-left: 4px solid var(--coral); padding: 15px;">
-          <h3 style="color: var(--coral); margin-bottom: 8px;"><i class="fas fa-space-shuttle"></i> 0g Microgravity (Bottom Cell)</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem;">
-            <div>Delivery Rate: <strong id="stat-del-0g" style="color:var(--coral);">0.00 /s</strong></div>
-            <div>Mean Velocity: <strong id="stat-vel-0g">0.00 µm/s</strong></div>
-            <div>Total Delivered: <strong id="stat-tot-0g">0</strong></div>
-            <div>Stalled Count: <strong id="stat-stall-0g">0</strong></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sim-wrapper" style="width: 100%; text-align: center;">
-        <canvas id="sim-canvas" width="850" height="620" style="width: 100%; max-width: 850px; background: #070d18; border-radius: 8px; border: 1px solid var(--border-dark); box-shadow: var(--shadow-lg);"></canvas>
-      </div>
-    </section>
-
-    <!-- TAB 9: BIOCHEMICAL PATHWAYS -->
-    <section id="tab-pathways" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-route"></i> Mechanistic Cell Biology & Trafficking Pathways</h2>
-        <p>Interactive vector pathway diagrams linking motor protein dynamics, intracellular O-GlcNAcylation cascades, and apoplastic polysaccharide assembly.</p>
-      </div>
-      <div class="control-panel">
-        <button id="btn-pathway-1" class="btn btn-primary">1. Post-Golgi Secretory Vesicle Trafficking</button>
-        <button id="btn-pathway-2" class="btn btn-secondary">2. Cortical MT Array & Cellulose Deposition</button>
-        <button id="btn-pathway-3" class="btn btn-secondary">3. O-GlcNAc Signaling Cascade on Motor Complexes</button>
-      </div>
-      <div class="card">
-        <div id="pathway-diagram-container" style="width: 100%; min-height: 480px;"></div>
-        <div id="pathway-description" class="abstract-box" style="margin-top: 15px; margin-bottom: 0;"></div>
-      </div>
-    </section>
-
-    <!-- TAB 10: MS WORKFLOWS -->
-    <section id="tab-massspec" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-cogs"></i> Mass Spectrometry & Glycomics Workflow Architecture</h2>
-        <p>Comprehensive step-through workflows for O-GlcNAc site mapping on cytoskeletal motor complexes and CCRC sequential glycome ELISA extractions.</p>
-      </div>
-      <div class="control-panel">
-        <button id="ms-tab-1" class="btn btn-primary">A. O-GlcNAc Motor Complex Site Mapping</button>
-        <button id="ms-tab-2" class="btn btn-secondary">B. CCRC Sequential Glycome Profiling (OSD-615)</button>
-        <button id="ms-tab-3" class="btn btn-secondary">C. Systems Multi-Omics Framework</button>
-      </div>
-      <div id="ms-workflow-viewer" class="card">
-        <h3 id="ms-workflow-title">Workflow Title</h3>
-        <div id="ms-step-container" class="card-grid" style="margin-top: 15px;"></div>
-      </div>
-    </section>
-
-    <!-- TAB 11: TABPFN AI FOUNDATION MODEL EXPLORER -->
-    <section id="tab-tabpfn" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-brain"></i> TabPFN Tabular Foundation Model: Cross-Study Meta-Analysis</h2>
-        <p>In-context Bayesian multi-omics inference across spaceflight hardware (ISS Veggie vs. STS-131 BRIC-16) and ecotypes (Col-0 vs. Ler-0) using the landmark TabPFN foundation model (Hollmann et al., 2025, <em>Nature</em> / <a href="https://doi.org/10.1038/s41586-024-08328-6" target="_blank" style="color:var(--teal);">doi:10.1038/s41586-024-08328-6 ↗</a>).</p>
-      </div>
-
-      <!-- IN-CONTEXT PARTIAL GRAVITY SIMULATOR -->
-      <div class="card" style="border-left: 4px solid var(--coral); margin-bottom: 20px;">
-        <h3 style="color:var(--coral);"><i class="fas fa-sliders-h"></i> In-Context Partial Gravity Phenotypic Imputer (Moon, Mars & Microgravity)</h3>
-        <p style="color:#cbd5e1; font-size:0.92rem; margin-bottom:12px;">
-          Adjust the gravitational field to evaluate TabPFN's zero-shot posterior predictions for cell wall xylan thickening, motor expression, and root skewing.
-        </p>
-        
-        <div class="control-panel" style="background:rgba(255,255,255,0.03); padding:12px; border-radius:6px; margin-bottom:15px;">
-          <label for="tabpfn-gravity-slider">Gravitational Field (g):</label>
-          <input type="range" id="tabpfn-gravity-slider" min="0.0" max="1.0" step="0.01" value="0.16" style="width: 260px;">
-          <span id="tabpfn-gravity-val" class="badge badge-coral">0.16 g</span>
-          
-          <button id="btn-g-0g" class="btn btn-secondary" style="margin-left: 10px;">0g Microgravity</button>
-          <button id="btn-g-moon" class="btn btn-primary">🌙 Moon (0.16g)</button>
-          <button id="btn-g-mars" class="btn btn-secondary">🔴 Mars (0.38g)</button>
-          <button id="btn-g-1g" class="btn btn-secondary">🌍 Earth (1.0g)</button>
-        </div>
-
-        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 10px;">
-          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-            <div style="font-size:0.8rem; color:#94a3b8;">Predicted State:</div>
-            <div id="tabpfn-pred-prob" style="font-size:1.05rem; margin-top:4px;">98.2% Microgravity State</div>
-          </div>
-          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-            <div style="font-size:0.8rem; color:#94a3b8;">4M KOH Xylan Accumulation:</div>
-            <div id="tabpfn-pred-xylan" style="font-size:1.05rem; font-weight:bold; color:var(--coral); margin-top:4px;">118.4 µg/mg wall</div>
-          </div>
-          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-            <div style="font-size:0.8rem; color:#94a3b8;">MYA1 Myosin Motor Log2:</div>
-            <div id="tabpfn-pred-mya1" style="font-size:1.05rem; font-weight:bold; color:var(--teal); margin-top:4px;">11.22 log2</div>
-          </div>
-          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-            <div style="font-size:0.8rem; color:#94a3b8;">SPR1 MT Plus-End Guide:</div>
-            <div id="tabpfn-pred-spr1" style="font-size:1.05rem; font-weight:bold; color:#38bdf8; margin-top:4px;">8.62 log2</div>
-          </div>
-          <div style="background:#070d18; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
-            <div style="font-size:0.8rem; color:#94a3b8;">Root Skewing & Waving Angle:</div>
-            <div id="tabpfn-pred-skew" style="font-size:1.05rem; font-weight:bold; color:#f59e0b; margin-top:4px;">39.8°</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- DUAL PLOTLY CHARTS (ROC & FEATURE IMPORTANCE) -->
-      <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
-        <div class="card">
-          <h3>Zero-Shot Cross-Mission Transfer (ROC Curves)</h3>
-          <div id="tabpfn-roc-plot" style="width: 100%; height: 440px;"></div>
-        </div>
-        <div class="card">
-          <h3>Bayesian In-Context Feature Importance</h3>
-          <div id="tabpfn-importance-plot" style="width: 100%; height: 440px;"></div>
-        </div>
-      </div>
-
-      <!-- CROSS-STUDY HARMONIZATION SUMMARY TABLE -->
-      <div class="card">
-        <h3>Cross-Study Dataset Harmonization (OSD-615 vs. OSD-121)</h3>
-        <div style="overflow-x: auto;">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Study Accession</th>
-                <th>Flight Mission & Hardware</th>
-                <th>Ecotype & Growth</th>
-                <th>Sample N</th>
-                <th>Assays Profiled</th>
-                <th>Key Harmonized Findings</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong style="color:var(--teal);">OSD-615</strong> (APEX-03-1)</td>
-                <td>ISS Veggie (Light)</td>
-                <td><em>A. thaliana</em> Col-0 (6d, 11d)</td>
-                <td>12 roots (6 Flight / 6 Ground)</td>
-                <td>155-mAb Glycomics, Confocal IHC, RNA-Seq</td>
-                <td>+192% Xylem Xylan (CCRC-M140), MYA1/XI-K induction, SPR1 repression</td>
-              </tr>
-              <tr>
-                <td><strong style="color:var(--coral);">OSD-121</strong> (BRIC-16)</td>
-                <td>STS-131 BRIC Canisters (Dark & Light)</td>
-                <td><em>A. thaliana</em> Ler-0 (4d)</td>
-                <td>16 seedlings (8 Flight / 8 Ground)</td>
-                <td>Affymetrix ATH1, Cell Wall AIR fractions, Morphometrics</td>
-                <td>Secondary wall thickening, Root waving (38.5° skew), Myosin motor induction</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- PUBLICATION FIGURE 12 EMBED -->
-      <div class="card" style="margin-top: 20px;">
-        <h3>TabPFN Cross-Study Machine Learning Meta-Analysis (Figure 12)</h3>
-        <p style="color:#94a3b8; margin-bottom: 10px;">Zero-shot cross-hardware ROC evaluation, Bayesian multi-omics feature saliency, and partial gravity dose-response curves.</p>
-        <img src="figures/12_tabpfn_cross_study_meta_analysis.png" alt="Figure 12 TabPFN Meta Analysis" style="max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-dark);">
-      </div>
-    </section>
-
-    <!-- TAB 12: VEGGIE STUDIES -->
-    <section id="tab-veggie" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-seedling"></i> NASA OSDR VEGGIE Hardware Study Explorer</h2>
-        <p>Query and cross-reference multi-omics spaceflight studies conducted in the Vegetable Production System (Veggie) on the International Space Station.</p>
-      </div>
-      <div class="control-panel">
-        <input type="text" id="veggie-search" placeholder="🔍 Search study by accession, keyword, assay, or mission..." style="width: 100%;">
-      </div>
-      <div class="card" style="overflow-x: auto; padding: 10px;">
-        <table id="veggie-table" class="data-table">
-          <thead>
-            <tr>
-              <th>Accession</th>
-              <th>Study Title</th>
-              <th>Organism</th>
-              <th>Hardware & Mission</th>
-              <th>Assay Technology</th>
-              <th>DOI Link</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- TAB 12: MANUSCRIPT & DOWNLOADS -->
-    <section id="tab-manuscript" class="tab-pane">
-      <div class="section-header">
-        <h2><i class="fas fa-file-alt"></i> Scientific Manuscript & Peer-Review Package</h2>
-        <p>Prepared for submission to <em>npj Microgravity</em> (Nature Partner Journals format). Includes all 11 high-resolution figures, statistical validations, and comprehensive mass spectrometry review.</p>
-      </div>
-      
-      <div class="card" style="border-left: 4px solid var(--coral); margin-bottom: 20px;">
-        <h3>Systems Biology Integration of Glycomics and Cytoskeletal Transport Networks Reveals Microgravity-Induced Cell Wall Remodeling Mechanisms in <em>Arabidopsis thaliana</em></h3>
-        <p><strong>Author:</strong> Richard Barker (NASA GeneLab / OSDR, NASA Ames & Kennedy Space Centers)</p>
-        <div class="hero-actions" style="justify-content: flex-start; margin-top: 15px;">
-          <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" download="OSD615_Glycome_Cytoskeleton_Manuscript.pdf" class="btn btn-primary">
-            <i class="fas fa-file-pdf"></i> Download Publication PDF (7-Page, 2.45 MB)
-          </a>
-          <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.docx" download="OSD615_Glycome_Cytoskeleton_Manuscript.docx" class="btn btn-secondary">
-            <i class="fas fa-file-word"></i> Download Editable Manuscript (DOCX)
-          </a>
-          <a href="figures/01_glycomics_clustered_heatmap.png" target="_blank" class="btn btn-outline">
-            <i class="fas fa-image"></i> Main Heatmap (PNG)
-          </a>
-          <a href="figures/11_single_cell_spatial_microscopy_composite.png" target="_blank" class="btn btn-outline">
-            <i class="fas fa-image"></i> Composite Panel (PNG)
-          </a>
-        </div>
-      </div>
-      
-      <div class="card" style="padding: 10px;">
-        <object data="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" type="application/pdf" width="100%" height="850px" style="border-radius: 6px; border: 1px solid var(--border-dark);">
-          <iframe src="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" width="100%" height="850px" style="border: none;">
-            <p>Your browser does not support embedded PDF viewing. Please <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf">download the PDF</a> to view the complete manuscript.</p>
-          </iframe>
-        </object>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- SITE FOOTER -->
-  <footer class="site-footer">
-    <p>
-      Developed by <strong>NASA GeneLab / Open Science Data Repository (OSDR)</strong> Plant Biology AWG & the <strong>Astrobotany Consortium</strong>.
-    </p>
-    <p style="margin-top: 6px; font-size: 0.8rem; color: #64748b;">
-      FAIR Open Science Repository | Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a> | 
-      <a href="https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology" target="_blank"><i class="fab fa-github"></i> GitHub Source</a>
-    </p>
-  </footer>
-
-  <script type="module" src="js/app.js"></script>
+    <script src="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/sites.js"></script>
+    <script src="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/theme.js"></script>
+    <script src="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/nav.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
