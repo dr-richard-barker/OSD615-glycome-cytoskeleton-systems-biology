@@ -78,32 +78,64 @@ function updateThemeUI(theme) {
     const themeText = document.getElementById('theme-text');
     if (themeIcon && themeText) {
         if (theme === 'light') {
-            themeIcon.className = 'fas fa-sun';
-            themeText.innerText = 'Light Mode';
-        } else {
             themeIcon.className = 'fas fa-moon';
             themeText.innerText = 'Dark Mode';
+        } else {
+            themeIcon.className = 'fas fa-sun';
+            themeText.innerText = 'Light Mode';
         }
     }
-}
-
-// Dark / Light Theme Toggle with LocalStorage Persistence
-const themeToggle = document.getElementById('theme-toggle');
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const html = document.documentElement;
-        const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-        html.dataset.theme = nextTheme;
-        localStorage.setItem('theme', nextTheme);
-        updateThemeUI(nextTheme);
-        
-        // Broadcast custom event for all charts to re-theme
-        window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: nextTheme } }));
-        window.dispatchEvent(new Event('resize'));
+    // Sync CoSE chrome rails if present
+    document.querySelectorAll('.topbar, .sitebar').forEach(el => {
+        el.classList.remove('cose-dark', 'cose-light');
+        el.classList.add(theme === 'dark' ? 'cose-dark' : 'cose-light');
     });
 }
 
-// Restore saved theme on startup
-const savedTheme = localStorage.getItem('theme') || 'dark';
-document.documentElement.dataset.theme = savedTheme;
-updateThemeUI(savedTheme);
+let activeTheme = localStorage.getItem('theme') || localStorage.getItem('barker.theme') || 'light';
+
+export function applyHardTheme(theme) {
+    activeTheme = theme;
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    if (document.body) {
+        document.body.dataset.theme = theme;
+        document.body.setAttribute('data-theme', theme);
+    }
+    try {
+        localStorage.setItem('theme', theme);
+        localStorage.setItem('barker.theme', theme);
+    } catch (e) {}
+    updateThemeUI(theme);
+
+    // Broadcast custom event for all charts and canvases to re-theme
+    window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: theme } }));
+    setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
+}
+
+// Dark / Light Hard Theme Toggle with LocalStorage Persistence
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+    themeToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const current = document.documentElement.getAttribute('data-theme') || activeTheme;
+        const nextTheme = current === 'dark' ? 'light' : 'dark';
+        applyHardTheme(nextTheme);
+    });
+}
+
+// Observe external CoSE theme button changes
+const themeObserver = new MutationObserver((mutations) => {
+    mutations.forEach((m) => {
+        if (m.type === 'attributes' && m.attributeName === 'data-theme') {
+            const newTheme = document.documentElement.getAttribute('data-theme');
+            if (newTheme && newTheme !== activeTheme) {
+                applyHardTheme(newTheme);
+            }
+        }
+    });
+});
+themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+// Restore or initialize theme on startup
+applyHardTheme(activeTheme);

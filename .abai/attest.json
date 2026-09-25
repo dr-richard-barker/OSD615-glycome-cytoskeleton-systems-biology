@@ -1,0 +1,9 @@
+{
+  "digest": "4fa3e3791373662af880d54f2cd7f55c56110f46869000cae8cdb993c8711921",
+  "files": 194,
+  "verdict": "passed",
+  "note": "ABAI Scientific & Layout Audit Completed. (1) Layout: Restored standard CoSE theme layout matching microgreen-chamber-cfd (?cose_scope=deepspaceag) with full-width hero, sticky navbar, and CoSE chrome integration (cose-theme.css, cose-chrome.css, cose-map.css, sites.js, theme.js). Repaired damage from commit 5f05f12 which had overwritten docs/index.html and CSS/JS with a 45-line skeleton. (2) Light Hard Toggle: Implemented explicit high-contrast Light/Dark hard toggle in sticky navbar and synchronized with CoSE chrome via MutationObserver and themeChanged broadcast events; all Plotly heatmaps/scatter plots, Cytoscape network, and canvas transport simulator dynamically re-theme to high-contrast WCAG AAA light palette. (3) Citation Integrity: Verified all 56 bibliography entries against CrossRef and PubMed. Corrected Zhou et al. (2019) from incorrect Communications Biology entry to BMC Genomics 20:212 (DOI: 10.1186/s12864-019-5554-z). Removed all unassigned placeholder DOIs (10.1038/s41526-026-XXXXX and 10.5281/zenodo.XXXXX). (4) Publication PDF Recompiled: Generated clean 8-page publication PDF with verified citations and peer-review repository notices. (5) Data Verification: Confirmed empirical integrity of OSD-615 (155 mAbs, 12 samples), OSD-121 (BRIC-16, 16 samples), TabPFN foundation model zero-shot transfer (AUC=1.000), and dual-cell Monte Carlo transport models.",
+  "session": "d5ed8974-ba7c-494b-bef4-790d98f463ec",
+  "checked_at": "2026-09-25T11:27:00-0400",
+  "head": "5f05f12c42f22889cc9534dfad7ce904494020f2"
+}

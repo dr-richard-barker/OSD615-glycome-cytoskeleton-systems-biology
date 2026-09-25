@@ -3,7 +3,7 @@
 **Linking glycomics data to actin and kinesin/myosin cytoskeletal machinery in *Arabidopsis thaliana* under microgravity via multi-omics integration and dynamic systems modeling.**
 
 [![GitHub Pages](https://img.shields.io/badge/Dashboard-Live-brightgreen?logo=github)](https://dr-richard-barker.github.io/OSD615-glycome-cytoskeleton-systems-biology/)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.XXXXX-blue)](https://doi.org/10.5281/zenodo.XXXXX)
+[![Zenodo](https://img.shields.io/badge/Zenodo-DOI%20Pending-lightgrey.svg)](https://zenodo.org)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-CC-BY-4.0)
 [![FAIR](https://img.shields.io/badge/FAIR-Compliant-orange)](fair_deposit/)

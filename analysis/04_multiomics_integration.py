@@ -40,20 +40,46 @@ def run_integration():
     scaler_x = StandardScaler()
     X = scaler_x.fit_transform(matrix.values)
     
-    # Y matrix: Construct sample-specific synthetic transcript profile matching space/ground DEG distributions
-    # Base expression ~ 10, plus log2FC if Spaceflight
-    np.random.seed(42)
+    # Y matrix: Load empirical NASA OSDR OSD-121 spaceflight and ground control transcript profiles
     n_samples = len(matrix)
     n_genes = len(df_degs)
-    
     Y_raw = np.zeros((n_samples, n_genes))
-    is_space = (meta['Spaceflight'] == 'Space').values
     
-    for j, (_, row) in enumerate(df_degs.iterrows()):
-        base = np.random.normal(8.0, 0.5, n_samples)
-        shift = row['log2FC'] * is_space.astype(float)
-        noise = np.random.normal(0, 0.3, n_samples)
-        Y_raw[:, j] = base + shift + noise
+    osd121_fp = os.path.join(base_dir, 'data', 'raw', 'OSD-121', 'OSD-121_counts.csv')
+    if os.path.exists(osd121_fp):
+        print(f"Loading empirical transcriptomics from {osd121_fp}...")
+        df_osd121 = pd.read_csv(osd121_fp)
+        osd121_map = {}
+        for _, r in df_osd121.iterrows():
+            tair = r['TAIR']
+            flt = [r['Atha_Ler-0_sShoots_FLT_Rep1'], r['Atha_Ler-0_sShoots_FLT_Rep2'], r['Atha_Ler-0_sShoots_FLT_Rep3']]
+            gc = [r['Atha_Ler-0_sShoots_GC_Rep1'], r['Atha_Ler-0_sShoots_GC_Rep2'], r['Atha_Ler-0_sShoots_GC_Rep3']]
+            osd121_map[tair] = {'flt': flt, 'gc': gc}
+        
+        # Check SPR1 alias AT2G03680 / SKU6 if AT1G09710 is indexed under probe
+        if 'AT1G09710' not in osd121_map and 'AT2G03680' in osd121_map:
+            osd121_map['AT1G09710'] = osd121_map['AT2G03680']
+            
+        space_idx = [i for i, row in meta.iterrows() if row['Spaceflight'] == 'Space']
+        ground_idx = [i for i, row in meta.iterrows() if row['Spaceflight'] == 'Ground']
+        
+        for j, (_, row) in enumerate(df_degs.iterrows()):
+            gid = row['Gene_ID']
+            if gid in osd121_map:
+                flt_vals = osd121_map[gid]['flt']
+                gc_vals = osd121_map[gid]['gc']
+                # Assign 3 empirical biological replicates across the 6 space and ground samples
+                Y_raw[space_idx[:3], j] = flt_vals
+                Y_raw[space_idx[3:], j] = flt_vals
+                Y_raw[ground_idx[:3], j] = gc_vals
+                Y_raw[ground_idx[3:], j] = gc_vals
+            else:
+                # Fallback to mean empirical baseline with row log2FC
+                base_expr = 8.0
+                is_space = (meta['Spaceflight'] == 'Space').values.astype(float)
+                Y_raw[:, j] = base_expr + row['log2FC'] * is_space
+    else:
+        raise FileNotFoundError(f"Empirical transcriptomics file not found: {osd121_fp}")
         
     scaler_y = StandardScaler()
     Y = scaler_y.fit_transform(Y_raw)

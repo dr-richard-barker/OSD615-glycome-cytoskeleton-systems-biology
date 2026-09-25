@@ -156,6 +156,19 @@ function setupNetworkControls() {
             });
         });
     }
+
+    // Reactive listener on theme changes
+    window.addEventListener('themeChanged', (e) => {
+        if (!cyInstance) return;
+        const isDark = e.detail?.theme === 'dark';
+        cyInstance.style()
+            .selector('node')
+            .style({
+                'color': isDark ? '#f1f5f9' : '#0f172a',
+                'text-outline-color': isDark ? '#070d18' : '#ffffff'
+            })
+            .update();
+    });
 }
 
 // Safe DOM initialization

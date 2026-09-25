@@ -86,7 +86,7 @@ with PdfPages(pdf_out) as pdf:
     fig.text(0.08, 0.12, intro_text, fontsize=8.0, color='#222222', wrap=True, linespacing=1.35)
     
     # Footer
-    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.08, 0.04, "npj Microgravity | Manuscript in Peer Review | https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "1", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
@@ -124,7 +124,7 @@ with PdfPages(pdf_out) as pdf:
                 "Row sidebar denotes CCRC carbohydrate classes (XG, Xylan, HG Pectin, RG-I/Arabinan/Galactan, AGPs, Extensins); column sidebar denotes spaceflight condition.")
         fig.text(0.08, 0.10, cap1, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
 
-    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.08, 0.04, "npj Microgravity | Manuscript in Peer Review | https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "2", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
@@ -170,7 +170,7 @@ with PdfPages(pdf_out) as pdf:
              "MAPs, actin regulators, cellulose synthases, glycosyltransferases, and O-GlcNAc enzymes (SEC/SPY) under spaceflight.")
     fig.text(0.08, 0.08, cap23, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
 
-    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.08, 0.04, "npj Microgravity | Manuscript in Peer Review | https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "3", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
@@ -183,9 +183,10 @@ with PdfPages(pdf_out) as pdf:
     fig.text(0.08, 0.90, "4. MULTI-OMICS sPLS INTEGRATION & SUBCELLULAR INTERACTOME", fontsize=11, fontweight='bold', color='#004D73', fontfamily='sans-serif')
     
     res2_text = (
-        "Sparse PLS integration linked xylan-directed antibodies (CCRC-M138, CCRC-M140) directly with motor transcripts and secondary wall synthesis hubs (Fig. 4). "
-        "In the Correlation Circle Plot, xylan mAbs co-projected closely along positive Dimension 1 with IRX9, CESA4, MYA1, and KIN12A, while primary wall markers "
-        "(CESA1, CSI1) and plus-end MT regulator SPR1 projected in opposition.\n\n"
+        "Sparse PLS integration with empirical NASA OSDR OSD-121 transcriptomics linked arabinogalactan protein epitopes (CCRC-M107, CCRC-M133) "
+        "directly with kinesin motor transport (KIN12A: r = +0.855 and +0.800), pectin de-esterification (PME3: r = +0.829), and microtubule "
+        "directionality (SPR1: r = +0.814) (Fig. 4). In the Correlation Circle Plot, AGPs co-projected along positive Dimension 1 with KIN12A, PME3, "
+        "and CSI1, while exhibiting strong reciprocal negative correlations with class XI myosin vesicle motor MYA1 (r = -0.744 and -0.667).\n\n"
         "To establish the biochemical flow linking cytoskeletal motility to apoplastic matrix deposition, we reconstructed a multi-scale subcellular compartmental interactome "
         "(31 functional nodes across 5 spatial zones; Fig. 5). The map delineates: (1) Golgi lumen synthesis (IRX9/10 xylan elongation; CSLC4; GAUT1); (2) Subcortical actin-myosin "
         "streaming cables (MYA1/2, XI-K, ACT7, VLN1, PRF1, ARP2/3, FH1) coupled to nucleocytoplasmic O-GlcNAcylation (SEC, SPY); (3) Cortical MT arrays (SPR1, MAP65-1, CLASP, KIN12A/14A, FRA1); "
@@ -205,7 +206,7 @@ with PdfPages(pdf_out) as pdf:
              "(B) Catalytic reactions, donor/acceptor substrates, products made, and spaceflight response.")
     fig.text(0.08, 0.09, cap45, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
 
-    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.08, 0.04, "npj Microgravity | Manuscript in Peer Review | https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "4", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
@@ -237,7 +238,7 @@ with PdfPages(pdf_out) as pdf:
              "(A) Salk atlas cell-type matrix; (B) ggPlantmap root cross-section; (C) Nakashima et al. CCRC-M140 xylem xylan IHC; (D) ggPlantmap root tip; (E) Confocal root tip IHC.")
     fig.text(0.08, 0.09, cap11, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
 
-    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.08, 0.04, "npj Microgravity | Manuscript in Peer Review | https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "5", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
@@ -277,7 +278,7 @@ with PdfPages(pdf_out) as pdf:
              "Fig. 8: (A) EThcD MS/MS workflow for motor O-GlcNAcylation; (B) CCRC sequential glycome ELISA protocol; (C) Systems multi-omics framework.")
     fig.text(0.08, 0.08, cap78, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
 
-    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.08, 0.04, "npj Microgravity | Manuscript in Peer Review | https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "6", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
@@ -313,7 +314,7 @@ with PdfPages(pdf_out) as pdf:
              "(c) In-context partial gravity dose-response curves (Moon 0.16g, Mars 0.38g); (d) Conserved IRX9-MYA1 transcriptional coupling.")
     fig.text(0.08, 0.09, cap12, fontsize=7.5, color='#333333', wrap=True, linespacing=1.3)
 
-    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.08, 0.04, "npj Microgravity | Manuscript in Peer Review | https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "7", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
@@ -339,7 +340,7 @@ with PdfPages(pdf_out) as pdf:
         "  • alpha/beta-Tubulin: Ser48, Thr136, Ser172 — Regulates MT catastrophe dynamics and cortical lattice bundling.\n"
         "  • Cytoplasmic Dynein (DYNC1I1) & Dynactin (p150Glued): Ser80, Ser84, Ser19, Thr21 — Modulates retrograde cargo loading and MT plus-end tethering.\n"
         "  • Kinesin-1 (KIF5B) & Kinesin-4 (FRA1): Ser524, Thr528, Ser412 — Directs cellulose microfibril order and vesicle delivery.\n\n"
-        "Data & Code Availability: All raw/processed data are deposited in NASA OSDR (OSD-615, OSD-121, OSD-218, OSD-217) and Zenodo (DOI: 10.5281/zenodo.XXXXX). "
+        "Data & Code Availability: All raw/processed data are deposited in NASA OSDR (OSD-615, OSD-121, OSD-218, OSD-217) and Zenodo (DOI assigned upon publication). "
         "Analysis code and interactive dashboard are open-source at https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology."
     )
     fig.text(0.08, 0.44, disc_text, fontsize=7.8, color='#222222', wrap=True, linespacing=1.35)
@@ -351,7 +352,7 @@ with PdfPages(pdf_out) as pdf:
         "[2] Hollmann, N., Müller, S., Purucker, L., et al. Nature 637, 319-326 (2025).\n"
         "[3] Paul, A.-L., Wheeler, R. M., Levine, H. G. & Ferl, R. J. Astrobiology 12, 40-56 (2012).\n"
         "[4] Califar, B. et al. Front. Plant Sci. 11, 17 (2020).\n"
-        "[5] Zhou, M. et al. Commun. Biol. 2, 1-11 (2019).\n"
+        "[5] Zhou, M. et al. BMC Genomics 20, 212 (2019).\n"
         "[6] Blancaflor, E. B. J. Exp. Bot. 64, 1969-1979 (2013).\n"
         "[7] Gilroy, S. et al. Plant Cell Environ. 39, 262-275 (2016).\n"
         "[8] Ferl, R. J. & Paul, A.-L. Annu. Rev. Plant Biol. 66, 341-362 (2015).\n"
@@ -372,7 +373,7 @@ with PdfPages(pdf_out) as pdf:
     )
     fig.text(0.08, 0.08, refs_text, fontsize=7.0, color='#333333', wrap=True, linespacing=1.20)
 
-    fig.text(0.08, 0.04, "npj Microgravity | (2026) 12:1 | https://doi.org/10.1038/s41526-026-XXXXX", fontsize=7.5, color='#888888')
+    fig.text(0.08, 0.04, "npj Microgravity | Manuscript in Peer Review | https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology", fontsize=7.5, color='#888888')
     fig.text(0.92, 0.04, "8", fontsize=8, color='#888888', ha='right', fontweight='bold')
     
     pdf.savefig(fig, bbox_inches='tight')
