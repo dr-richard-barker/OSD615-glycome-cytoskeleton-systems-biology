@@ -9,6 +9,7 @@ Exploratory Data Analysis of OSD-615 Glycomics Profiles:
 """
 
 import os
+import shutil
 import json
 import pandas as pd
 import numpy as np
@@ -50,22 +51,38 @@ def run_eda():
     cond_color_map = {'Ground': '#2F5985', 'Space': '#E85D50'}
     col_colors = meta.set_index('Sample_Name')['Spaceflight'].map(cond_color_map)
     
-    plt.figure(figsize=(12, 16))
+    plt.figure(figsize=(14, 16))
     g = sns.clustermap(
         matrix_t,
         row_colors=mab_colors,
         col_colors=col_colors,
         cmap='YlOrRd',
         standard_scale=0, # Scale by mAb row for visibility
-        figsize=(12, 14),
-        dendrogram_ratio=(0.15, 0.1),
-        cbar_pos=(0.02, 0.8, 0.03, 0.15),
+        figsize=(14, 15),
+        dendrogram_ratio=(0.14, 0.08),
+        cbar_pos=(0.02, 0.80, 0.03, 0.14),
         cbar_kws={'label': 'Relative Binding (Z-Score)'}
     )
-    g.fig.suptitle('OSD-615 Arabidopsis Root Glycome Profiling (155 Monoclonal Antibodies)', y=1.02, fontsize=14, fontweight='bold')
-    g.savefig(os.path.join(fig_dir, '01_glycomics_clustered_heatmap.png'), dpi=300, bbox_inches='tight')
+    g.fig.suptitle('Figure 1 | OSD-615 Arabidopsis Root Glycome Profiling (155 Monoclonal Antibodies)', y=1.02, fontsize=18, fontweight='bold')
+    g.ax_heatmap.set_xticklabels(g.ax_heatmap.get_xticklabels(), fontsize=12, fontweight='bold', rotation=45, ha='right')
+    g.ax_heatmap.set_xlabel('Root Biological Samples (Flight vs Ground; 6d vs 11d)', fontsize=13, fontweight='bold', labelpad=12)
+    g.ax_heatmap.set_ylabel('155 Monoclonal Antibodies (CCRC / JIM / MAC)', fontsize=13, fontweight='bold', labelpad=12)
+    g.ax_cbar.yaxis.label.set_size(12)
+    g.ax_cbar.yaxis.label.set_weight('bold')
+    g.ax_cbar.tick_params(labelsize=10)
+    
+    heatmap_fig_path = os.path.join(fig_dir, '01_glycomics_clustered_heatmap.png')
+    g.savefig(heatmap_fig_path, dpi=300, bbox_inches='tight')
     plt.close()
-    print("Saved 01_glycomics_clustered_heatmap.png")
+
+    # Synchronize to docs/figures and manuscript/figures
+    docs_fig_dir = os.path.join(base_dir, 'docs', 'figures')
+    manuscript_fig_dir = os.path.join(base_dir, 'manuscript', 'figures')
+    os.makedirs(docs_fig_dir, exist_ok=True)
+    os.makedirs(manuscript_fig_dir, exist_ok=True)
+    shutil.copy(heatmap_fig_path, os.path.join(docs_fig_dir, '01_glycomics_clustered_heatmap.png'))
+    shutil.copy(heatmap_fig_path, os.path.join(manuscript_fig_dir, '01_glycomics_clustered_heatmap.png'))
+    print("Saved and synchronized 01_glycomics_clustered_heatmap.png with enlarged typography")
 
     # 2. PCA Biplot
     pca = PCA(n_components=5)
