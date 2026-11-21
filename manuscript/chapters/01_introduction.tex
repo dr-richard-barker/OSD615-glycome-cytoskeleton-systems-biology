@@ -26,9 +26,12 @@ To systematically map the consequences of microgravity on plant cell wall archit
 
 Despite these pioneering discoveries, the molecular pathways linking the altered OSD-615 glycomics profiles to the underlying cytoskeletal transport networks have remained largely correlative. In this study, we bridge this gap by establishing an open-science systems biology framework that:
 \begin{itemize}
+    \item Establishes a unified multi-scale workflow architecture integrating high-throughput spaceflight root glycome ELISA profiling (155 mAbs), companion transcriptomics, single-cell spatial atlases, and AI foundation models;
     \item Integrates OSD-615 continuous glycomics matrices with companion spaceflight transcriptomics (APEX-03-2 / OSD-218 and OSD-217) using supervised sparse PLS (mixOmics) and WGCNA co-expression modeling;
-    \item Reconstructs a high-confidence protein--protein interaction (PPI) network coupling motor proteins, cytoskeletal regulators, and carbohydrate-active enzymes (CAZy);
-    \item Implements dynamic stochastic Monte Carlo simulations to quantify how microgravity-induced cytoskeletal perturbation alters post-Golgi vesicle transit times and wall delivery flux;
-    \item Provides an exhaustive review of mass spectrometry workflows (EThcD, lectin affinity, click-chemistry) for mapping $O$-GlcNAcylation on motor complexes;
-    \item Deploys a FAIR-compliant, interactive 10-tab web dashboard on GitHub Pages for community exploration and model simulation.
+    \item Reconstructs a high-confidence subcellular compartmental protein--protein interaction (PPI) network coupling motor proteins, cytoskeletal regulators, and carbohydrate-active enzymes (CAZy) with a complete catalytic reaction catalog;
+    \item Maps multi-omics signatures onto the Salk Institute single-cell root atlas (14 cell types) and \textit{ggPlantmap} vector anatomy, validating metaxylem-specific secondary wall synthesis against in situ confocal immunohistochemistry (PMC10444889);
+    \item Implements dynamic stochastic Monte Carlo simulations to quantify how microgravity-induced cytoskeletal track perturbation alters post-Golgi vesicle transit times and wall delivery flux;
+    \item Evaluates cross-mission generalization on independent shuttle experiment OSD-121 (STS-131 BRIC-16) using the TabPFN tabular foundation model, establishing non-linear gravity dose-response thresholds for Lunar ($0.16g$) and Martian ($0.38g$) surface habitats;
+    \item Provides an exhaustive analytical review of advanced mass spectrometry workflows (EThcD, lectin affinity, click-chemistry) for mapping $O$-GlcNAcylation on motor complexes;
+    \item Deploys a FAIR-compliant, interactive 13-tab web dashboard on GitHub Pages for open community exploration, biophysical simulation, and predictive query.
 \end{itemize}

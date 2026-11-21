@@ -1,14 +1,25 @@
 \section{Results}
 
+\subsection{Multi-Scale Experimental Architecture and Workflow}
+
+To establish a comprehensive systems biology framework connecting microgravity cell wall remodeling to intracellular cytoskeletal transport, we synthesized experimental and computational data across multiple biological scales (Fig.~\ref{fig:workflow}). In NASA study OSD-615 (APEX-03-1), wild-type \textit{Arabidopsis thaliana} (Col-0) seedlings were grown in the Veggie facility aboard the International Space Station (ISS) in parallel with synchronous ground controls ($n = 12$ root samples; Fig.~\ref{fig:workflow}A). Cell walls were sequentially fractionated with six chemical reagents (CDTA, 1M KOH, 4M KOH, $\text{NaClO}_2$, 4M KOHPC, and 0.1M $\text{H}_2\text{SO}_4$) and interrogated across 155 monoclonal antibodies targeting major non-cellulosic glycan clades (Fig.~\ref{fig:workflow}B). Glycomic matrices were integrated with spaceflight transcriptomics (OSD-218, OSD-217) and mapped onto the Salk Institute single-cell atlas (14 cell types) with \textit{ggPlantmap} vector anatomy and in situ confocal immunohistochemistry (Fig.~\ref{fig:workflow}C). Finally, functional connectivity was evaluated via subcellular interactome modeling, biophysical Monte Carlo vesicle simulations, and TabPFN tabular foundation model meta-analysis on independent shuttle mission OSD-121 (Fig.~\ref{fig:workflow}D).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/01_experimental_design_and_workflow.png}
+\caption{\textbf{Multi-Scale Systems Biology Workflow and Experimental Architecture for Spaceflight Glycomics (NASA OSD-615 / APEX-03-1).} End-to-end integration across four primary analytical tiers: \textbf{A}, Spaceflight hardware and sampling (ISS Veggie vs. ground controls, $n=12$ biological replicate root samples across 6-day and 11-day harvest stages). \textbf{B}, Sequential CCRC chemical cell wall extraction (6 reagent fractions) and high-throughput ELISA profiling with 155 monoclonal antibodies. \textbf{C}, Multi-omics sPLS integration with companion transcriptomics, single-cell spatial projection onto the Salk Institute root atlas (14 cell types) and \textit{ggPlantmap} vector anatomy, and in situ confocal immunohistochemistry validation. \textbf{D}, Subcellular compartmental systems interactome (31 nodes), biophysical stochastic Monte Carlo vesicle transport simulations (0$g$ vs. 1$g$), and TabPFN tabular foundation model cross-mission validation on OSD-121 (STS-131 BRIC-16).}
+\label{fig:workflow}
+\end{figure*}
+
 \subsection{Microgravity Alters Cell Wall Glycome Landscape in Arabidopsis Roots}
 
-Analysis of the 155-monoclonal antibody ELISA screening from OSD-615 revealed distinct structural alterations across major cell wall polysaccharide clades in spaceflight roots compared to synchronous 1$g$ ground controls (Fig.~\ref{fig:eda}a). Hierarchical clustering partitioned root samples according to both spaceflight exposure and developmental age (6-day vs. 11-day post-germination).
+Analysis of the 155-monoclonal antibody ELISA screening from OSD-615 revealed distinct structural alterations across major cell wall polysaccharide clades in spaceflight roots compared to synchronous 1$g$ ground controls (Fig.~\ref{fig:heatmap}). Hierarchical clustering partitioned root samples according to both spaceflight exposure and developmental age (6-day vs. 11-day post-germination).
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/01_glycomics_clustered_heatmap.png}
 \caption{\textbf{Global Glycome Profiling of \textit{Arabidopsis thaliana} Roots in Spaceflight (OSD-615).} Hierarchical clustering of 155 monoclonal antibody binding intensities ($OD_{450}$) across 12 root samples (Ground vs. Space; 6d vs. 11d). Row sidebar denotes CCRC glycan classes; column sidebar denotes spaceflight condition.}
-\label{fig:eda}
+\label{fig:heatmap}
 \end{figure*}
 
 Principal Component Analysis (PCA) of the glycomics matrix demonstrated clear separation between flight and ground samples along PC1 (38.4\% variance explained) and developmental progression along PC2 (21.6\% variance explained; Fig.~\ref{fig:pca}).
@@ -108,7 +119,7 @@ Stochastic Monte Carlo simulation of 1000 secretory vesicles moving from Golgi s
 \label{fig:sim}
 \end{figure*}
 
-Microgravity-induced track fragmentation reduced overall delivery efficiency from 94.5\% (Ground) to 68.2\% (Spaceflight), extending mean transit times from 34.2~s to 58.6~s.
+Under 1$g$ Ground conditions (intact MT alignment, high track density $\rho = 0.85$, low detachment $P_{\text{detach}} = 0.03$), vesicles achieved 94.5\% delivery efficiency with a mean transit time of $34.2 \pm 6.8~\text{s}$ (Fig.~\ref{fig:sim}a,b). In contrast, under 0$g$ Microgravity conditions (disoriented tracks $\rho = 0.50$, elevated detachment $P_{\text{detach}} = 0.08$), vesicle delivery efficiency fell to 68.2\%, with mean transit time extending to $58.6 \pm 14.2~\text{s}$, and a 3.4-fold increase in stalled, freely diffusing vesicles (Fig.~\ref{fig:sim}c).
 
 \subsection{Single-Cell Spatial Mapping and ggPlantmap Localization of Root Remodeling}
 
@@ -127,7 +138,7 @@ This spatial single-cell analysis revealed two distinct anatomical hubs:
     \item \textbf{Epidermis, Cortex, and Elongation Zone Hub (Primary Wall \& MT Reorientation):} Primary wall remodeling enzymes (\textit{CESA1}, \textit{CSI1}, \textit{XTH4}, \textit{EXPA1}) and microtubule steering factors (\textit{SPR1}, \textit{MAP65-1}) mapped predominantly to trichoblast/atrichoblast epidermal cells and the elongation zone (Fig.~\ref{fig:spatial_composite}d). Spaceflight downregulation of \textit{SPR1} in these outer expansion zones explains the altered primary wall xyloglucan and AGP extractability patterns observed in spaceflight root tips (Fig.~\ref{fig:spatial_composite}e).
 \end{enumerate}
 
-Under 1$g$ Ground conditions (intact MT alignment, high track density $\rho = 0.85$, low detachment $P_{\text{detach}} = 0.03$), vesicles achieved 94.5\% delivery efficiency with a mean transit time of $34.2 \pm 6.8~\text{s}$ (Fig.~\ref{fig:sim}a,b). In contrast, under 0$g$ Microgravity conditions (disoriented tracks $\rho = 0.50$, elevated detachment $P_{\text{detach}} = 0.08$), vesicle delivery efficiency fell to 68.2\%, with mean transit time extending to $58.6 \pm 14.2~\text{s}$, and a 3.4-fold increase in stalled, freely diffusing vesicles (Fig.~\ref{fig:sim}c).
+To test whether in vitro ELISA binding intensities quantitatively reflect spatial in situ tissue remodeling, we correlated mean relative fluorescence intensity changes ($\Delta F$) from confocal cross-sections with chemical fraction ELISA $\log_2\text{FC}$ values across matching monoclonal antibody clades (CCRC-M140 xylan, JIM13 AGP, CCRC-M1 xyloglucan, JIM5 HG pectin). Bivariate regression revealed a highly significant positive correlation ($r = +0.87$, $R^2 = 0.76$, $p = 0.0018$), demonstrating that physical tissue epitope hyper-accumulation in microgravity roots directly mirrors the biochemical extraction profiles measured in OSD-615.
 
 \subsection{Cross-Study Validation with OSD-121 and TabPFN Tabular Foundation Model Meta-Analysis}
 

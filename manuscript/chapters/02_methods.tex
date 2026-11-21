@@ -14,7 +14,26 @@ The foundational datasets incorporated in this study comprise:
     \item \textbf{OSD-615 (GLDS-598 / APEX-03-1):} High-throughput cell wall glycome profiling (ELISA with 155 monoclonal antibodies) and immunohistochemistry (IHC) on 4-day and 8-day old \textit{Arabidopsis thaliana} (Col-0) roots grown in Veggie on the ISS vs. ground controls \cite{Nakashima2023}.
     \item \textbf{OSD-218 (GLDS-218 / APEX-03-2):} RNA-Seq transcriptomic profiling of wild-type (Col-0, Ws) and root skewing mutants (\textit{spr1}, \textit{sku5}) harvested synchronously in Veggie on ISS Exp 42 \cite{Califar2020}.
     \item \textbf{OSD-217 (GLDS-217 / APEX-03-2):} Whole-genome bisulfite sequencing (WGBS) paired with RNA-Seq in Veggie hardware \cite{Zhou2019}.
+    \item \textbf{OSD-121 (GLDS-121 / BRIC-16):} Space Shuttle mission STS-131 seedling roots in BRIC-16 hardware (Ler-0 ecotype), profiling cell wall glycomics, microarray gene expression, and root morphometrics \cite{Paul2012_BRIC16}.
 \end{itemize}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{\textbf{Spaceflight and Foundational Multi-Omics Datasets Integrated in this Study.}}
+\label{tab:veggie_studies}
+\begin{tabular}{llllll}
+\hline
+\textbf{Accession} & \textbf{Mission / Hardware} & \textbf{Organism / Line} & \textbf{Omics / Assay Type} & \textbf{Sample Count} & \textbf{Reference} \\
+\hline
+\textbf{OSD-615} & ISS Veggie (APEX-03-1) & \textit{A. thaliana} (Col-0) & Glycome ELISA (155 mAbs), IHC & $n = 12$ roots & \cite{Nakashima2023} \\
+\textbf{OSD-218} & ISS Veggie (APEX-03-2) & \textit{A. thaliana} (Col-0, \textit{spr1}, \textit{sku5}) & Illumina HiSeq RNA-Seq & $n = 16$ roots & \cite{Califar2020} \\
+\textbf{OSD-217} & ISS Veggie (APEX-03-2) & \textit{A. thaliana} (Col-0 WT) & WGBS Methylome \& RNA-Seq & $n = 12$ roots & \cite{Zhou2019} \\
+\textbf{OSD-121} & STS-131 (BRIC-16) & \textit{A. thaliana} (Ler-0 WT) & Glycomics, Affymetrix Microarray & $n = 16$ seedlings & \cite{Paul2012_BRIC16} \\
+\textbf{Salk Atlas} & Ground Reference Atlas & \textit{A. thaliana} (Col-0 roots) & 10x Chromium snRNA-Seq (14 cell types) & $>25,000$ nuclei & \cite{Lee2025} \\
+\hline
+\end{tabular}
+\end{table*}
 
 \subsection{Glycomics Matrix Curation and CCRC Epitope Annotation}
 
@@ -81,3 +100,35 @@ To evaluate the mechanical impact of microgravity on secretory vesicle delivery,
     \end{cases}
 \end{equation}
 where $v_i \sim \mathcal{N}(v_{\text{base}}, \sigma_v^2)$ is the motor velocity ($\mu\text{m/s}$), $\eta_t \sim \mathcal{N}(0, \sigma_{\text{motor}}^2)$ represents motor step noise, and $\xi_t \sim \mathcal{N}(0, 2D)$ represents spatial diffusion ($D = 0.02~\mu\text{m}^2/\text{s}$). State transitions follow detachment probability $P_{\text{detach}}$ and reattachment probability $P_{\text{reattach}} = \rho_{\text{track}} \times P_{\text{capture}}$, where $\rho_{\text{track}}$ reflects cytoskeletal track density (0.85 in 1$g$ vs. 0.50 in microgravity).
+
+\subsection{Single-Cell Spatial Mapping and ggPlantmap Anatomical Projection}
+
+To resolve the precise cellular lineages driving microgravity-induced wall remodeling, we utilized single-nucleus RNA-Seq (snRNA-Seq) data from the Salk Institute \textit{Arabidopsis} Reference Atlas \cite{Lee2025}, encompassing $>25,000$ nuclei profiled across 14 annotated root cell types: protoxylem, metaxylem, phloem pole, companion cells, pericycle, endodermis, cortex, atrichoblasts, trichoblasts, columella, lateral root cap, and meristematic/elongation zones. Expression vectors $\mathbf{E}_g \in \mathbb{R}^{14}$ for the 28 key cytoskeletal motors and matrix synthases were normalized by total nuclear count ($\log_2(\text{CP10K} + 1)$) and standardized to $Z$-scores across cell types:
+\begin{equation}
+    Z_{gc} = \frac{E_{gc} - \bar{E}_g}{s_g}
+\end{equation}
+Spatial polygon definitions for \textit{Arabidopsis} root anatomy were sourced from the \textit{ggPlantmap} spatial framework \cite{Lee2025}. Anatomical coordinates representing root maturation cross-sections (vascular stele, cortex layers, epidermal files) and median longitudinal root tips were mapped into structured vector schemas. Cell-type specific $Z$-scores and log$_2$-transformed expression values were assigned to anatomical polygons, generating high-fidelity spatial predictions of active wall biosynthesis.
+
+\subsection{TabPFN Tabular Foundation Model Bayesian Meta-Analysis and Partial-Gravity Imputation}
+
+To determine whether the cytoskeletal-glycome remodeling axis constitutes a conserved physiological response across independent flight missions, we conducted cross-study meta-analysis harmonizing OSD-615 (ISS Veggie / Col-0; $n = 12$) with independent spaceflight study OSD-121 (STS-131 BRIC-16 / Ler-0; $n = 16$; \cite{Paul2012_BRIC16}). To eliminate empirical overfitting on small sample sizes ($N = 28$ total), we employed the \textbf{TabPFN Tabular Foundation Model} \cite{Hollmann2025}.
+
+TabPFN is a prior-data fitted transformer pre-trained on millions of synthetic tabular classification tasks generated from random structural causal models. It performs exact Bayesian posterior inference in a single forward pass without iterative backpropagation:
+\begin{equation}
+    p(y_{\text{test}} \mid \mathbf{x}_{\text{test}}, \mathcal{D}_{\text{train}}) = \operatorname{Transformer}(\mathbf{x}_{\text{test}}, \mathbf{X}_{\text{train}}, \mathbf{y}_{\text{train}})
+\end{equation}
+Zero-shot cross-mission transfer was evaluated by conditioning TabPFN on OSD-615 and predicting flight status on OSD-121 without parameter updates, and vice-versa. Receiver operating characteristic (ROC) curves and area under the curve (AUC) were computed. Feature importance was quantified via in-context posterior attribution:
+\begin{equation}
+    I(f) = \mathbb{E}_{\mathbf{x}}\left[ \operatorname{KL}\left( p(y \mid \mathbf{x}, \mathcal{D}) \parallel p(y \mid \mathbf{x}_{\setminus f}, \mathcal{D}) \right) \right]
+\end{equation}
+In-context partial gravity dose-response curves were imputed across gravitational acceleration vectors $g \in [0.0, 1.0]$, specifically evaluating Lunar ($0.16g$) and Martian ($0.38g$) surface environments.
+
+\subsection{In Situ Confocal Immunohistochemistry Archive and Quantitative Validation}
+
+To physically validate predicted glycome remodeling, we constructed a comprehensive confocal immunohistochemistry database mining high-resolution micrographs from Nakashima et al. \cite{Nakashima2023} (PMC10444889). The archive indexes $>30$ monoclonal antibodies with documented antibody clades, target polysaccharides, fluorophore conjugates (Alexa Fluor 488 / FITC), tissue section planes (cross-section vs. longitudinal), and ISS flight vs. ground control specimens.
+
+To quantify spatial epitope remodeling, confocal TIFF/JPEG micrographs were processed in ImageJ/Fiji. Regions of interest (ROIs) encompassing the central vascular bundle (xylem vessels), cortex, and epidermis were manually segmented. Mean pixel fluorescence intensities ($F_{\text{ROI}}$) were measured after rolling-ball background subtraction ($\text{radius} = 50~\text{pixels}$). Fold-changes in fluorescence were calculated as:
+\begin{equation}
+    \Delta F = \frac{\bar{F}_{\text{Flight}} - \bar{F}_{\text{Ground}}}{\bar{F}_{\text{Ground}}} \times 100\%
+\end{equation}
+Bivariate Pearson correlations between in situ fluorescence $\Delta F$ and in vitro ELISA $\log_2\text{FC}$ across matching antibodies were calculated to confirm cross-method concordance.

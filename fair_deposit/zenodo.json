@@ -52,6 +52,18 @@
       "scheme": "url"
     },
     {
+      "identifier": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-121",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.1038/s41586-024-08328-6",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
       "identifier": "https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology",
       "relation": "isSupplementTo",
       "resource_type": "software",

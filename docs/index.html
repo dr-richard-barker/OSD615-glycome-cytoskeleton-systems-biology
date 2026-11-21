@@ -38,13 +38,16 @@
         NASA GeneLab / Open Science Data Repository, NASA Ames Research Center, Moffett Field, CA 94035, USA
       </div>
       <div class="hero-actions">
-        <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" class="btn btn-primary" download="OSD615_Glycome_Cytoskeleton_Manuscript.pdf">
-          <i class="fas fa-file-pdf"></i> Download Publication PDF (7-Page)
+        <a href="manuscript/glycome_cytoskeleton_manuscript.pdf" class="btn btn-primary" download="glycome_cytoskeleton_manuscript.pdf">
+          <i class="fas fa-file-pdf"></i> Download Full Manuscript (25-Page npj Microgravity)
+        </a>
+        <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" class="btn btn-teal" download="OSD615_Glycome_Cytoskeleton_Manuscript.pdf">
+          <i class="fas fa-file-alt"></i> Executive Summary PDF (8-Page)
         </a>
         <a href="https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology" class="btn btn-outline" target="_blank">
           <i class="fab fa-github"></i> GitHub Repository
         </a>
-        <a href="#tab-singlecell" class="btn btn-teal nav-trigger" data-tab="tab-singlecell">
+        <a href="#tab-singlecell" class="btn btn-outline nav-trigger" data-tab="tab-singlecell">
           <i class="fas fa-map-marked-alt"></i> Single-Cell ggPlantmap
         </a>
         <a href="#tab-simulation" class="btn btn-outline nav-trigger" data-tab="tab-simulation">
@@ -551,29 +554,40 @@
         <p>Prepared for submission to <em>npj Microgravity</em> (Nature Partner Journals format). Includes all 11 high-resolution figures, statistical validations, and comprehensive mass spectrometry review.</p>
       </div>
       
-      <div class="card" style="border-left: 4px solid var(--coral); margin-bottom: 20px;">
+      <div class="card" style="border-left: 4px solid var(--teal); margin-bottom: 20px;">
         <h3>Systems Biology Integration of Glycomics and Cytoskeletal Transport Networks Reveals Microgravity-Induced Cell Wall Remodeling Mechanisms in <em>Arabidopsis thaliana</em></h3>
-        <p><strong>Author:</strong> Richard Barker (NASA GeneLab / OSDR, NASA Ames & Kennedy Space Centers)</p>
-        <div class="hero-actions" style="justify-content: flex-start; margin-top: 15px;">
-          <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" download="OSD615_Glycome_Cytoskeleton_Manuscript.pdf" class="btn btn-primary">
-            <i class="fas fa-file-pdf"></i> Download Publication PDF (7-Page, 2.45 MB)
+        <p><strong>Authors:</strong> Richard Barker*, and the NASA GeneLab / OSDR Plant Biology Analysis Working Group (AWG)</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">
+          Prepared for submission to <em>npj Microgravity</em> (Nature Partner Journals). Features full 12 publication figures, Table 1 multi-study catalog, Table 2 PTM motor targets, Salk single-cell projections, TabPFN cross-mission validation, and complete bibliographic references.
+        </p>
+        <div class="hero-actions" style="justify-content: flex-start; margin-top: 15px; flex-wrap: wrap; gap: 8px;">
+          <a href="manuscript/glycome_cytoskeleton_manuscript.pdf" download="glycome_cytoskeleton_manuscript.pdf" class="btn btn-primary" id="btn-download-full">
+            <i class="fas fa-file-pdf"></i> Download Full Manuscript (25-Page npj Microgravity, 9.2 MB)
           </a>
+          <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" download="OSD615_Glycome_Cytoskeleton_Manuscript.pdf" class="btn btn-teal" id="btn-download-brief">
+            <i class="fas fa-file-alt"></i> Download Executive Summary PDF (8-Page, 3.1 MB)
+          </a>
+          <button class="btn btn-outline" id="toggle-pdf-viewer" style="cursor: pointer;">
+            <i class="fas fa-exchange-alt"></i> Switch Embedded Viewer (<span id="viewer-status-text">Full Manuscript</span>)
+          </button>
           <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.docx" download="OSD615_Glycome_Cytoskeleton_Manuscript.docx" class="btn btn-secondary">
-            <i class="fas fa-file-word"></i> Download Editable Manuscript (DOCX)
-          </a>
-          <a href="figures/01_glycomics_clustered_heatmap.png" target="_blank" class="btn btn-outline">
-            <i class="fas fa-image"></i> Main Heatmap (PNG)
-          </a>
-          <a href="figures/11_single_cell_spatial_microscopy_composite.png" target="_blank" class="btn btn-outline">
-            <i class="fas fa-image"></i> Composite Panel (PNG)
+            <i class="fas fa-file-word"></i> Editable Word (DOCX)
           </a>
         </div>
       </div>
       
       <div class="card" style="padding: 10px;">
-        <object data="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" type="application/pdf" width="100%" height="850px" style="border-radius: 6px; border: 1px solid var(--border-dark);">
-          <iframe src="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf" width="100%" height="850px" style="border: none;">
-            <p>Your browser does not support embedded PDF viewing. Please <a href="manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf">download the PDF</a> to view the complete manuscript.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.8rem; background: var(--bg-card); border-bottom: 1px solid var(--border-dark); margin-bottom: 8px; border-radius: 4px;">
+          <span style="font-weight: 600; font-size: 0.95rem; color: var(--teal);" id="embedded-viewer-label">
+            <i class="fas fa-book-open"></i> Displaying: Full 25-Page npj Microgravity Manuscript (LaTeX Compilation)
+          </span>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">
+            Use controls inside viewer or click "Switch Embedded Viewer" above
+          </span>
+        </div>
+        <object id="pdf-object" data="manuscript/glycome_cytoskeleton_manuscript.pdf" type="application/pdf" width="100%" height="850px" style="border-radius: 6px; border: 1px solid var(--border-dark);">
+          <iframe id="pdf-iframe" src="manuscript/glycome_cytoskeleton_manuscript.pdf" width="100%" height="850px" style="border: none;">
+            <p>Your browser does not support embedded PDF viewing. Please <a href="manuscript/glycome_cytoskeleton_manuscript.pdf">download the PDF</a> to view the complete manuscript.</p>
           </iframe>
         </object>
       </div>

@@ -139,3 +139,32 @@ themeObserver.observe(document.documentElement, { attributes: true, attributeFil
 
 // Restore or initialize theme on startup
 applyHardTheme(activeTheme);
+
+// Toggle between Full 25-Page LaTeX PDF and 8-Page Summary PDF
+const togglePdfBtn = document.getElementById('toggle-pdf-viewer');
+let activePdf = 'full';
+if (togglePdfBtn) {
+    togglePdfBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const pdfObject = document.getElementById('pdf-object');
+        const pdfIframe = document.getElementById('pdf-iframe');
+        const viewerLabel = document.getElementById('embedded-viewer-label');
+        const statusText = document.getElementById('viewer-status-text');
+
+        if (activePdf === 'full') {
+            activePdf = 'brief';
+            const briefUrl = 'manuscript/OSD615_Glycome_Cytoskeleton_Manuscript.pdf';
+            if (pdfObject) pdfObject.data = briefUrl;
+            if (pdfIframe) pdfIframe.src = briefUrl;
+            if (viewerLabel) viewerLabel.innerHTML = '<i class="fas fa-file-alt"></i> Displaying: Executive Summary Manuscript (8-Page Brief)';
+            if (statusText) statusText.textContent = 'Executive Summary';
+        } else {
+            activePdf = 'full';
+            const fullUrl = 'manuscript/glycome_cytoskeleton_manuscript.pdf';
+            if (pdfObject) pdfObject.data = fullUrl;
+            if (pdfIframe) pdfIframe.src = fullUrl;
+            if (viewerLabel) viewerLabel.innerHTML = '<i class="fas fa-book-open"></i> Displaying: Full 25-Page npj Microgravity Manuscript (LaTeX Compilation)';
+            if (statusText) statusText.textContent = 'Full Manuscript';
+        }
+    });
+}

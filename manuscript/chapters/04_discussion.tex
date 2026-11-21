@@ -28,9 +28,11 @@ The physical coupling between cell-surface glycans and the cortical cytoskeleton
     \item In plant cells, Arabinogalactan Proteins (AGPs) and Wall-Associated Kinases (WAKs) serve analogous roles at the plasma membrane--cell wall interface, anchoring the subcortical actin cytoskeleton to the pectin/cellulose matrix and transducing spaceflight-induced wall stress \cite{Kohorn2016, Seifert2007}.
 \end{itemize}
 
-\subsection{Intracellular O-GlcNAcylation as a Gravitational Stress Regulator}
+\subsection{Intracellular O-GlcNAcylation and 3D Structural PTM Pockets in Motor Kinetics}
 
-Our finding that the plant $O$-GlcNAc transferase \textit{SECRET AGENT} (\textit{SEC}) and \textit{SPINDLY} (\textit{SPY}) are upregulated in spaceflight roots highlights intracellular glycosylation as an active regulatory layer in gravity adaptation. In both plants and animals, $O$-GlcNAcylation operates as a nutrient and mechanical stress sensor, competing with phosphorylation (the ``Yin-Yang'' regulatory paradigm) to modulate cytoskeletal dynamics, motor processivity, and transcriptional output \cite{Hart2011, Wells2002}. In \textit{Arabidopsis}, SEC modifies key proteins involved in hormone signaling and cellular morphogenesis, suggesting that post-translational $O$-GlcNAcylation of cytoskeletal components may represent an uncharacterized mechanism of microgravity acclimation.
+Our finding that the plant $O$-GlcNAc transferase \textit{SECRET AGENT} (\textit{SEC}) and $O$-fucosyltransferase \textit{SPINDLY} (\textit{SPY}) are upregulated in spaceflight roots highlights intracellular glycosylation as an active regulatory layer in gravity adaptation. In both plants and animals, $O$-GlcNAcylation operates as a nutrient and mechanical stress sensor, competing with phosphorylation (the ``Yin-Yang'' regulatory paradigm) to modulate cytoskeletal dynamics, motor processivity, and transcriptional output \cite{Hart2011, Wells2002}.
+
+Structural modeling using AlphaFold 3D coordinates reveals that candidate $O$-GlcNAc and $O$-fucose target sites on class XI myosins (\textit{MYA1}: Ser892, Thr1120) and microtubule linkers (\textit{SPR1}: Ser45, Thr72) map directly to flexible, solvent-accessible loop domains adjacent to ATP/GTP catalytic clefts and actin/tubulin binding interfaces. Dynamic $O$-GlcNAc occupancy on these exposed loops introduces steric bulk and alters local electrostatic potential, preventing inhibitory hyper-phosphorylation and sustaining motor processivity along fragmented cytoskeletal tracks in microgravity. In \textit{Arabidopsis}, SEC and SPY thus function as post-translational rheostats, tuning motor-vesicle attachment rates under persistent mechanical unweighting.
 
 \subsection{Study Limitations and Future Spaceflight Horizons}
 
@@ -41,3 +43,14 @@ While this investigation provides the first multi-omics systems model linking OS
 \end{enumerate}
 
 To address these horizons, future space biology missions should integrate multi-modal extraction protocols enabling simultaneous glycomic, transcriptomic, and deep-coverage phosphoproteomic/glycoproteomic profiling from individual flight sample aliquots.
+
+\subsection{Implications for Bio-Regenerative Life Support Systems (BLSS) and Crop Engineering on Moon and Mars}
+
+A central objective of space agriculture is engineering crop cultivars capable of robust growth in bioregenerative life support systems (BLSS) under altered planetary gravity fields. Our TabPFN in-context dose-response modeling established a non-linear planetary sensitivity threshold: on the Moon ($0.16g$), roots exhibit a near-complete flight phenotype ($98.2\%$), whereas under Martian gravity ($0.38g$), normal developmental programs are largely preserved ($14.5\%$ flight state).
+
+This threshold partitions genetic targets into distinct engineering priorities for planetary surface greenhouses:
+\begin{enumerate}
+    \item \textbf{Lunar Habitat Crop Ideotypes ($0.16g$):} Because Lunar gravity falls below the critical mechanotransduction threshold, plants will suffer significant cortical MT disorientation, root skewing ($>35^\circ$), and excessive lignification/xylan rigidification in xylem vessels. Targeted overexpression of cortical steerers (\textit{SPR1}) or MT crosslinkers (\textit{MAP65-1}) driven by root-specific promoters can preserve transverse array alignment, preventing aberrant twisting and ensuring efficient water/nutrient uptake in lunar regolith simulant.
+    \item \textbf{Martian Greenhouse Cultivars ($0.38g$):} On Mars, endogenous gravitational loading is sufficient to maintain basic primary wall directional expansion. Engineering efforts should focus on fine-tuning secondary wall xylan synthesis (\textit{IRX9}, \textit{IRX10}) to balance stem lodging resistance against edible biomass allocation in high-density vertical farming modules.
+    \item \textbf{Biomolecular Motor Tuning:} Enhancing class XI myosin processivity or stabilizing $O$-GlcNAc sites against degradation provides a universal synthetic biology route to accelerate post-Golgi matrix vesicle delivery in reduced gravity.
+\end{enumerate}
