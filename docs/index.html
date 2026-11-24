@@ -24,7 +24,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
-<body data-site-id="osd615-glycome-cytoskeleton" data-brand-logo="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-logo.png">
+<body data-site-id="osd615-glycome-cytoskeleton" data-brand-logo="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-logo.png" data-cose-themetoggle="off">
 
   <!-- HERO SECTION -->
   <header class="hero">
@@ -59,23 +59,27 @@
 
   <!-- STICKY TOP NAVIGATION BAR -->
   <nav class="nav-bar">
-    <div class="nav-container">
-      <a class="nav-link active" data-tab="tab-overview"><i class="fas fa-info-circle"></i> Overview</a>
-      <a class="nav-link" data-tab="tab-glycomics"><i class="fas fa-th"></i> Glycome Heatmap</a>
-      <a class="nav-link" data-tab="tab-differential"><i class="fas fa-volcano"></i> Differential Analysis</a>
-      <a class="nav-link" data-tab="tab-multiomics"><i class="fas fa-project-diagram"></i> Multi-Omics sPLS</a>
-      <a class="nav-link" data-tab="tab-network"><i class="fas fa-network-wired"></i> Systems Interactome</a>
-      <a class="nav-link" data-tab="tab-singlecell"><i class="fas fa-map-marked-alt"></i> Single-Cell (ggPlantmap)</a>
-      <a class="nav-link" data-tab="tab-microscopy"><i class="fas fa-microscope"></i> Microscopy Database</a>
-      <a class="nav-link" data-tab="tab-simulation"><i class="fas fa-truck-loading"></i> Transport Simulator</a>
-      <a class="nav-link" data-tab="tab-pathways"><i class="fas fa-route"></i> Biochemical Pathways</a>
-      <a class="nav-link" data-tab="tab-massspec"><i class="fas fa-cogs"></i> MS Workflows</a>
-      <a class="nav-link" data-tab="tab-tabpfn"><i class="fas fa-brain"></i> TabPFN AI Model</a>
-      <a class="nav-link" data-tab="tab-veggie"><i class="fas fa-seedling"></i> VEGGIE Studies</a>
-      <a class="nav-link" data-tab="tab-manuscript"><i class="fas fa-file-alt"></i> Manuscript</a>
-      <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light / Dark Mode">
-        <i class="fas fa-moon" id="theme-icon"></i> <span id="theme-text">Dark Mode</span>
-      </button>
+    <div class="nav-wrapper">
+      <div class="nav-tabs-scroll" id="nav-tabs-scroll">
+        <a class="nav-link active" data-tab="tab-overview"><i class="fas fa-info-circle"></i> Overview</a>
+        <a class="nav-link" data-tab="tab-glycomics"><i class="fas fa-th"></i> Glycome Heatmap</a>
+        <a class="nav-link" data-tab="tab-differential"><i class="fas fa-volcano"></i> Differential Analysis</a>
+        <a class="nav-link" data-tab="tab-multiomics"><i class="fas fa-project-diagram"></i> Multi-Omics sPLS</a>
+        <a class="nav-link" data-tab="tab-network"><i class="fas fa-network-wired"></i> Systems Interactome</a>
+        <a class="nav-link" data-tab="tab-singlecell"><i class="fas fa-map-marked-alt"></i> Single-Cell (ggPlantmap)</a>
+        <a class="nav-link" data-tab="tab-microscopy"><i class="fas fa-microscope"></i> Microscopy Database</a>
+        <a class="nav-link" data-tab="tab-simulation"><i class="fas fa-truck-loading"></i> Transport Simulator</a>
+        <a class="nav-link" data-tab="tab-pathways"><i class="fas fa-route"></i> Biochemical Pathways</a>
+        <a class="nav-link" data-tab="tab-massspec"><i class="fas fa-cogs"></i> MS Workflows</a>
+        <a class="nav-link" data-tab="tab-tabpfn"><i class="fas fa-brain"></i> TabPFN AI Model</a>
+        <a class="nav-link" data-tab="tab-veggie"><i class="fas fa-seedling"></i> VEGGIE Studies</a>
+        <a class="nav-link" data-tab="tab-manuscript"><i class="fas fa-file-alt"></i> Manuscript</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+          <i class="fas fa-moon" id="theme-icon"></i> <span id="theme-text">Dark Mode</span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -605,6 +609,11 @@
       <a href="https://github.com/dr-richard-barker/OSD615-glycome-cytoskeleton-systems-biology" target="_blank"><i class="fab fa-github"></i> GitHub Source</a>
     </p>
   </footer>
+
+  <!-- FLOATING QUICK-TOGGLE FAB -->
+  <button id="floating-theme-toggle" class="floating-theme-fab" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+    <i class="fas fa-moon" id="floating-theme-icon"></i>
+  </button>
 
   <!-- CoSE Theme Integration Scripts -->
   <script src="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/sites.js"></script>
